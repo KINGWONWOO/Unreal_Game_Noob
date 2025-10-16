@@ -5,3 +5,8 @@
 #include "C:/Users/qudtn/UnrealEngine/NoobGame/Plugins/AdvancedSteamSessions/Intermediate/Build/Win64/UnrealGame/Inc/AdvancedSteamSessions/UHT/SteamNotificationsSubsystem.gen.cpp"
 #include "C:/Users/qudtn/UnrealEngine/NoobGame/Plugins/AdvancedSteamSessions/Intermediate/Build/Win64/UnrealGame/Inc/AdvancedSteamSessions/UHT/SteamRequestGroupOfficersCallbackProxy.gen.cpp"
 #include "C:/Users/qudtn/UnrealEngine/NoobGame/Plugins/AdvancedSteamSessions/Intermediate/Build/Win64/UnrealGame/Inc/AdvancedSteamSessions/UHT/SteamWSRequestUGCDetailsCallbackProxy.gen.cpp"
+#include "C:/Users/qudtn/UnrealEngine/NoobGame/Plugins/AdvancedSteamSessions/Source/AdvancedSteamSessions/Private/AdvancedSteamFriendsLibrary.cpp"
+#include "C:/Users/qudtn/UnrealEngine/NoobGame/Plugins/AdvancedSteamSessions/Source/AdvancedSteamSessions/Private/AdvancedSteamSessions.cpp"
+#include "C:/Users/qudtn/UnrealEngine/NoobGame/Plugins/AdvancedSteamSessions/Source/AdvancedSteamSessions/Private/AdvancedSteamWorkshopLibrary.cpp"
+#include "C:/Users/qudtn/UnrealEngine/NoobGame/Plugins/AdvancedSteamSessions/Source/AdvancedSteamSessions/Private/SteamRequestGroupOfficersCallbackProxy.cpp"
+#include "C:/Users/qudtn/UnrealEngine/NoobGame/Plugins/AdvancedSteamSessions/Source/AdvancedSteamSessions/Private/SteamWSRequestUGCDetailsCallbackProxy.cpp"

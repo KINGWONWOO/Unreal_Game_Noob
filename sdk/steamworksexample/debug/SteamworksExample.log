@@ -1,0 +1,2524 @@
+﻿  Main.cpp
+  stdafx.cpp
+  gameenginewin32.cpp
+  VectorEntity.cpp
+  BaseMenu.cpp
+  clanchatroom.cpp
+  Friends.cpp
+  htmlsurface.cpp
+  Inventory.cpp
+  ItemStore.cpp
+  Leaderboards.cpp
+  Lobby.cpp
+  MainMenu.cpp
+  musicplayer.cpp
+  OverlayExamples.cpp
+  p2pauth.cpp
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\MainMenu.cpp(1,1): error C2220: 다음 경고는 오류로 처리됩니다.
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Leaderboards.cpp(1,1): error C2220: 다음 경고는 오류로 처리됩니다.
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\MainMenu.cpp(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Leaderboards.cpp(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\ItemStore.cpp(1,1): error C2220: 다음 경고는 오류로 처리됩니다.
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\ItemStore.cpp(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\musicplayer.cpp(1,1): error C2220: 다음 경고는 오류로 처리됩니다.
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\musicplayer.cpp(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Lobby.cpp(1,1): error C2220: 다음 경고는 오류로 처리됩니다.
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Lobby.cpp(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\BaseMenu.cpp(1,1): error C2220: 다음 경고는 오류로 처리됩니다.
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\stdafx.cpp(1,1): error C2220: 다음 경고는 오류로 처리됩니다.
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\htmlsurface.cpp(1,1): error C2220: 다음 경고는 오류로 처리됩니다.
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\VectorEntity.cpp(1,1): error C2220: 다음 경고는 오류로 처리됩니다.
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\OverlayExamples.cpp(1,1): error C2220: 다음 경고는 오류로 처리됩니다.
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\BaseMenu.cpp(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\stdafx.cpp(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\htmlsurface.cpp(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\VectorEntity.cpp(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\OverlayExamples.cpp(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\stdafx.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'MainMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\stdafx.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Leaderboards.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\stdafx.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ItemStore.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\stdafx.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'musicplayer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\stdafx.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Lobby.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\stdafx.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'BaseMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\stdafx.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'htmlsurface.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\stdafx.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'VectorEntity.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\stdafx.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'stdafx.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\stdafx.h(1,1): error C2220: 다음 경고는 오류로 처리됩니다.
+  (소스 파일 'clanchatroom.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\gameenginewin32.cpp(1,1): error C2220: 다음 경고는 오류로 처리됩니다.
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\stdafx.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'clanchatroom.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\gameenginewin32.cpp(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Inventory.cpp(1,1): error C2220: 다음 경고는 오류로 처리됩니다.
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\stdafx.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'OverlayExamples.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\p2pauth.cpp(1,1): error C2220: 다음 경고는 오류로 처리됩니다.
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Inventory.cpp(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Friends.cpp(1,1): error C2220: 다음 경고는 오류로 처리됩니다.
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Main.cpp(1,1): error C2220: 다음 경고는 오류로 처리됩니다.
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\p2pauth.cpp(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Friends.cpp(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Main.cpp(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\stdafx.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Friends.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\stdafx.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Inventory.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\stdafx.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'gameenginewin32.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\stdafx.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Main.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\stdafx.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'p2pauth.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamuserstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ItemStore.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamclientpublic.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ItemStore.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamuniverse.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ItemStore.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamuserstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'BaseMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamclientpublic.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'BaseMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamuniverse.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'BaseMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamuserstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'p2pauth.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamuserstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'MainMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamclientpublic.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'p2pauth.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamremotestorage.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ItemStore.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamuniverse.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'p2pauth.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamclientpublic.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'MainMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamuniverse.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'MainMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamremotestorage.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'BaseMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamremotestorage.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'MainMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\matchmakingtypes.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'MainMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\matchmakingtypes.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ItemStore.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamremotestorage.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'p2pauth.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\matchmakingtypes.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'p2pauth.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steam_gameserver.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'MainMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamuserstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Lobby.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steam_gameserver.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ItemStore.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamclientpublic.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Lobby.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamuniverse.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Lobby.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\matchmakingtypes.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'BaseMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steam_gameserver.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'p2pauth.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamutils.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ItemStore.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamutils.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'MainMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamutils.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'p2pauth.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamremotestorage.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Lobby.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamscreenshots.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'MainMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamscreenshots.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ItemStore.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamscreenshots.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'p2pauth.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamuserstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Inventory.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steam_gameserver.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'BaseMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamhttpenums.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ItemStore.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamclientpublic.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Inventory.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamuniverse.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Inventory.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamutils.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'BaseMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamuserstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'stdafx.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamclientpublic.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'stdafx.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamuniverse.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'stdafx.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamscreenshots.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'BaseMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamhttpenums.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'BaseMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamhttpenums.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'MainMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamremotestorage.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Inventory.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamuserstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Friends.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamuserstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'OverlayExamples.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamclientpublic.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Friends.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamclientpublic.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'OverlayExamples.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamuserstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'htmlsurface.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamuniverse.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Friends.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamuniverse.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'OverlayExamples.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamhttpenums.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'p2pauth.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamremotestorage.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'stdafx.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\matchmakingtypes.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Inventory.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamclientpublic.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'htmlsurface.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamuniverse.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'htmlsurface.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\matchmakingtypes.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'stdafx.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamremotestorage.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'OverlayExamples.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamremotestorage.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Friends.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteaminventory.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ItemStore.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteaminventory.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'MainMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamtimeline.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ItemStore.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamtimeline.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'MainMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamremotestorage.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'htmlsurface.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamuserstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'gameenginewin32.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteaminventory.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'BaseMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamvideo.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'MainMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamvideo.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ItemStore.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamclientpublic.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'gameenginewin32.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteaminventory.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'p2pauth.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamparentalsettings.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'MainMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamparentalsettings.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ItemStore.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamuniverse.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'gameenginewin32.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steam_gameserver.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'stdafx.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamtimeline.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'p2pauth.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamvideo.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'p2pauth.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\matchmakingtypes.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Lobby.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamparentalsettings.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'p2pauth.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamutils.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'stdafx.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\matchmakingtypes.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'OverlayExamples.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steam_gameserver.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Inventory.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\matchmakingtypes.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Friends.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamremotestorage.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'gameenginewin32.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\matchmakingtypes.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'htmlsurface.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamtimeline.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'BaseMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamuserstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'VectorEntity.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamutils.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Inventory.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steam_gameserver.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Lobby.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamscreenshots.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'stdafx.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamvideo.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'BaseMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamparentalsettings.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'BaseMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamclientpublic.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'VectorEntity.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steam_gameserver.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'OverlayExamples.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\matchmakingtypes.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'gameenginewin32.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamutils.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Lobby.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamscreenshots.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Inventory.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamuniverse.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'VectorEntity.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamhttpenums.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'stdafx.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steam_gameserver.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Friends.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamgameserverstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ItemStore.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamutils.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'OverlayExamples.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamuserstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'clanchatroom.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steam_gameserver.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'htmlsurface.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamhttpenums.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Inventory.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\ItemStore.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ItemStore.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamscreenshots.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Lobby.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamclientpublic.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'clanchatroom.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamuserstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Leaderboards.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamuniverse.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'clanchatroom.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamutils.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Friends.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamscreenshots.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'OverlayExamples.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWar.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ItemStore.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steam_gameserver.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'gameenginewin32.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamutils.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'htmlsurface.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamremotestorage.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'VectorEntity.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamscreenshots.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Friends.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamhttpenums.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'OverlayExamples.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamhttpenums.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Lobby.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\GameEngine.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ItemStore.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamutils.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'gameenginewin32.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamscreenshots.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'htmlsurface.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamhttpenums.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Friends.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteaminventory.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'stdafx.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamgameserverstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'BaseMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamtimeline.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'stdafx.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteaminventory.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Inventory.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamhttpenums.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'htmlsurface.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamscreenshots.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'gameenginewin32.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamvideo.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'stdafx.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamparentalsettings.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'stdafx.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteaminventory.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'OverlayExamples.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamhttpenums.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'gameenginewin32.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamgameserverstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'MainMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamtimeline.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'OverlayExamples.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteaminventory.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Lobby.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamclientpublic.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Leaderboards.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\MainMenu.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'MainMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamvideo.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'OverlayExamples.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamuniverse.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Leaderboards.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamparentalsettings.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'OverlayExamples.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamtimeline.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Lobby.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteaminventory.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Friends.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamremotestorage.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'clanchatroom.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamvideo.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Lobby.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamparentalsettings.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Lobby.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamtimeline.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Friends.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamvideo.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Friends.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamparentalsettings.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Friends.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamuserstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'musicplayer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\matchmakingtypes.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'clanchatroom.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamremotestorage.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Leaderboards.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteaminventory.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'gameenginewin32.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamclientpublic.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'musicplayer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamuniverse.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'musicplayer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamtimeline.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'gameenginewin32.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamvideo.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'gameenginewin32.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\matchmakingtypes.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Leaderboards.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamparentalsettings.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'gameenginewin32.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steam_gameserver.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'clanchatroom.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamgameserverstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Lobby.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamgameserverstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'OverlayExamples.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamremotestorage.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'musicplayer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Lobby.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Lobby.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWar.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Lobby.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamutils.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'clanchatroom.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\matchmakingtypes.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'VectorEntity.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamgameserverstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'p2pauth.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamtimeline.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Inventory.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamgameserverstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Friends.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamscreenshots.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'clanchatroom.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\matchmakingtypes.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'musicplayer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamvideo.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Inventory.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWarClient.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'p2pauth.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Friends.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Friends.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\OverlayExamples.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'OverlayExamples.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\GameEngine.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Lobby.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteaminventory.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'htmlsurface.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamgameserverstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'stdafx.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steam_gameserver.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'VectorEntity.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steam_gameserver.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Leaderboards.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamgameserverstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'gameenginewin32.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamhttpenums.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'clanchatroom.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\GameEngine.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'p2pauth.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamparentalsettings.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Inventory.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWar.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Friends.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWar.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'OverlayExamples.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamtimeline.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'htmlsurface.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\GameEngineWin32.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'gameenginewin32.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamutils.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'VectorEntity.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\GameEngine.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'gameenginewin32.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamutils.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Leaderboards.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamvideo.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'htmlsurface.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\GameEngine.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Friends.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\GameEngine.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'OverlayExamples.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steam_gameserver.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'musicplayer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamparentalsettings.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'htmlsurface.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamutils.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'musicplayer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamscreenshots.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Leaderboards.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamscreenshots.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'VectorEntity.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamuserstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Main.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteaminventory.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'clanchatroom.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamtimeline.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'clanchatroom.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamclientpublic.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Main.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamhttpenums.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Leaderboards.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamvideo.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'clanchatroom.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamuniverse.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Main.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamhttpenums.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'VectorEntity.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamscreenshots.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'musicplayer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamparentalsettings.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'clanchatroom.cpp'을(를) 컴파일하는 중)
+  
+  PhotonBeam.cpp
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamhttpenums.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'musicplayer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamgameserverstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Inventory.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamgameserverstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'htmlsurface.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Inventory.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Inventory.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWar.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Inventory.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\htmlsurface.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'htmlsurface.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWar.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'htmlsurface.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteaminventory.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Leaderboards.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\GameEngine.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Inventory.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteaminventory.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'VectorEntity.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamtimeline.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Leaderboards.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\GameEngine.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'htmlsurface.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamtimeline.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'VectorEntity.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamvideo.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Leaderboards.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamgameserverstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'clanchatroom.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamvideo.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'VectorEntity.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamparentalsettings.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Leaderboards.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamparentalsettings.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'VectorEntity.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\clanchatroom.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'clanchatroom.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWar.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'clanchatroom.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteaminventory.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'musicplayer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\GameEngine.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'clanchatroom.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamremotestorage.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Main.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamtimeline.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'musicplayer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamvideo.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'musicplayer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamparentalsettings.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'musicplayer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamgameserverstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Leaderboards.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamgameserverstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'musicplayer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Leaderboards.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Leaderboards.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWar.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Leaderboards.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\PhotonBeam.cpp(1,1): error C2220: 다음 경고는 오류로 처리됩니다.
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\PhotonBeam.cpp(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\stdafx.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'PhotonBeam.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\GameEngine.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Leaderboards.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\musicplayer.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'musicplayer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\GameEngine.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'musicplayer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\matchmakingtypes.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Main.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamgameserverstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'VectorEntity.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\VectorEntity.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'VectorEntity.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\GameEngine.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'VectorEntity.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steam_gameserver.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Main.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamutils.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Main.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamscreenshots.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Main.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamhttpenums.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Main.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteaminventory.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Main.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamtimeline.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Main.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamvideo.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Main.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamparentalsettings.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Main.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamgameserverstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Main.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\gameenginewin32.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Main.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\GameEngine.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Main.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWar.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'p2pauth.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Messages.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'p2pauth.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\StarField.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'p2pauth.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWarClient.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ItemStore.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Messages.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ItemStore.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWarClient.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'OverlayExamples.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Messages.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'OverlayExamples.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\StarField.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ItemStore.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Sun.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'p2pauth.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWarEntity.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'p2pauth.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\VectorEntity.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'p2pauth.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWarClient.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Friends.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Messages.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Friends.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\StarField.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Friends.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Ship.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'p2pauth.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\StarField.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'OverlayExamples.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\PhotonBeam.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'p2pauth.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\GameEngine.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'MainMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Sun.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Friends.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\StatsAndAchievements.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'p2pauth.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWarEntity.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Friends.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Inventory.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'p2pauth.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\VectorEntity.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Friends.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Ship.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Friends.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\StatsAndAchievements.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'clanchatroom.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Inventory.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'clanchatroom.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\PhotonBeam.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Friends.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWar.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'MainMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWarClient.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Inventory.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Messages.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Inventory.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWarClient.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'MainMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Messages.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'MainMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\GameEngine.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'BaseMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\StarField.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Inventory.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\StarField.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'MainMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\StatsAndAchievements.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Leaderboards.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Inventory.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Leaderboards.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Sun.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'MainMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWarEntity.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'MainMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\VectorEntity.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'MainMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\StatsAndAchievements.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Friends.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Inventory.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Friends.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Ship.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'MainMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Sun.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Inventory.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWarEntity.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Inventory.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\VectorEntity.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Inventory.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWar.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'BaseMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWarClient.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'BaseMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Messages.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'BaseMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Sun.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ItemStore.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWarEntity.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ItemStore.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\VectorEntity.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ItemStore.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Ship.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Inventory.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\StarField.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'BaseMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\PhotonBeam.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'MainMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\PhotonBeam.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Inventory.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Ship.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ItemStore.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Sun.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'BaseMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWarEntity.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'BaseMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\VectorEntity.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'BaseMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\StatsAndAchievements.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Inventory.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\StatsAndAchievements.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'MainMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Inventory.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'MainMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\RemoteStorage.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Inventory.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\musicplayer.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Inventory.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\PhotonBeam.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ItemStore.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Ship.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'BaseMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\StatsAndAchievements.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ItemStore.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Inventory.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ItemStore.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\PhotonBeam.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'BaseMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWarClient.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'htmlsurface.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Messages.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'htmlsurface.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Sun.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'OverlayExamples.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWarEntity.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'OverlayExamples.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\VectorEntity.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'OverlayExamples.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\StarField.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'htmlsurface.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\RemoteStorage.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'p2pauth.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\musicplayer.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'p2pauth.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Ship.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'OverlayExamples.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\StatsAndAchievements.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'BaseMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Inventory.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'BaseMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\PhotonBeam.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'OverlayExamples.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Sun.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'htmlsurface.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\RemoteStorage.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'BaseMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\StatsAndAchievements.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'OverlayExamples.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Inventory.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'OverlayExamples.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\musicplayer.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'BaseMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWarEntity.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'htmlsurface.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\RemoteStorage.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'MainMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\musicplayer.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'MainMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\p2pauth.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'p2pauth.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWarClient.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Lobby.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Messages.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Lobby.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\StarField.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Lobby.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\VectorEntity.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'htmlsurface.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Sun.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Lobby.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWarEntity.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Lobby.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\VectorEntity.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Lobby.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Ship.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'htmlsurface.cpp'을(를) 컴파일하는 중)
+  
+  QuitMenu.cpp
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Ship.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Lobby.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\PhotonBeam.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'htmlsurface.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\PhotonBeam.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Lobby.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWarClient.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'clanchatroom.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Messages.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'clanchatroom.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\StatsAndAchievements.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'htmlsurface.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\StarField.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'clanchatroom.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Inventory.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'htmlsurface.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\StatsAndAchievements.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Lobby.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Inventory.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Lobby.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWarClient.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Leaderboards.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Messages.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Leaderboards.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\RemoteStorage.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ItemStore.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\musicplayer.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ItemStore.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\RemoteStorage.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Lobby.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\StarField.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Leaderboards.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\musicplayer.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Lobby.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Sun.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'clanchatroom.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWarEntity.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'clanchatroom.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\VectorEntity.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'clanchatroom.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Ship.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'clanchatroom.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\PhotonBeam.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'clanchatroom.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\RemoteStorage.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'clanchatroom.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\musicplayer.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'clanchatroom.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Sun.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Leaderboards.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWarEntity.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Leaderboards.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\VectorEntity.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Leaderboards.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\QuitMenu.cpp(1,1): error C2220: 다음 경고는 오류로 처리됩니다.
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\QuitMenu.cpp(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\stdafx.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'QuitMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\RemoteStorage.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Friends.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\musicplayer.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Friends.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWar.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'musicplayer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWarClient.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'musicplayer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Messages.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'musicplayer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\StarField.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'musicplayer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWarClient.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Main.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWar.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Main.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\RemoteStorage.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'htmlsurface.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Ship.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Leaderboards.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\PhotonBeam.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Leaderboards.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\musicplayer.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'htmlsurface.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Messages.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Main.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\RemoteStorage.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'OverlayExamples.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\RemoteStorage.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Leaderboards.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\musicplayer.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Leaderboards.cpp'을(를) 컴파일하는 중)
+  
+  RemotePlay.cpp
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\p2pauth.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Lobby.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\StarField.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Main.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\musicplayer.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'OverlayExamples.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Sun.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'musicplayer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWarEntity.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'musicplayer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\VectorEntity.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'musicplayer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Ship.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'musicplayer.cpp'을(를) 컴파일하는 중)
+  
+  RemoteStorage.cpp
+  ServerBrowser.cpp
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Sun.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Main.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWarEntity.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Main.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\VectorEntity.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Main.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Ship.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Main.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\RemotePlay.cpp(1,1): error C2220: 다음 경고는 오류로 처리됩니다.
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\RemotePlay.cpp(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\stdafx.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemotePlay.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\PhotonBeam.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Main.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\StatsAndAchievements.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Main.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Inventory.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Main.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\PhotonBeam.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'musicplayer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\StatsAndAchievements.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'musicplayer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Inventory.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'musicplayer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\stdafx.h(1,1): error C2220: 다음 경고는 오류로 처리됩니다.
+  (소스 파일 'RemoteStorage.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\stdafx.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemoteStorage.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\RemoteStorage.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'musicplayer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\ServerBrowser.cpp(1,1): error C2220: 다음 경고는 오류로 처리됩니다.
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\ServerBrowser.cpp(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\stdafx.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ServerBrowser.cpp'을(를) 컴파일하는 중)
+  
+  Ship.cpp
+  SimpleProtobuf.cpp
+  SpaceWarClient.cpp
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Ship.cpp(1,1): error C2220: 다음 경고는 오류로 처리됩니다.
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Ship.cpp(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\stdafx.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Ship.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\RemoteStorage.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Main.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\musicplayer.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Main.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWarClient.cpp(1,1): error C2220: 다음 경고는 오류로 처리됩니다.
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWarClient.cpp(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\stdafx.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarClient.cpp'을(를) 컴파일하는 중)
+  
+  SpaceWarEntity.cpp
+  SpaceWarServer.cpp
+  StarField.cpp
+  StatsAndAchievements.cpp
+  Sun.cpp
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWarEntity.cpp(1,1): error C2220: 다음 경고는 오류로 처리됩니다.
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWarEntity.cpp(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\stdafx.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarEntity.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWarServer.cpp(1,1): error C2220: 다음 경고는 오류로 처리됩니다.
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWarServer.cpp(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\stdafx.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarServer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\StarField.cpp(1,1): error C2220: 다음 경고는 오류로 처리됩니다.
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\StarField.cpp(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\stdafx.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'StarField.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\StatsAndAchievements.cpp(1,1): error C2220: 다음 경고는 오류로 처리됩니다.
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\StatsAndAchievements.cpp(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\stdafx.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'StatsAndAchievements.cpp'을(를) 컴파일하는 중)
+  
+  timeline.cpp
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Sun.cpp(1,1): error C2220: 다음 경고는 오류로 처리됩니다.
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Sun.cpp(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\stdafx.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Sun.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\stdafx.h(1,1): error C2220: 다음 경고는 오류로 처리됩니다.
+  (소스 파일 'timeline.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\stdafx.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'timeline.cpp'을(를) 컴파일하는 중)
+  
+  voicechat.cpp
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\voicechat.cpp(1,1): error C2220: 다음 경고는 오류로 처리됩니다.
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\voicechat.cpp(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\stdafx.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'voicechat.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamuserstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'PhotonBeam.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamclientpublic.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'PhotonBeam.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamuniverse.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'PhotonBeam.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamremotestorage.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'PhotonBeam.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\matchmakingtypes.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'PhotonBeam.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steam_gameserver.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'PhotonBeam.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamutils.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'PhotonBeam.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamscreenshots.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'PhotonBeam.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamhttpenums.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'PhotonBeam.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteaminventory.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'PhotonBeam.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamtimeline.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'PhotonBeam.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamvideo.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'PhotonBeam.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamparentalsettings.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'PhotonBeam.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamgameserverstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'PhotonBeam.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\PhotonBeam.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'PhotonBeam.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\GameEngine.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'PhotonBeam.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamuserstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'QuitMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamclientpublic.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'QuitMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamuniverse.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'QuitMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamremotestorage.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'QuitMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\matchmakingtypes.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'QuitMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steam_gameserver.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'QuitMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWarEntity.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'PhotonBeam.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\VectorEntity.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'PhotonBeam.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamutils.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'QuitMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWar.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'PhotonBeam.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamscreenshots.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'QuitMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamhttpenums.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'QuitMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamuserstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemotePlay.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamuserstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemoteStorage.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamclientpublic.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemoteStorage.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamuniverse.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemoteStorage.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteaminventory.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'QuitMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamtimeline.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'QuitMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamvideo.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'QuitMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamuserstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarServer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamremotestorage.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemoteStorage.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamclientpublic.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarServer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamuniverse.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarServer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\matchmakingtypes.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemoteStorage.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamparentalsettings.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'QuitMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamremotestorage.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarServer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamclientpublic.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemotePlay.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steam_gameserver.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemoteStorage.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamuniverse.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemotePlay.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamutils.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemoteStorage.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamuserstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ServerBrowser.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamremotestorage.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemotePlay.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamclientpublic.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ServerBrowser.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamuniverse.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ServerBrowser.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\matchmakingtypes.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarServer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamgameserverstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'QuitMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\matchmakingtypes.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemotePlay.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\QuitMenu.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'QuitMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamremotestorage.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ServerBrowser.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\matchmakingtypes.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ServerBrowser.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steam_gameserver.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemotePlay.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamscreenshots.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemoteStorage.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamhttpenums.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemoteStorage.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamutils.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemotePlay.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steam_gameserver.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ServerBrowser.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamuserstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarClient.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamclientpublic.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarClient.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamuniverse.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarClient.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamscreenshots.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemotePlay.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamutils.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ServerBrowser.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteaminventory.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemoteStorage.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steam_gameserver.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarServer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamhttpenums.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemotePlay.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamremotestorage.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarClient.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamtimeline.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemoteStorage.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamscreenshots.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ServerBrowser.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamvideo.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemoteStorage.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamutils.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarServer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamparentalsettings.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemoteStorage.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamhttpenums.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ServerBrowser.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\matchmakingtypes.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarClient.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamuserstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Ship.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamscreenshots.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarServer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamclientpublic.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Ship.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamuniverse.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Ship.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteaminventory.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemotePlay.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamhttpenums.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarServer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steam_gameserver.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarClient.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamtimeline.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemotePlay.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteaminventory.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ServerBrowser.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamvideo.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemotePlay.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamtimeline.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ServerBrowser.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamparentalsettings.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemotePlay.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamutils.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarClient.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamvideo.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ServerBrowser.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamremotestorage.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Ship.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamparentalsettings.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ServerBrowser.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamgameserverstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemoteStorage.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamscreenshots.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarClient.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\RemoteStorage.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemoteStorage.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWar.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemoteStorage.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamhttpenums.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarClient.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\GameEngine.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemoteStorage.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\matchmakingtypes.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Ship.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamgameserverstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ServerBrowser.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\ServerBrowser.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ServerBrowser.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamgameserverstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemotePlay.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWar.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ServerBrowser.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\RemotePlay.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemotePlay.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steam_gameserver.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Ship.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWar.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemotePlay.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\GameEngine.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ServerBrowser.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamutils.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Ship.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\GameEngine.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemotePlay.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteaminventory.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarClient.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamscreenshots.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Ship.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamtimeline.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarClient.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamvideo.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarClient.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamhttpenums.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Ship.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamparentalsettings.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarClient.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteaminventory.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Ship.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteaminventory.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarServer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamtimeline.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Ship.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamtimeline.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarServer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamvideo.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Ship.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamvideo.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarServer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamparentalsettings.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Ship.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamparentalsettings.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarServer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamgameserverstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarClient.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamgameserverstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Ship.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamuserstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarEntity.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWarClient.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarClient.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\GameEngine.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarClient.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamclientpublic.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarEntity.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamuniverse.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarEntity.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamgameserverstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarServer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWarServer.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarServer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamremotestorage.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarEntity.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\matchmakingtypes.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarEntity.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamuserstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'timeline.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamuserstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'StarField.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamclientpublic.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'StarField.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamclientpublic.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'timeline.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamuniverse.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'StarField.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamuniverse.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'timeline.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamuserstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Sun.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamclientpublic.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Sun.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamuniverse.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Sun.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamremotestorage.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'StarField.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamremotestorage.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'timeline.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\GameEngine.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Ship.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steam_gameserver.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarEntity.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\matchmakingtypes.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'timeline.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamutils.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarEntity.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamremotestorage.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Sun.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamscreenshots.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarEntity.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\matchmakingtypes.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Sun.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamhttpenums.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarEntity.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\matchmakingtypes.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'StarField.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steam_gameserver.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Sun.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamutils.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Sun.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steam_gameserver.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'StarField.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamutils.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'StarField.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steam_gameserver.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'timeline.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamscreenshots.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'StarField.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamhttpenums.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'StarField.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamscreenshots.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Sun.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamhttpenums.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Sun.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteaminventory.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarEntity.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteaminventory.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Sun.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamtimeline.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Sun.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamvideo.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Sun.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteaminventory.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'StarField.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamparentalsettings.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Sun.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamtimeline.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'StarField.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamuserstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'StatsAndAchievements.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamclientpublic.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'StatsAndAchievements.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamtimeline.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarEntity.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamuniverse.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'StatsAndAchievements.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamvideo.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarEntity.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamparentalsettings.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarEntity.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamvideo.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'StarField.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamparentalsettings.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'StarField.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamutils.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'timeline.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamuserstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'voicechat.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamremotestorage.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'StatsAndAchievements.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamgameserverstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Sun.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Sun.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Sun.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamscreenshots.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'timeline.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\GameEngine.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Sun.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamgameserverstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarEntity.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamhttpenums.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'timeline.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWarEntity.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarEntity.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\GameEngine.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarEntity.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamclientpublic.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'voicechat.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\matchmakingtypes.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'StatsAndAchievements.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamgameserverstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'StarField.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\StarField.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'StarField.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steam_gameserver.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'StatsAndAchievements.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamuniverse.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'voicechat.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamutils.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'StatsAndAchievements.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamscreenshots.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'StatsAndAchievements.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamhttpenums.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'StatsAndAchievements.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteaminventory.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'timeline.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamtimeline.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'timeline.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamvideo.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'timeline.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamparentalsettings.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'timeline.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamremotestorage.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'voicechat.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteaminventory.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'StatsAndAchievements.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\matchmakingtypes.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'voicechat.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamtimeline.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'StatsAndAchievements.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamvideo.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'StatsAndAchievements.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamparentalsettings.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'StatsAndAchievements.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamgameserverstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'timeline.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\timeline.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'timeline.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWar.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'timeline.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\GameEngine.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'timeline.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steam_gameserver.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'voicechat.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamutils.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'voicechat.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamscreenshots.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'voicechat.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamgameserverstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'StatsAndAchievements.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamhttpenums.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'voicechat.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\StatsAndAchievements.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'StatsAndAchievements.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWar.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'StatsAndAchievements.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteaminventory.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'voicechat.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\GameEngine.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'StatsAndAchievements.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamtimeline.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'voicechat.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamvideo.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'voicechat.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamparentalsettings.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'voicechat.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\isteamgameserverstats.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'voicechat.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\voicechat.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'voicechat.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\GameEngine.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'voicechat.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWarClient.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemotePlay.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Messages.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemotePlay.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\StarField.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemotePlay.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Sun.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemotePlay.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWarEntity.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemotePlay.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\VectorEntity.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemotePlay.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Ship.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemotePlay.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWar.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarClient.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Messages.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarClient.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\StarField.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarClient.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\PhotonBeam.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemotePlay.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Sun.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarClient.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWarEntity.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarClient.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\VectorEntity.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarClient.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\StatsAndAchievements.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemotePlay.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Inventory.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemotePlay.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Ship.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarClient.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\PhotonBeam.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarClient.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\StatsAndAchievements.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarClient.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Inventory.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarClient.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\GameEngine.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'QuitMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWar.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'QuitMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWarClient.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'QuitMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Messages.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'QuitMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\StarField.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'QuitMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWarClient.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemoteStorage.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Messages.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemoteStorage.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Sun.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'QuitMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWarClient.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ServerBrowser.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Messages.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ServerBrowser.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\VectorEntity.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarEntity.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWarEntity.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'QuitMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\VectorEntity.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'QuitMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\StarField.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemoteStorage.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\StarField.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ServerBrowser.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Sun.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemoteStorage.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Sun.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ServerBrowser.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWarEntity.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemoteStorage.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\VectorEntity.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemoteStorage.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWarEntity.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ServerBrowser.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Ship.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'QuitMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\VectorEntity.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ServerBrowser.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\RemoteStorage.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemotePlay.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Ship.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemoteStorage.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Ship.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ServerBrowser.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\musicplayer.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemotePlay.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWarEntity.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Sun.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\PhotonBeam.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'QuitMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\VectorEntity.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Sun.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\GameEngine.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarServer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Ship.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Ship.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\StatsAndAchievements.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'QuitMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Inventory.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'QuitMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\PhotonBeam.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ServerBrowser.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\PhotonBeam.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemoteStorage.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWarEntity.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Ship.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\VectorEntity.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Ship.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\RemoteStorage.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'QuitMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\musicplayer.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'QuitMenu.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\StatsAndAchievements.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ServerBrowser.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Inventory.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ServerBrowser.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\StatsAndAchievements.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemoteStorage.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Inventory.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemoteStorage.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\RemoteStorage.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarClient.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\musicplayer.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarClient.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWar.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarServer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\PhotonBeam.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Ship.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWar.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Ship.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Ship.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarServer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\musicplayer.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'RemoteStorage.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\GameEngine.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'StarField.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\RemoteStorage.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ServerBrowser.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\musicplayer.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ServerBrowser.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWarServer.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Ship.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWarEntity.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarServer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\VectorEntity.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarServer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWarServer.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarClient.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\MainMenu.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarClient.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\PhotonBeam.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarServer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\QuitMenu.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarClient.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\ServerBrowser.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarClient.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Sun.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarServer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Messages.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarServer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Inventory.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'StatsAndAchievements.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Leaderboards.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarClient.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Friends.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarClient.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\clanchatroom.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarClient.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Lobby.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarClient.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\ServerBrowserMenu.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'ServerBrowser.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWarClient.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarServer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\StarField.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarServer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\p2pauth.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarClient.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\voicechat.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarClient.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\StatsAndAchievements.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarServer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Inventory.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarServer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\RemoteStorage.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarServer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\htmlsurface.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarClient.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\musicplayer.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarServer.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWarClient.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'timeline.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Messages.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'timeline.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\StarField.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'timeline.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\public\steam\steamencryptedappticket.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarClient.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\RemotePlay.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarClient.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\ItemStore.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarClient.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWar.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'voicechat.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Messages.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'voicechat.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\OverlayExamples.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarClient.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\timeline.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'SpaceWarClient.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Sun.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Ship.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Messages.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Ship.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Sun.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'timeline.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWarEntity.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'timeline.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\VectorEntity.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'timeline.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\StatsAndAchievements.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Ship.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Inventory.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'Ship.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Ship.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'timeline.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\PhotonBeam.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'timeline.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\StatsAndAchievements.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'timeline.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Inventory.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'timeline.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWarClient.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'StatsAndAchievements.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Messages.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'StatsAndAchievements.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\StarField.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'StatsAndAchievements.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Sun.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'StatsAndAchievements.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\SpaceWarEntity.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'StatsAndAchievements.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\VectorEntity.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'StatsAndAchievements.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\Ship.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'StatsAndAchievements.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\PhotonBeam.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'StatsAndAchievements.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\RemoteStorage.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'StatsAndAchievements.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\musicplayer.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'StatsAndAchievements.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\RemoteStorage.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'timeline.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\qudtn\UnrealEngine\PuzzlePlatform\sdk\steamworksexample\musicplayer.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  (소스 파일 'timeline.cpp'을(를) 컴파일하는 중)
+  
