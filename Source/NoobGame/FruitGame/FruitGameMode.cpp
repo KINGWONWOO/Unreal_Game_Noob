@@ -4,58 +4,86 @@
 #include "FruitGame/FruitGameState.h"
 #include "FruitGame/FruitPlayerState.h"
 #include "FruitGame/FruitPlayerController.h"
+#include "FruitGame/InteractableFruitObject.h" // Guessing object
+#include "FruitGame/SubmitGuessButton.h"     // Guessing submit button
 #include "Kismet/GameplayStatics.h"
-#include "Engine/World.h"
-#include "TimerManager.h"
+#include "Engine/World.h" // Needed for GetWorld()->GetTimeSeconds()
+#include "TimerManager.h" // Needed for FTimerHandle
 
 AFruitGameMode::AFruitGameMode()
 {
-	// 사용할 클래스들을 기본값으로 설정
+	// Set default classes
 	GameStateClass = AFruitGameState::StaticClass();
 	PlayerStateClass = AFruitPlayerState::StaticClass();
 	PlayerControllerClass = AFruitPlayerController::StaticClass();
 
-	// 틱 활성화 (타이머 UI 갱신용)
-	PrimaryActorTick.bCanEverTick = true;
-	PrimaryActorTick.TickInterval = 0.5f; // 너무 자주 틱할 필요 없음
+	// GameMode doesn't need to tick anymore for the timer
+	PrimaryActorTick.bCanEverTick = false;
 
 	MyGameState = nullptr;
+	NumPlayersReady_Setup = 0;
 }
 
 void AFruitGameMode::PostLogin(APlayerController* NewPlayer)
 {
 	Super::PostLogin(NewPlayer);
 
-	// GameState 캐시
+	// Cache GameState reference
 	if (!MyGameState)
 	{
 		MyGameState = GetGameState<AFruitGameState>();
 	}
 
-	// 2명이 모두 접속했는지 확인
+	// Check if 2 players are connected to start the Instructions phase
 	if (MyGameState && GetNumPlayers() == 2)
 	{
-		// 2명이 모두 접속하면 "준비" 단계로 전환
-		MyGameState->CurrentGamePhase = EGamePhase::GP_Setup;
+		MyGameState->CurrentGamePhase = EGamePhase::GP_Instructions;
 	}
 }
 
-void AFruitGameMode::PlayerSubmittedFruits(AController* PlayerController, const TArray<EFruitType>& SecretFruits)
+// Handles interaction requests coming from the PlayerController (originating from Character's F key)
+void AFruitGameMode::PlayerInteracted(AController* PlayerController, AActor* HitActor, EGamePhase CurrentPhase)
 {
-	if (!MyGameState || MyGameState->CurrentGamePhase != EGamePhase::GP_Setup)
+	// --- Guessing Phase Logic ---
+	if (CurrentPhase == EGamePhase::GP_PlayerTurn)
 	{
-		return; // 준비 단계가 아니면 무시
+		// Check if it's the interacting player's turn
+		if (!IsPlayerTurn(PlayerController)) return;
+
+		// Check if the hit actor is an InteractableFruitObject (for guessing)
+		if (AInteractableFruitObject* GuessObject = Cast<AInteractableFruitObject>(HitActor))
+		{
+			// Tell the object to cycle its fruit (server call, replicates automatically)
+			GuessObject->CycleFruit();
+		}
+		// Check if the hit actor is the SubmitGuessButton (for guessing)
+		else if (ASubmitGuessButton* GuessSubmitButton = Cast<ASubmitGuessButton>(HitActor))
+		{
+			// Collect guesses from world objects and process the guess
+			ProcessGuessFromWorldObjects(PlayerController);
+		}
+	}
+	// (No logic needed here for GP_Setup, as it's handled by UI)
+}
+
+// --- 1. Instructions Phase ---
+void AFruitGameMode::PlayerIsReady(AController* PlayerController)
+{
+	// Only proceed if in the correct game phase
+	if (!MyGameState || MyGameState->CurrentGamePhase != EGamePhase::GP_Instructions)
+	{
+		return;
 	}
 
 	AFruitPlayerState* PS = PlayerController->GetPlayerState<AFruitPlayerState>();
-	if (PS && !PS->bHasSubmittedFruits)
+	if (PS)
 	{
-		PS->SetSecretAnswers_Server(SecretFruits);
-		CheckBothPlayersReady();
+		PS->SetInstructionReady_Server(); // Mark player as ready on the server
+		CheckBothPlayersReady_Instructions(); // Check if both players are ready
 	}
 }
 
-void AFruitGameMode::CheckBothPlayersReady()
+void AFruitGameMode::CheckBothPlayersReady_Instructions()
 {
 	if (!MyGameState) return;
 
@@ -63,93 +91,161 @@ void AFruitGameMode::CheckBothPlayersReady()
 	for (APlayerState* PS : MyGameState->PlayerArray)
 	{
 		AFruitPlayerState* FruitPS = Cast<AFruitPlayerState>(PS);
-		if (FruitPS && FruitPS->bHasSubmittedFruits)
+		if (FruitPS && FruitPS->bIsReady_Instructions)
 		{
 			ReadyPlayers++;
 		}
 	}
 
-	// 2명 모두 준비 완료 시, 동전 던지기 시작
+	// If both players are ready, move to the Setup phase
 	if (ReadyPlayers == 2)
+	{
+		MyGameState->CurrentGamePhase = EGamePhase::GP_Setup;
+	}
+}
+
+// --- 2. Setup Phase ---
+// Called by PlayerController's RPC when UI submits the secret fruits
+void AFruitGameMode::PlayerSubmittedFruits(AController* PlayerController, const TArray<EFruitType>& SecretFruits)
+{
+	// Only proceed if in the correct game phase
+	if (!MyGameState || MyGameState->CurrentGamePhase != EGamePhase::GP_Setup)
+	{
+		return;
+	}
+
+	AFruitPlayerState* PS = PlayerController->GetPlayerState<AFruitPlayerState>();
+	// Ensure the player hasn't submitted already
+	if (PS && !PS->bHasSubmittedFruits)
+	{
+		PS->SetSecretAnswers_Server(SecretFruits); // Store the secret answer securely on the server
+		NumPlayersReady_Setup++;
+		CheckBothPlayersReady_Setup(); // Check if both players have submitted
+	}
+}
+
+void AFruitGameMode::CheckBothPlayersReady_Setup()
+{
+	// If both players submitted their answers, start the coin toss
+	if (NumPlayersReady_Setup == 2)
 	{
 		StartCoinToss();
 	}
 }
 
+// --- 3. PlayerTurn Phase ---
 void AFruitGameMode::StartCoinToss()
 {
 	if (!MyGameState) return;
 
 	MyGameState->CurrentGamePhase = EGamePhase::GP_PlayerTurn;
 
-	// 0 또는 1 랜덤 선택
-	int32 FirstPlayerIndex = FMath::RandRange(0, 1);
+	// Randomly select the starting player
+	FirstPlayerIndex = FMath::RandRange(0, 1);
 	MyGameState->CurrentActivePlayer = MyGameState->PlayerArray[FirstPlayerIndex];
 
-	StartTurn();
+	StartTurn(); // Start the first turn
 }
 
 void AFruitGameMode::StartTurn()
 {
 	if (!MyGameState || !MyGameState->CurrentActivePlayer) return;
 
-	// 턴 타이머 설정
-	MyGameState->TurnTimer = TurnDuration;
+	// **Record the server time when the turn starts**
+	MyGameState->ServerTimeAtTurnStart = GetWorld()->GetTimeSeconds();
 
-	// 타이머 핸들 설정 (시간 만료 시 OnTurnTimerExpired 호출)
-	GetWorldTimerManager().SetTimer(TurnTimerHandle, this, &AFruitGameMode::OnTurnTimerExpired, TurnDuration);
+	// **Set a timer for the actual timeout logic (independent of frame rate)**
+	GetWorldTimerManager().SetTimer(TurnTimerHandle, this, &AFruitGameMode::OnTurnTimerExpired, TurnDuration, false);
 
-	// 현재 턴인 플레이어의 컨트롤러 찾기
+	// Notify the current player's client that their turn has started (for UI)
 	AFruitPlayerController* ActivePC = Cast<AFruitPlayerController>(MyGameState->CurrentActivePlayer->GetPlayerController());
 	if (ActivePC)
 	{
-		// 해당 클라이언트에게 "당신 턴"임을 알림
 		ActivePC->Client_StartTurn();
 	}
 }
 
-void AFruitGameMode::Tick(float DeltaSeconds)
-{
-	Super::Tick(DeltaSeconds);
-
-	// 턴 진행 중일 때 GameState의 타이머 값을 계속 감소 (UI 표시용)
-	if (MyGameState && MyGameState->CurrentGamePhase == EGamePhase::GP_PlayerTurn)
-	{
-		MyGameState->TurnTimer -= DeltaSeconds;
-		if (MyGameState->TurnTimer < 0.0f)
-		{
-			MyGameState->TurnTimer = 0.0f;
-		}
-	}
-}
-
+// Called by the FTimerHandle when TurnDuration expires
 void AFruitGameMode::OnTurnTimerExpired()
 {
-	// 시간 초과로 턴 종료
-	EndTurn(true);
+	EndTurn(true); // End the turn due to timeout
 }
 
 bool AFruitGameMode::IsPlayerTurn(AController* PlayerController) const
 {
-	if (!MyGameState || !PlayerController)
+	if (!MyGameState || !PlayerController || !PlayerController->PlayerState)
 	{
 		return false;
 	}
-	return MyGameState->CurrentActivePlayer == PlayerController->PlayerState;
+	// Check if the provided controller's PlayerState matches the active one in GameState
+	return (MyGameState->CurrentActivePlayer == PlayerController->PlayerState);
 }
 
-void AFruitGameMode::ProcessPlayerGuess(AController* PlayerController, const TArray<EFruitType>& GuessedFruits)
+// Collects fruit types from world objects and calls ProcessPlayerGuess
+void AFruitGameMode::ProcessGuessFromWorldObjects(AController* PlayerController)
 {
-	if (!IsPlayerTurn(PlayerController))
+	TArray<AActor*> FoundActors;
+	UGameplayStatics::GetAllActorsOfClass(GetWorld(), AInteractableFruitObject::StaticClass(), FoundActors);
+
+	if (FoundActors.Num() != 5)
 	{
-		return; // 현재 턴인 플레이어가 아니면 무시
+		UE_LOG(LogTemp, Warning, TEXT("ProcessGuessFromWorldObjects: Did not find exactly 5 AInteractableFruitObject actors."));
+		return;
 	}
 
-	// 턴 타이머 정지
-	GetWorldTimerManager().ClearTimer(TurnTimerHandle);
-	MyGameState->TurnTimer = 0.0f; // UI 타이머도 0으로
+	// Sort actors based on their assigned index
+	FoundActors.Sort([](const AActor& A, const AActor& B) {
+		const AInteractableFruitObject* ObjA = Cast<AInteractableFruitObject>(&A);
+		const AInteractableFruitObject* ObjB = Cast<AInteractableFruitObject>(&B);
+		if (ObjA && ObjB) return ObjA->GuessIndex < ObjB->GuessIndex;
+		return false;
+		});
 
-	// 1. 상대방(정답 소유자) 찾기
+	// Build the guess array
+	TArray<EFruitType> GuessedFruits;
+	GuessedFruits.Init(EFruitType::FT_None, 5);
+	bool bAllValid = true;
+
+	for (AActor* Actor : FoundActors)
+	{
+		AInteractableFruitObject* FruitObject = Cast<AInteractableFruitObject>(Actor);
+		if (FruitObject && GuessedFruits.IsValidIndex(FruitObject->GuessIndex))
+		{
+			GuessedFruits[FruitObject->GuessIndex] = FruitObject->CurrentFruit;
+		}
+		else
+		{
+			bAllValid = false;
+			break; // Exit loop if any object is invalid
+		}
+	}
+
+	if (bAllValid)
+	{
+		// Process the collected guess
+		ProcessPlayerGuess(PlayerController, GuessedFruits);
+	}
+	else
+	{
+		UE_LOG(LogTemp, Error, TEXT("ProcessGuessFromWorldObjects: Invalid GuessIndex found on one or more AInteractableFruitObject actors. Ensure indices are 0-4."));
+	}
+}
+
+// Compares the guess with the opponent's secret answer
+void AFruitGameMode::ProcessPlayerGuess(AController* PlayerController, const TArray<EFruitType>& GuessedFruits)
+{
+	// Double-check if it's the player's turn (security)
+	if (!IsPlayerTurn(PlayerController))
+	{
+		return;
+	}
+
+	// **Stop the actual timeout timer**
+	GetWorldTimerManager().ClearTimer(TurnTimerHandle);
+	// **Signal clients that the timer should display 0**
+	if (MyGameState) MyGameState->ServerTimeAtTurnStart = 0.0f;
+
+	// Find the opponent's PlayerState
 	AFruitPlayerState* OpponentPS = nullptr;
 	for (APlayerState* PS : MyGameState->PlayerArray)
 	{
@@ -159,16 +255,16 @@ void AFruitGameMode::ProcessPlayerGuess(AController* PlayerController, const TAr
 			break;
 		}
 	}
+	if (!OpponentPS) return; // Should not happen in a 2-player game
 
-	if (!OpponentPS) return; // 상대가 없으면 처리 불가
-
-	// 2. 상대방의 정답(서버에만 있음) 가져오기
+	// Get the secret answer (only available on the server)
 	const TArray<EFruitType>& OpponentSecret = OpponentPS->GetSecretAnswers_Server();
 
-	// 3. 정답 비교
+	// Compare the guess with the secret
 	int32 MatchCount = 0;
 	for (int32 i = 0; i < 5; ++i)
 	{
+		// Ensure indices are valid and the fruit is not 'None'
 		if (GuessedFruits.IsValidIndex(i) && OpponentSecret.IsValidIndex(i) &&
 			GuessedFruits[i] == OpponentSecret[i] && GuessedFruits[i] != EFruitType::FT_None)
 		{
@@ -176,29 +272,27 @@ void AFruitGameMode::ProcessPlayerGuess(AController* PlayerController, const TAr
 		}
 	}
 
-	// 4. 결과 전송
+	// Send results back to both clients via RPCs
 	AFruitPlayerController* GuesserPC = Cast<AFruitPlayerController>(PlayerController);
 	AFruitPlayerController* OpponentPC = Cast<AFruitPlayerController>(OpponentPS->GetPlayerController());
 
 	if (GuesserPC)
 	{
-		// 추측한 사람에게 결과 전송
 		GuesserPC->Client_ReceiveGuessResult(GuessedFruits, MatchCount);
 	}
 	if (OpponentPC)
 	{
-		// 상대방에게 추측 내용 전송
 		OpponentPC->Client_OpponentGuessed(GuessedFruits, MatchCount);
 	}
 
-	// 5. 승리 판정 또는 턴 넘기기
+	// Check for win condition or end the turn
 	if (MatchCount == 5)
 	{
-		EndGame(PlayerController->PlayerState); // 추측한 사람 승리
+		EndGame(PlayerController->PlayerState); // Guesser wins
 	}
 	else
 	{
-		EndTurn(false); // 시간 초과가 아님
+		EndTurn(false); // Guess submitted, not a timeout
 	}
 }
 
@@ -206,9 +300,14 @@ void AFruitGameMode::EndTurn(bool bTimeOut)
 {
 	if (!MyGameState) return;
 
-	// (bTimeOut이 true일 경우 추가 로직... 예: 페널티)
+	// **If the turn ended due to timeout, signal clients timer is 0**
+	// (If not timeout, ProcessPlayerGuess already set it to 0)
+	if (bTimeOut)
+	{
+		MyGameState->ServerTimeAtTurnStart = 0.0f;
+	}
 
-	// 다음 턴 플레이어 찾기
+	// Find the next player
 	APlayerState* NextPlayer = nullptr;
 	for (APlayerState* PS : MyGameState->PlayerArray)
 	{
@@ -222,12 +321,11 @@ void AFruitGameMode::EndTurn(bool bTimeOut)
 	if (NextPlayer)
 	{
 		MyGameState->CurrentActivePlayer = NextPlayer;
-		StartTurn(); // 다음 턴 시작
+		StartTurn(); // Start the next turn
 	}
 	else
 	{
-		// 플레이어가 1명뿐이거나 오류 발생 시
-		EndGame(nullptr); // 무승부 또는 오류 처리
+		EndGame(nullptr); // Error or only one player left
 	}
 }
 
@@ -238,11 +336,12 @@ void AFruitGameMode::EndGame(APlayerState* Winner)
 	MyGameState->CurrentGamePhase = EGamePhase::GP_GameOver;
 	MyGameState->Winner = Winner;
 
-	// 턴 타이머 완전 정지
+	// **Stop the actual timeout timer**
 	GetWorldTimerManager().ClearTimer(TurnTimerHandle);
-	MyGameState->TurnTimer = 0.0f;
+	// **Signal clients that the timer should display 0**
+	MyGameState->ServerTimeAtTurnStart = 0.0f;
 
-	// 모든 플레이어에게 게임 종료 및 승패 여부 전송
+	// Notify all clients about the game over state and winner
 	for (APlayerState* PS : MyGameState->PlayerArray)
 	{
 		AFruitPlayerController* PC = Cast<AFruitPlayerController>(PS->GetPlayerController());
@@ -252,5 +351,5 @@ void AFruitGameMode::EndGame(APlayerState* Winner)
 		}
 	}
 
-	// (필요시 10초 뒤 로비로 ServerTravel 등)
+	// Optional: Add logic here to automatically return to lobby after a delay
 }

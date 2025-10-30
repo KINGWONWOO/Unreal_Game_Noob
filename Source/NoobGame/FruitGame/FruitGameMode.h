@@ -4,12 +4,13 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
-#include "FruitGameTypes.h"
+#include "FruitGame/FruitGameTypes.h"
 #include "FruitGameMode.generated.h"
 
 class AFruitGameState;
 class AFruitPlayerState;
 class AFruitPlayerController;
+class AActor; // 전방 선언
 
 UCLASS()
 class NOOBGAME_API AFruitGameMode : public AGameModeBase
@@ -20,47 +21,50 @@ public:
 	AFruitGameMode();
 
 	// --- PlayerController가 호출하는 함수 ---
+
+	/** 1. Instructions 단계에서 준비 완료 */
+	void PlayerIsReady(AController* PlayerController);
+
+	/** 2. Setup 단계에서 (UI로부터) 정답 제출 */
 	void PlayerSubmittedFruits(AController* PlayerController, const TArray<EFruitType>& SecretFruits);
+
+	/** 3. 턴 진행 중 (월드로부터) 추측 제출 */
 	void ProcessPlayerGuess(AController* PlayerController, const TArray<EFruitType>& GuessedFruits);
 
-	// 현재 턴인 플레이어가 맞는지 확인
+	/** 현재 턴인 플레이어가 맞는지 확인 */
 	bool IsPlayerTurn(AController* PlayerController) const;
 
+	/** (수정) PlayerController의 RPC가 호출하는 (GP_PlayerTurn 전용) 상호작용 핸들러 */
+	void PlayerInteracted(AController* PlayerController, AActor* HitActor, EGamePhase CurrentPhase);
+
 protected:
-	// 플레이어가 레벨에 접속 완료 시 호출
 	virtual void PostLogin(APlayerController* NewPlayer) override;
 
-	// 게임 틱 (타이머 감소용)
-	virtual void Tick(float DeltaSeconds) override;
-
 	// --- 게임 흐름 제어 함수 ---
-
-	// 2명이 모두 정답을 제출했는지 확인
-	void CheckBothPlayersReady();
-
-	// 동전 던지기 및 첫 턴 시작
+	void CheckBothPlayersReady_Instructions();
+	void CheckBothPlayersReady_Setup();
 	void StartCoinToss();
-
-	// 턴 시작 (타이머 설정)
 	void StartTurn();
-
-	// 턴 종료 (타임아웃 또는 추측 완료)
 	void EndTurn(bool bTimeOut);
-
-	// 게임 종료 (승자 결정)
 	void EndGame(APlayerState* Winner);
-
-	// 턴 시간 만료 시 호출될 함수
 	void OnTurnTimerExpired();
 
-	// 캐시된 GameState
+	/** 추측 턴에 월드 오브젝트로부터 추측 배열을 생성하고 제출합니다. */
+	void ProcessGuessFromWorldObjects(AController* PlayerController);
+
+	/** 캐시된 GameState */
 	UPROPERTY()
 	AFruitGameState* MyGameState;
 
-	// 턴 타이머 핸들
+	/** 턴 타이머 핸들 */
 	FTimerHandle TurnTimerHandle;
 
-	// 턴당 제한 시간 (초)
+	/** 턴당 제한 시간 (초) */
 	UPROPERTY(EditDefaultsOnly, Category = "Game Rules")
 	float TurnDuration = 30.0f;
+
+	int32 FirstPlayerIndex;
+
+	/** Setup 준비 완료 인원 */
+	int32 NumPlayersReady_Setup = 0;
 };
