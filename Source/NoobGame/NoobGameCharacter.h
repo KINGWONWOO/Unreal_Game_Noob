@@ -1,106 +1,65 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
-
+// NoobGameCharacter.h
 #pragma once
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
-#include "Logging/LogMacros.h"
 #include "NoobGameCharacter.generated.h"
 
-class USpringArmComponent;
-class UCameraComponent;
-class UInputAction;
-struct FInputActionValue;
+class UAnimMontage;
 
-DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
-
-/**
- *  A simple player-controllable third person character
- *  Implements a controllable orbiting camera
- */
-UCLASS(abstract)
-class ANoobGameCharacter : public ACharacter
+UCLASS()
+class NOOBGAME_API ANoobGameCharacter : public ACharacter
 {
 	GENERATED_BODY()
 
-	/** Camera boom positioning the camera behind the character */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Components", meta = (AllowPrivateAccess = "true"))
-	USpringArmComponent* CameraBoom;
-
-	/** Follow camera */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Components", meta = (AllowPrivateAccess = "true"))
-	UCameraComponent* FollowCamera;
-	
-protected:
-
-	/** Jump Input Action */
-	UPROPERTY(EditAnywhere, Category="Input")
-	UInputAction* JumpAction;
-
-	/** Move Input Action */
-	UPROPERTY(EditAnywhere, Category="Input")
-	UInputAction* MoveAction;
-
-	/** Look Input Action */
-	UPROPERTY(EditAnywhere, Category="Input")
-	UInputAction* LookAction;
-
-	/** Mouse Look Input Action */
-	UPROPERTY(EditAnywhere, Category="Input")
-	UInputAction* MouseLookAction;
-
 public:
+	ANoobGameCharacter();
 
-	/** Constructor */
-	ANoobGameCharacter();	
+	/** (수정!) BeginPlay 함수 선언 추가 */
+	virtual void BeginPlay() override;
 
-protected:
+	/** (신규!) OnConstruction 함수 선언 추가 */
+	virtual void OnConstruction(const FTransform& Transform) override;
 
-	/** Initialize input action bindings */
-	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+	virtual void Tick(float DeltaTime) override;
+
+	/** 래그돌 상태를 실제 켜고 끄는 함수 */
+	void SetRagdoll(bool bEnable);
+
+	/** 서버(GameMode)에서 래그돌 상태를 변경하기 위한 public 함수 */
+	void SetRagdollState_Server(bool bEnable);
+
+	// --- 몽타주 애셋 ---
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Combat|Montages")
+	UAnimMontage* LeftPunchMontage;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Combat")
+	UAnimMontage* RightPunchMontage;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Combat")
+	UAnimMontage* HitReactionMontage;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Combat")
+	UAnimMontage* KnockdownMontage; // (현재 래그돌 사용으로 미사용)
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Combat")
+	UAnimMontage* RecoverMontage; // (래그돌에서 일어날 때 사용됨)
 
 protected:
+	/** 래그돌 상태 (서버에서 변경되면 클라이언트로 복제됨) */
+	UPROPERTY(ReplicatedUsing = OnRep_IsRagdolling)
+	bool bIsRagdolling;
 
-	/** Called for movement input */
-	void Move(const FInputActionValue& Value);
+	/** bIsRagdolling 변수가 복제될 때 클라이언트에서 호출될 함수 */
+	UFUNCTION()
+	void OnRep_IsRagdolling();
 
-	/** Called for looking input */
-	void Look(const FInputActionValue& Value);
+	/** 리플리케이션(복제) 설정 함수 */
+	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 
-public:
+	/** (신규!) 회복 애니메이션이 끝난 후 이동을 활성화하기 위한 타이머 */
+	FTimerHandle RecoveryMovementTimerHandle;
 
-	/** Handles move inputs from either controls or UI interfaces */
-	UFUNCTION(BlueprintCallable, Category="Input")
-	virtual void DoMove(float Right, float Forward);
-
-	/** Handles look inputs from either controls or UI interfaces */
-	UFUNCTION(BlueprintCallable, Category="Input")
-	virtual void DoLook(float Yaw, float Pitch);
-
-	/** Handles jump pressed inputs from either controls or UI interfaces */
-	UFUNCTION(BlueprintCallable, Category="Input")
-	virtual void DoJumpStart();
-
-	/** Handles jump pressed inputs from either controls or UI interfaces */
-	UFUNCTION(BlueprintCallable, Category="Input")
-	virtual void DoJumpEnd();
-
-public:
-
-	/** Returns CameraBoom subobject **/
-	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
-
-	/** Returns FollowCamera subobject **/
-	FORCEINLINE class UCameraComponent* GetFollowCamera() const { return FollowCamera; }
-
-	// --- 추가: 감도 및 반전 관련 ---
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera")
-	float CameraSensitivity = 1.0f;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera")
-	bool ReverseX = false;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera")
-	bool ReverseY = false;
+	/** (신규!) 타이머가 만료되면 이동을 활성화하는 함수 */
+	void EnableMovementAfterRecovery();
 };
-

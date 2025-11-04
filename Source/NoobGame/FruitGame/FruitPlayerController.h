@@ -53,6 +53,10 @@ public:
 	UFUNCTION(BlueprintImplementableEvent, Category = "Combat")
 	void PlayPunchEvent(ACharacter* PunchingCharacter, bool bIsLeftPunch);
 
+	/** (신규!) 카메라 높이 및 비네팅 효과를 적용/해제하는 블루프린트 이벤트 */
+	UFUNCTION(BlueprintImplementableEvent, Category = "Combat|Camera")
+	void ApplyKnockdownCameraEffect(bool bEnableEffect);
+
 	// --- 서버 -> 클라이언트 RPC ---
 	UFUNCTION(Client, Reliable)
 	void Client_StartTurn();
@@ -65,13 +69,17 @@ public:
 	UFUNCTION(Client, Reliable)
 	void Client_PlaySpinnerAnimation(int32 WinningPlayerIndex);
 
-	/** (수정!) NetMulticast -> Client RPC로 변경 */
-	UFUNCTION(Client, Reliable)
-	void Client_PlayPunchMontage(ACharacter* PunchingCharacter, bool bIsLeftPunch);
+	/** 피격 애니메이션 재생 */
+	UFUNCTION(NetMulticast, Reliable)
+	void Multicast_PlayHitReaction(ACharacter* TargetCharacter, UAnimMontage* MontageToPlay);
 
-	/** (수정!) NetMulticast -> Client RPC로 변경 */
+	/** 펀치 애니메이션 재생 */
+	UFUNCTION(NetMulticast, Reliable)
+	void Multicast_PlayPunchMontage(ACharacter* PunchingCharacter, UAnimMontage* MontageToPlay);
+
+	/** (신규!) 쓰러졌을 때 카메라 시점/PostProcess 효과를 변경하도록 클라이언트에 지시 */
 	UFUNCTION(Client, Reliable)
-	void Client_PlayHitReaction(ACharacter* TargetCharacter);
+	void Client_SetCameraEffect(bool bEnableKnockdownEffect);
 
 	// --- UI 바인딩용 델리게이트 ---
 	UPROPERTY(BlueprintAssignable, Category = "Fruit Game")
@@ -84,21 +92,34 @@ public:
 	FOnGameOver OnGameOver;
 
 protected:
-	// (삭제!) 몽타주 변수들을 컨트롤러에서 삭제
-
 	// --- 클라이언트 -> 서버 RPC ---
 	UFUNCTION(Server, Reliable, WithValidation)
 	void Server_PlayerReady();
+	bool Server_PlayerReady_Validate();
+	void Server_PlayerReady_Implementation();
+
 	UFUNCTION(Server, Reliable, WithValidation)
 	void Server_SubmitSecretFruits(const TArray<EFruitType>& SecretFruits);
+	bool Server_SubmitSecretFruits_Validate(const TArray<EFruitType>& SecretFruits);
+	void Server_SubmitSecretFruits_Implementation(const TArray<EFruitType>& SecretFruits);
+
 	UFUNCTION(Server, Reliable, WithValidation)
 	void Server_RequestInteract(AActor* HitActor);
+	bool Server_RequestInteract_Validate(AActor* HitActor);
+	void Server_RequestInteract_Implementation(AActor* HitActor);
+
 	UFUNCTION(Server, Reliable, WithValidation)
 	void Server_RequestStartPlayerTurn();
+	bool Server_RequestStartPlayerTurn_Validate();
+	void Server_RequestStartPlayerTurn_Implementation();
+
 	UFUNCTION(Server, Reliable, WithValidation)
 	void Server_RequestPunch(ACharacter* HitCharacter);
+	bool Server_RequestPunch_Validate(ACharacter* HitCharacter);
+	void Server_RequestPunch_Implementation(ACharacter* HitCharacter);
+
 	UFUNCTION(Server, Reliable, WithValidation)
 	void Server_RequestPlayPunchMontage();
-
-	// (삭제!) Multicast RPC 2개 선언 삭제
+	bool Server_RequestPlayPunchMontage_Validate();
+	void Server_RequestPlayPunchMontage_Implementation();
 };

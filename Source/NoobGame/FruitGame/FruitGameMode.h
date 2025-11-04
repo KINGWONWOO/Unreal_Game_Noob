@@ -7,11 +7,13 @@
 #include "FruitGame/FruitGameTypes.h"
 #include "FruitGameMode.generated.h"
 
+// --- 전방 선언 ---
 class AFruitGameState;
 class AFruitPlayerState;
 class AFruitPlayerController;
 class AActor;
 class ACharacter;
+class UAnimMontage; // ProcessPunchAnimation을 위해 필요
 
 UCLASS()
 class NOOBGAME_API AFruitGameMode : public AGameModeBase
@@ -29,11 +31,11 @@ public:
 	bool IsPlayerTurn(AController* PlayerController) const;
 	void PlayerInteracted(AController* PlayerController, AActor* HitActor, EGamePhase CurrentPhase);
 
-	/** 펀치 '적중' 처리 함수 (서버 전용) */
-	void ProcessPunch(APlayerController* PuncherController, ACharacter* HitCharacter);
+	/** (수정!) 펀치 '애니메이션'을 모든 클라이언트에 전파 */
+	void ProcessPunchAnimation(ACharacter* PunchingCharacter, UAnimMontage* MontageToPlay);
 
-	/** (수정!) 펀치 '애니메이션'을 모든 클라이언트에 전파 (몽타주 대신 bool 인자) */
-	void ProcessPunchAnimation(ACharacter* PunchingCharacter, bool bIsLeftPunch);
+	/** (기존) 펀치 '적중' 처리 */
+	void ProcessPunch(APlayerController* PuncherController, ACharacter* HitCharacter);
 
 protected:
 	virtual void PostLogin(APlayerController* NewPlayer) override;
@@ -77,5 +79,5 @@ protected:
 
 	/** 쓰러짐 지속 시간 */
 	UPROPERTY(EditDefaultsOnly, Category = "Combat")
-	float KnockdownDuration = 3.0f;
+	float KnockdownDuration = 4.0f;
 };

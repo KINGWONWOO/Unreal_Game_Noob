@@ -10,7 +10,9 @@
 #include "Engine/World.h"
 #include "TimerManager.h" 
 #include "GameFramework/Character.h" 
+#include "NoobGame/NoobGameCharacter.h"
 #include "GameFramework/CharacterMovementComponent.h" 
+#include "Animation/AnimMontage.h"
 
 AFruitGameMode::AFruitGameMode()
 {
@@ -287,46 +289,54 @@ void AFruitGameMode::EndGame(APlayerState* Winner)
 
 // --- 5. 펀치 기능 ---
 
-/** (수정!) 펀치 '애니메이션'을 모든 클라이언트에 재생하도록 지시 */
-void AFruitGameMode::ProcessPunchAnimation(ACharacter* PunchingCharacter, bool bIsLeftPunch)
+void AFruitGameMode::ProcessPunchAnimation(ACharacter* PunchingCharacter, UAnimMontage* MontageToPlay)
 {
-	if (!MyGameState || !PunchingCharacter) return;
+	if (!MyGameState || !PunchingCharacter || !MontageToPlay) return;
 
-	// 모든 PlayerController를 순회하며 각 PC에서 Client RPC를 호출
 	for (APlayerState* PS : MyGameState->PlayerArray)
 	{
 		AFruitPlayerController* PC = Cast<AFruitPlayerController>(PS->GetPlayerController());
 		if (PC)
 		{
-			// 이 PC의 Client RPC를 호출 (펀치 종류 bool 값 포함)
-			PC->Client_PlayPunchMontage(PunchingCharacter, bIsLeftPunch);
+			PC->Multicast_PlayPunchMontage(PunchingCharacter, MontageToPlay);
 		}
 	}
 }
 
-/** 펀치 '적중' 처리 함수 (서버에서만 실행됨) */
+/** (수정!) 펀치 '적중' 처리 함수 (래그돌 및 카메라 효과 제어) */
 void AFruitGameMode::ProcessPunch(APlayerController* PuncherController, ACharacter* HitCharacter)
 {
-	if (!PuncherController || !PuncherController->GetPawn() || !HitCharacter || !HitCharacter->GetController()) return;
+	if (!HitCharacter || !HitCharacter->GetController()) return;
 
 	AFruitPlayerState* HitPlayerState = HitCharacter->GetController()->GetPlayerState<AFruitPlayerState>();
-	if (!HitPlayerState) return;
+	AFruitGameState* GS = GetGameState<AFruitGameState>();
 
-	if (HitPlayerState->bIsKnockedDown) return;
+	if (!HitPlayerState || !GS || HitPlayerState->bIsKnockedDown)
+	{
+		return;
+	}
 
-	// 1. 밀치기 효과 적용 (피격)
 	FVector PunchDirection = (HitCharacter->GetActorLocation() - PuncherController->GetPawn()->GetActorLocation()).GetSafeNormal();
 	PunchDirection.Z = 0.2f;
 	HitCharacter->GetCharacterMovement()->AddImpulse(PunchDirection * PunchPushForce, true);
 
-	// 2. 피격 횟수 증가
 	HitPlayerState->PunchHitCount++;
 
-	// 3. 쓰러짐 판정
 	if (HitPlayerState->PunchHitCount >= 10)
 	{
 		HitPlayerState->bIsKnockedDown = true;
 		HitPlayerState->PunchHitCount = 0;
+
+		ANoobGameCharacter* HitChar = Cast<ANoobGameCharacter>(HitCharacter);
+		if (HitChar)
+		{
+			HitChar->SetRagdollState_Server(true);
+		}
+
+		if (AFruitPlayerController* HitPC = Cast<AFruitPlayerController>(HitCharacter->GetController()))
+		{
+			HitPC->Client_SetCameraEffect(true);
+		}
 
 		FTimerHandle RecoveryTimerHandle;
 		FTimerDelegate RecoveryDelegate;
@@ -335,22 +345,24 @@ void AFruitGameMode::ProcessPunch(APlayerController* PuncherController, ACharact
 	}
 	else
 	{
-		// (수정!) 1~9대째: 피격 애니메이션 전파 (Client RPC 사용)
-		if (MyGameState)
+		ANoobGameCharacter* HitChar = Cast<ANoobGameCharacter>(HitCharacter);
+		UAnimMontage* HitMontage = HitChar ? HitChar->HitReactionMontage : nullptr;
+
+		if (GS && HitMontage)
 		{
-			for (APlayerState* PS : MyGameState->PlayerArray)
+			for (APlayerState* PS : GS->PlayerArray)
 			{
 				AFruitPlayerController* PC = Cast<AFruitPlayerController>(PS->GetPlayerController());
 				if (PC)
 				{
-					PC->Client_PlayHitReaction(HitCharacter);
+					PC->Multicast_PlayHitReaction(HitCharacter, HitMontage);
 				}
 			}
 		}
 	}
 }
 
-/** 캐릭터 회복 함수 (서버에서만 실행됨) */
+/** (수정!) 캐릭터 회복 함수 (래그돌 해제만 지시) */
 void AFruitGameMode::RecoverCharacter(ACharacter* CharacterToRecover)
 {
 	if (!CharacterToRecover || !CharacterToRecover->GetController()) return;
@@ -359,5 +371,17 @@ void AFruitGameMode::RecoverCharacter(ACharacter* CharacterToRecover)
 	if (PS && PS->bIsKnockedDown)
 	{
 		PS->bIsKnockedDown = false;
+
+		ANoobGameCharacter* RecoverChar = Cast<ANoobGameCharacter>(CharacterToRecover);
+		if (RecoverChar)
+		{
+			RecoverChar->SetRagdollState_Server(false);
+		}
+
+		// (삭제!) 카메라 효과 해제 로직을 NoobGameCharacter의 타이머로 이동시켰습니다.
+		// if (AFruitPlayerController* RecoverPC = Cast<AFruitPlayerController>(CharacterToRecover->GetController()))
+		// {
+		// 	RecoverPC->Client_SetCameraEffect(false);
+		// }
 	}
 }
