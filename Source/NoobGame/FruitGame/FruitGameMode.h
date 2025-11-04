@@ -32,8 +32,8 @@ public:
 	/** 펀치 '적중' 처리 함수 (서버 전용) */
 	void ProcessPunch(APlayerController* PuncherController, ACharacter* HitCharacter);
 
-	/** (신규!) 펀치 '애니메이션'을 모든 클라이언트에 전파하는 함수 (서버 전용) */
-	void ProcessPunchAnimation(ACharacter* PunchingCharacter);
+	/** (수정!) 펀치 '애니메이션'을 모든 클라이언트에 전파 (몽타주 대신 bool 인자) */
+	void ProcessPunchAnimation(ACharacter* PunchingCharacter, bool bIsLeftPunch);
 
 protected:
 	virtual void PostLogin(APlayerController* NewPlayer) override;

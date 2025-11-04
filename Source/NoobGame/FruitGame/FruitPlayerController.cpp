@@ -2,7 +2,7 @@
 
 #include "FruitGame/FruitPlayerController.h"
 #include "FruitGame/FruitGameMode.h"
-#include "FruitGame/FruitPlayerState.h"
+#include "FruitGame/FruitPlayerState.h" 
 #include "FruitGame/FruitGameState.h"
 #include "FruitGame/InteractableFruitObject.h"
 #include "FruitGame/SubmitGuessButton.h"
@@ -10,7 +10,7 @@
 #include "Kismet/GameplayStatics.h"
 #include "GameFramework/Actor.h" 
 #include "GameFramework/Character.h" 
-#include "Animation/AnimMontage.h"
+// (삭제) #include "Animation/AnimMontage.h"
 
 // --- Get 함수 ---
 const TArray<EFruitType>& AFruitPlayerController::GetMyLocalSecretAnswers() const
@@ -88,12 +88,11 @@ void AFruitPlayerController::Server_RequestStartPlayerTurn_Implementation()
 // --- 5. 펀치 요청 (적중) ---
 void AFruitPlayerController::RequestPunch(ACharacter* HitCharacter)
 {
-	Server_RequestPunch(HitCharacter); // 서버 RPC 호출
+	Server_RequestPunch(HitCharacter);
 }
 bool AFruitPlayerController::Server_RequestPunch_Validate(ACharacter* HitCharacter) { return HitCharacter != nullptr; }
 void AFruitPlayerController::Server_RequestPunch_Implementation(ACharacter* HitCharacter)
 {
-	// GameMode에게 실제 처리 위임
 	AFruitGameMode* GM = GetWorld()->GetAuthGameMode<AFruitGameMode>();
 	if (GM)
 	{
@@ -106,23 +105,20 @@ void AFruitPlayerController::RequestPlayPunchMontage()
 {
 	Server_RequestPlayPunchMontage();
 }
-bool AFruitPlayerController::Server_RequestPlayPunchMontage_Validate()
-{
-	return true;
-}
-/** (수정!) 서버 RPC가 Multicast를 직접 호출하는 대신 GameMode에 위임합니다. */
+bool AFruitPlayerController::Server_RequestPlayPunchMontage_Validate() { return true; }
 void AFruitPlayerController::Server_RequestPlayPunchMontage_Implementation()
 {
 	ACharacter* MyCharacter = GetPawn<ACharacter>();
+	AFruitPlayerState* MyPlayerState = GetPlayerState<AFruitPlayerState>();
 	AFruitGameMode* GM = GetWorld()->GetAuthGameMode<AFruitGameMode>();
 
-	if (MyCharacter && GM)
+	if (MyCharacter && MyPlayerState && GM)
 	{
-		// GameMode에게 "이 캐릭터"의 펀치 애니메이션을 모두에게 전파하라고 요청
-		GM->ProcessPunchAnimation(MyCharacter);
+		bool bIsLeft = MyPlayerState->bIsNextPunchLeft;
+		MyPlayerState->bIsNextPunchLeft = !bIsLeft;
+		GM->ProcessPunchAnimation(MyCharacter, bIsLeft);
 	}
 }
-
 
 // --- 서버 -> 클라이언트 RPC 구현 ---
 void AFruitPlayerController::Client_StartTurn_Implementation() { OnTurnStarted.Broadcast(); }
@@ -134,19 +130,18 @@ void AFruitPlayerController::Client_PlaySpinnerAnimation_Implementation(int32 Wi
 	PlaySpinnerAnimationEvent(WinningPlayerIndex);
 }
 
-/** 피격 애니메이션 Multicast RPC 구현부 */
-void AFruitPlayerController::Multicast_PlayHitReaction_Implementation(ACharacter* TargetCharacter)
+/** (신규!) 피격 애니메이션 Client RPC 구현부 */
+void AFruitPlayerController::Client_PlayHitReaction_Implementation(ACharacter* TargetCharacter)
 {
+	// BP_PlayerController의 이벤트를 호출
 	PlayHitReactionOnCharacter(TargetCharacter);
 }
 
-/** 펀치 애니메이션 Multicast RPC 구현부 */
-void AFruitPlayerController::Multicast_PlayPunchMontage_Implementation(ACharacter* PunchingCharacter)
+/** (신규!) 펀치 애니메이션 Client RPC 구현부 */
+void AFruitPlayerController::Client_PlayPunchMontage_Implementation(ACharacter* PunchingCharacter, bool bIsLeftPunch)
 {
-	// 몽타주 애셋이 유효하고, 캐릭터가 유효하면
-	if (PunchingCharacter && PunchMontageAsset)
-	{
-		// 캐릭터의 스켈레탈 메시에서 몽타주를 재생합니다.
-		PunchingCharacter->PlayAnimMontage(PunchMontageAsset);
-	}
+	// BP_PlayerController의 이벤트를 호출
+	PlayPunchEvent(PunchingCharacter, bIsLeftPunch);
 }
+
+// (삭제!) Multicast RPC 2개 구현부 삭제
