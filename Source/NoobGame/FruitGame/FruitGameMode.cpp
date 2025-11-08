@@ -445,8 +445,7 @@ void AFruitGameMode::EndGame(APlayerState* Winner)
 	}
 
 	// --- [수정] 5초 타이머 설정 제거 ---
-	// GetWorldTimerManager().SetTimer(TimerHandle_EndGameRestore, this, &AFruitGameMode::RestorePlayerControl, 5.0f, false);
-	UE_LOG(LogTemp, Warning, TEXT("[Server GM] EndGame Finished. (Manual Restore Required)"));
+	UE_LOG(LogTemp, Warning, TEXT("[Server GM] EndGame Finished. (No movement lock)"));
 }
 
 // --- 5. 펀치 애니메이션 ---

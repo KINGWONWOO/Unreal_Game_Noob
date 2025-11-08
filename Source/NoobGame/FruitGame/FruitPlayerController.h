@@ -44,11 +44,6 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Combat")
 	void RequestPlayPunchMontage();
 
-	/** [신규] 블루프린트에서 호출하여 이동 및 입력을 복구하는 함수 */
-	UFUNCTION(BlueprintCallable, Category = "Game")
-	void RequestRestoreMovementAndInput();
-
-
 	// --- 블루프린트 구현 이벤트 ---
 	UFUNCTION(BlueprintImplementableEvent, Category = "Fruit Game|Animation")
 	void PlaySpinnerAnimationEvent(int32 WinningPlayerIndex);
@@ -89,10 +84,6 @@ public:
 
 	UFUNCTION(Client, Reliable)
 	void Client_SetUIOnlyInput(bool bYouWon, ECharacterType WinnerType, ACameraActor* EndingCamera);
-
-	/** [기존] 5초 후 게임 모드로 복구하는 RPC */
-	UFUNCTION(Client, Reliable)
-	void Client_SetGameOnlyInput();
 
 	/** [수정] GameMode가 호출할 엔딩 처리 함수 (서버 실행, 카메라 참조 포함) */
 	UFUNCTION(Server, Reliable, WithValidation)
@@ -142,10 +133,4 @@ protected:
 	void Server_RequestPlayPunchMontage();
 	bool Server_RequestPlayPunchMontage_Validate();
 	void Server_RequestPlayPunchMontage_Implementation();
-
-	/** [신규] RequestRestoreMovementAndInput이 호출할 서버 RPC */
-	UFUNCTION(Server, Reliable, WithValidation)
-	void Server_RequestRestoreControls();
-	bool Server_RequestRestoreControls_Validate();
-	void Server_RequestRestoreControls_Implementation();
 };

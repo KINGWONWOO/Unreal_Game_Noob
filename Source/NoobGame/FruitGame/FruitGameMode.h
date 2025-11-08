@@ -71,7 +71,7 @@ protected:
 	// [수정] 5초 타이머 핸들 제거
 	// FTimerHandle TimerHandle_EndGameRestore;
 
-	/** [신규] K.O. 상태인 플레이어와 복구 타이머를 매핑합니다. (TWeakObjectPtr로 안전하게) */
+	/** [기존] K.O. 상태인 플레이어와 복구 타이머를 매핑합니다. */
 	TMap<TWeakObjectPtr<ACharacter>, FTimerHandle> KnockdownTimers;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Game Rules")
