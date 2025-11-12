@@ -49,11 +49,11 @@ protected:
 	void OnTurnTimerExpired();
 	void ProcessGuessFromWorldObjects(AController* PlayerController);
 
+	/** [기존] 추측 결과가 딜레이 시간만큼 표시된 후 턴을 넘기기 위해 호출됩니다. */
+	void OnGuessResultDelayExpired();
+
 	UFUNCTION()
 	void RecoverCharacter(ACharacter* CharacterToRecover);
-
-	// [수정] 5초 타이머 함수 제거
-	// void RestorePlayerControl(); 
 
 	/** 호스트/Client 1이 사용할 폰 클래스 (BP_FirstPersonCharacter_Cat) */
 	UPROPERTY(EditDefaultsOnly, Category = "PlayerPawn")
@@ -68,14 +68,21 @@ protected:
 
 	FTimerHandle TurnTimerHandle;
 
-	// [수정] 5초 타이머 핸들 제거
-	// FTimerHandle TimerHandle_EndGameRestore;
+	/** [기존] (오답 시) 턴 넘김 딜레이 타이머 핸들 */
+	FTimerHandle GuessResultTimerHandle;
+
+	/** [신규] (정답 시) 게임 종료 딜레이 타이머 핸들 */
+	FTimerHandle EndGameDelayTimerHandle;
 
 	/** [기존] K.O. 상태인 플레이어와 복구 타이머를 매핑합니다. */
 	TMap<TWeakObjectPtr<ACharacter>, FTimerHandle> KnockdownTimers;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Game Rules")
 	float TurnDuration = 30.0f;
+
+	/** [기존] 추측 결과 UI를 표시할 시간 (딜레이) */
+	UPROPERTY(EditDefaultsOnly, Category = "Game Rules")
+	float GuessResultDisplayTime = 3.0f;
 
 	int32 NumPlayersReady_Setup = 0;
 

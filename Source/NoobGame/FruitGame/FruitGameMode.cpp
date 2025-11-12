@@ -13,6 +13,7 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Animation/AnimMontage.h"
 #include "Engine/TargetPoint.h"
+#include "Camera/CameraActor.h" // CameraActor 헤더 (EndGame에서 사용)
 
 AFruitGameMode::AFruitGameMode()
 {
@@ -209,12 +210,15 @@ void AFruitGameMode::ProcessGuessFromWorldObjects(AController* PlayerController)
 	}
 }
 
-// --- ProcessPlayerGuess는 EndGame을 호출하는 유일한 경로로 설정 ---
+// --- [대폭 수정됨] ProcessPlayerGuess는 딜레이 로직을 포함합니다 ---
 void AFruitGameMode::ProcessPlayerGuess(AController* PlayerController, const TArray<EFruitType>& GuessedFruits)
 {
 	if (!IsPlayerTurn(PlayerController)) return;
+
+	// 턴 타이머(30초)를 즉시 정지시킵니다.
 	GetWorldTimerManager().ClearTimer(TurnTimerHandle);
 	if (MyGameState) MyGameState->ServerTimeAtTurnStart = 0.0f;
+
 	AFruitPlayerState* OpponentPS = nullptr;
 	for (APlayerState* PS : MyGameState->PlayerArray)
 	{
@@ -226,6 +230,7 @@ void AFruitGameMode::ProcessPlayerGuess(AController* PlayerController, const TAr
 	}
 	if (!OpponentPS) return;
 
+	// 정답 비교
 	const TArray<EFruitType>& OpponentSecret = OpponentPS->GetSecretAnswers_Server();
 	int32 MatchCount = 0;
 	for (int32 i = 0; i < 5; ++i)
@@ -237,27 +242,52 @@ void AFruitGameMode::ProcessPlayerGuess(AController* PlayerController, const TAr
 		}
 	}
 
+	// 결과를 UI에 즉시 표시하기 위해 RPC를 먼저 호출합니다.
 	AFruitPlayerController* GuesserPC = Cast<AFruitPlayerController>(PlayerController);
 	AFruitPlayerController* OpponentPC = Cast<AFruitPlayerController>(OpponentPS->GetPlayerController());
 	if (GuesserPC)
 	{
+		// 추측한 사람에게 "N개 맞음" 또는 "승리!"를 알림
 		GuesserPC->Client_ReceiveGuessResult(GuessedFruits, MatchCount);
 	}
 	if (OpponentPC)
 	{
+		// 상대방에게 "상대가 N개 맞춤" 또는 "패배!"를 알림
 		OpponentPC->Client_OpponentGuessed(GuessedFruits, MatchCount);
 	}
 
 	if (MatchCount == 5)
 	{
-		// 과일을 5개 맞췄을 때만 EndGame 호출
-		EndGame(PlayerController->PlayerState);
+		GetWorldTimerManager().SetTimer(
+			EndGameDelayTimerHandle,
+			[this, PlayerState = PlayerController->PlayerState]()
+			{
+				EndGame(PlayerState);
+			},
+			3.0f,
+			false
+		);
 	}
 	else
 	{
-		EndTurn(false);
+		// [기존] 정답이 아닐 경우: 3초 딜레이 후 EndTurn 호출
+		GetWorldTimerManager().SetTimer(
+			GuessResultTimerHandle,
+			this,
+			&AFruitGameMode::OnGuessResultDelayExpired,
+			GuessResultDisplayTime,
+			false
+		);
 	}
 }
+
+/** (오답 시) 추측 결과 UI 딜레이가 끝났을 때 호출되는 함수 */
+void AFruitGameMode::OnGuessResultDelayExpired()
+{
+	// 3초가 지났으므로 다음 턴으로 넘깁니다.
+	EndTurn(false);
+}
+
 
 void AFruitGameMode::EndTurn(bool bTimeOut)
 {
@@ -266,6 +296,11 @@ void AFruitGameMode::EndTurn(bool bTimeOut)
 	{
 		if (MyGameState) MyGameState->ServerTimeAtTurnStart = 0.0f;
 	}
+
+	// [수정] 모든 딜레이 타이머를 클리어합니다.
+	GetWorldTimerManager().ClearTimer(GuessResultTimerHandle);
+	GetWorldTimerManager().ClearTimer(EndGameDelayTimerHandle);
+
 	APlayerState* NextPlayer = nullptr;
 	for (APlayerState* PS : MyGameState->PlayerArray)
 	{
@@ -282,7 +317,7 @@ void AFruitGameMode::EndTurn(bool bTimeOut)
 	}
 	else
 	{
-		EndGame(nullptr); // 혹시 몰라 비기는 경우
+		EndGame(nullptr); // 비기는 경우
 	}
 }
 
@@ -376,7 +411,12 @@ void AFruitGameMode::EndGame(APlayerState* Winner)
 
 	MyGameState->CurrentGamePhase = EGamePhase::GP_GameOver;
 	MyGameState->Winner = Winner;
+
+	// [수정] 모든 딜레이 타이머를 확실히 클리어합니다.
 	GetWorldTimerManager().ClearTimer(TurnTimerHandle);
+	GetWorldTimerManager().ClearTimer(GuessResultTimerHandle);
+	GetWorldTimerManager().ClearTimer(EndGameDelayTimerHandle);
+
 	MyGameState->ServerTimeAtTurnStart = 0.0f;
 
 	// 진행 중이던 모든 K.O. 타이머를 강제로 클리어

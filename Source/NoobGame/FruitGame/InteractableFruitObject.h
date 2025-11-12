@@ -1,5 +1,3 @@
-// InteractableFruitObject.h (½Å±Ô)
-
 #pragma once
 
 #include "CoreMinimal.h"
