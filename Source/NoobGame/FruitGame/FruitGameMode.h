@@ -33,6 +33,9 @@ public:
 	void PlayerInteracted(AController* PlayerController, AActor* HitActor, EFruitGamePhase CurrentPhase);
 	void ProcessPlayerGuess(AController* PlayerController, const TArray<EFruitType>& GuessedFruits);
 
+	/** [New] 승자 발표 시퀀스 시작 (3초 대기 후 EndGame) */
+	void StartWinnerAnnouncement(APlayerState* Winner);
+
 	UFUNCTION(BlueprintCallable, Category = "Game")
 	void EndGame(APlayerState* Winner);
 
@@ -46,14 +49,9 @@ public:
 	void ProcessPunchAnimation(ACharacter* PunchingCharacter, UAnimMontage* MontageToPlay);
 
 protected:
-	// ──────────────────────────────────────────────────────────────────────────
-	// Framework Overrides
-	// ──────────────────────────────────────────────────────────────────────────
 	virtual void PostLogin(APlayerController* NewPlayer) override;
 
-	// ──────────────────────────────────────────────────────────────────────────
 	// Internal Game Flow Logic
-	// ──────────────────────────────────────────────────────────────────────────
 	void CheckBothPlayersReady_Instructions();
 	void CheckBothPlayersReady_Setup();
 	void StartSpinnerPhase();
@@ -62,25 +60,17 @@ protected:
 	void OnTurnTimerExpired();
 	void ProcessGuessFromWorldObjects(AController* PlayerController);
 
-	/** 추측 결과가 딜레이 시간만큼 표시된 후 턴을 넘기기 위해 호출됩니다. */
 	void OnGuessResultDelayExpired();
 
-	// ──────────────────────────────────────────────────────────────────────────
-	// Internal Combat Logic
-	// ──────────────────────────────────────────────────────────────────────────
 	UFUNCTION()
 	void RecoverCharacter(ACharacter* CharacterToRecover);
 
 	// ──────────────────────────────────────────────────────────────────────────
-	// Configuration Properties (Settings)
+	// Configuration Properties
 	// ──────────────────────────────────────────────────────────────────────────
-
-	// -- Classes --
-	/** 호스트/Client 1이 사용할 폰 클래스 (BP_FirstPersonCharacter_Cat) */
 	UPROPERTY(EditDefaultsOnly, Category = "PlayerPawn")
 	TSubclassOf<APawn> HostPawnClass;
 
-	/** 참여자/Client 2가 사용할 폰 클래스 (BP_FirstPersonCharacter_Dog) */
 	UPROPERTY(EditDefaultsOnly, Category = "PlayerPawn")
 	TSubclassOf<APawn> ClientPawnClass;
 
@@ -91,12 +81,16 @@ protected:
 	UPROPERTY(EditDefaultsOnly, Category = "Game Rules")
 	float GuessResultDisplayTime = 3.0f;
 
+	/** [New] 승자 발표 텍스트 유지 시간 */
+	UPROPERTY(EditDefaultsOnly, Category = "Game Rules")
+	float WinnerAnnouncementDuration = 3.0f;
+
 	// -- Combat Settings --
 	UPROPERTY(EditDefaultsOnly, Category = "Combat")
 	float PunchPushForce = 50000.0f;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Combat")
-	float KnockdownDuration = 4.0f; // 4초 K.O. 지속시간
+	float KnockdownDuration = 4.0f;
 
 	// -- GameOver Settings --
 	UPROPERTY(EditDefaultsOnly, Category = "Quiz|GameOver")
@@ -109,16 +103,13 @@ protected:
 	FName EndingCameraTag = TEXT("EndingCamera");
 
 	// ──────────────────────────────────────────────────────────────────────────
-	// Runtime State & References
+	// Runtime State
 	// ──────────────────────────────────────────────────────────────────────────
 	UPROPERTY()
 	AFruitGameState* MyGameState;
 
-	// -- Timers --
 	FTimerHandle TurnTimerHandle;
-
 	FTimerHandle GuessResultTimerHandle;
-
 	FTimerHandle EndGameDelayTimerHandle;
 
 	TMap<TWeakObjectPtr<ACharacter>, FTimerHandle> KnockdownTimers;

@@ -1,31 +1,2711 @@
 [
   {
-    "Name": "Quiz_001",
-    "Question": "대한민국의 수도는?",
-    "Answers": [
-      "서울",
-      "부산",
-      "도쿄"
-    ],
-    "CorrectAnswerIndex": 0
+    "Name": "Q_Easy_001",
+    "Question": "물은 H₂O이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "과학",
+    "Type": "OX"
   },
   {
-    "Name": "Quiz_002",
-    "Question": "언리얼 엔진은 무료이다.",
-    "Answers": [
-      "O",
-      "X"
-    ],
-    "CorrectAnswerIndex": 0
+    "Name": "Q_Easy_002",
+    "Question": "지구는 둥글다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "과학",
+    "Type": "OX"
   },
   {
-    "Name": "Quiz_003",
-    "Question": "1 + 1 = ?",
-    "Answers": [
-      "1",
-      "2",
-      "3"
-    ],
-    "CorrectAnswerIndex": 1
+    "Name": "Q_Easy_003",
+    "Question": "한글은 세종대왕이 만들었다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "역사",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Easy_004",
+    "Question": "모니터는 소리가 난다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Easy",
+    "Category": "IT",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Easy_005",
+    "Question": "1년은 보통 365일이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "상식",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Easy_006",
+    "Question": "고양이는 개과 동물이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Easy",
+    "Category": "생물",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Easy_007",
+    "Question": "대한민국 수도는 서울이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "지리",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Easy_008",
+    "Question": "축구는 한 팀 11명이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "스포츠",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Easy_009",
+    "Question": "CPU는 컴퓨터의 두뇌이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "IT",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Easy_010",
+    "Question": "빨강+파랑은 보라색이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "예술",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Easy_011",
+    "Question": "펭귄은 남극에 산다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "생물",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Easy_012",
+    "Question": "하루는 24시간이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "상식",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Easy_013",
+    "Question": "지구는 태양 주위를 돈다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "과학",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Easy_014",
+    "Question": "에베레스트는 세계에서 가장 높은 산이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "지리",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Easy_015",
+    "Question": "키보드는 입력 장치이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "IT",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Easy_016",
+    "Question": "치타는 가장 빠른 육상동물이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "생물",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Easy_017",
+    "Question": "1주는 7일이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "상식",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Easy_018",
+    "Question": "고래는 포유류이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "생물",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Easy_019",
+    "Question": "삼각형의 세 변의 길이 합은 가장 긴 변보다 커야 한다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "수학",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Easy_020",
+    "Question": "한국 국기는 태극기이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "상식",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Easy_021",
+    "Question": "1시간은 60분이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "상식",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Easy_022",
+    "Question": "사자는 고양이과이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "생물",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Easy_023",
+    "Question": "파리는 프랑스 수도이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "지리",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Easy_024",
+    "Question": "1킬로미터는 1000미터이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "상식",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Easy_025",
+    "Question": "빨강+노랑은 주황색이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "예술",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Easy_026",
+    "Question": "북극곰은 북극에 산다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "생물",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Easy_027",
+    "Question": "야구는 9회까지이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "스포츠",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Easy_028",
+    "Question": "한국의 국화는 무궁화이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "상식",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Easy_029",
+    "Question": "태양계에서 가장 큰 행성은 목성이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "과학",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Easy_030",
+    "Question": "사과는 과일이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "상식",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Easy_031",
+    "Question": "에펠탑은 프랑스에 있다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "지리",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Easy_032",
+    "Question": "마우스는 입력 장치이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "IT",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Easy_033",
+    "Question": "12 x 12 = 144이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "수학",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Easy_034",
+    "Question": "지구의 위성은 달이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "과학",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Easy_035",
+    "Question": "한국은 아시아에 있다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "지리",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Easy_036",
+    "Question": "1리터는 1000밀리리터이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "상식",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Easy_037",
+    "Question": "코알라는 호주에 산다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "생물",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Easy_038",
+    "Question": "올림픽은 4년마다 열린다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "스포츠",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Easy_039",
+    "Question": "25 × 4 = 100이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "수학",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Easy_040",
+    "Question": "태극기 중앙에는 태극 문양이 있다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "상식",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Easy_041",
+    "Question": "김치는 한국 음식이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "문화",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Easy_042",
+    "Question": "사하라 사막은 아프리카에 있다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "지리",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Easy_043",
+    "Question": "피카소는 화가이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "예술",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Easy_044",
+    "Question": "1분은 60초이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "상식",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Easy_045",
+    "Question": "한복은 한국 전통 의상이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "문화",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Easy_046",
+    "Question": "48 ÷ 6 = 8이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "수학",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Easy_047",
+    "Question": "한강은 서울을 흐른다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "지리",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Easy_048",
+    "Question": "농구는 공을 손으로만 다룬다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "스포츠",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Easy_049",
+    "Question": "게임은 재미있다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "상식",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Easy_050",
+    "Question": "한옥은 한국 전통 집이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "문화",
+    "Type": "OX"
+  },
+
+  {
+    "Name": "Q_Easy_051",
+    "Question": "지구에서 가장 큰 대륙은?",
+    "Answers": [ "아프리카", "아시아", "유럽" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Easy",
+    "Category": "지리",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Easy_052",
+    "Question": "축구 한 팀 인원은?",
+    "Answers": [ "9명", "10명", "11명" ],
+    "CorrectAnswerIndex": 2,
+    "Difficulty": "Easy",
+    "Category": "스포츠",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Easy_053",
+    "Question": "모나리자를 그린 사람은?",
+    "Answers": [ "피카소", "다빈치", "반 고흐" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Easy",
+    "Category": "예술",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Easy_054",
+    "Question": "태양계에서 가장 큰 행성은?",
+    "Answers": [ "지구", "목성", "화성" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Easy",
+    "Category": "과학",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Easy_055",
+    "Question": "컴퓨터의 두뇌는?",
+    "Answers": [ "모니터", "CPU", "마우스" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Easy",
+    "Category": "IT",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Easy_056",
+    "Question": "세계에서 가장 높은 산은?",
+    "Answers": [ "한라산", "에베레스트", "후지산" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Easy",
+    "Category": "지리",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Easy_057",
+    "Question": "빨강+노랑은?",
+    "Answers": [ "초록", "주황", "파랑" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Easy",
+    "Category": "예술",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Easy_058",
+    "Question": "한국 국기는?",
+    "Answers": [ "태극기", "성조기", "일장기" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "상식",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Easy_059",
+    "Question": "지구의 위성은?",
+    "Answers": [ "태양", "달", "별" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Easy",
+    "Category": "과학",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Easy_060",
+    "Question": "한국에서 가장 큰 섬은?",
+    "Answers": [ "울릉도", "제주도", "독도" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Easy",
+    "Category": "지리",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Easy_061",
+    "Question": "입력 장치는?",
+    "Answers": [ "모니터", "스피커", "마우스" ],
+    "CorrectAnswerIndex": 2,
+    "Difficulty": "Easy",
+    "Category": "IT",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Easy_062",
+    "Question": "야구는 몇 회까지?",
+    "Answers": [ "7회", "9회", "12회" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Easy",
+    "Category": "스포츠",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Easy_063",
+    "Question": "한국의 국화는?",
+    "Answers": [ "장미", "무궁화", "튤립" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Easy",
+    "Category": "상식",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Easy_064",
+    "Question": "36 ÷ 4는?",
+    "Answers": [ "8", "9", "10" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Easy",
+    "Category": "수학",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Easy_065",
+    "Question": "에펠탑은 어느 나라?",
+    "Answers": [ "영국", "프랑스", "독일" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Easy",
+    "Category": "지리",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Easy_066",
+    "Question": "한국 전통 음식은?",
+    "Answers": [ "피자", "김치", "스시" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Easy",
+    "Category": "문화",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Easy_067",
+    "Question": "8 x 9는?",
+    "Answers": [ "64", "72", "81" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Easy",
+    "Category": "수학",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Easy_068",
+    "Question": "한국 전통 집은?",
+    "Answers": [ "한옥", "이글루", "티피" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "문화",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Easy_069",
+    "Question": "서울의 강은?",
+    "Answers": [ "템스강", "한강", "센강" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Easy",
+    "Category": "지리",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Easy_070",
+    "Question": "한국 전통 악기는?",
+    "Answers": [ "가야금", "기타", "피아노" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "예술",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Easy_071",
+    "Question": "125 ÷ 5는?",
+    "Answers": [ "20", "25", "30" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Easy",
+    "Category": "수학",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Easy_072",
+    "Question": "한국의 산은?",
+    "Answers": [ "후지산", "한라산", "알프스" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Easy",
+    "Category": "지리",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Easy_073",
+    "Question": "한국 전통 놀이는?",
+    "Answers": [ "윷놀이", "체스", "모노폴리" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "문화",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Easy_074",
+    "Question": "360 ÷ 9는?",
+    "Answers": [ "30", "40", "45" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Easy",
+    "Category": "수학",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Easy_075",
+    "Question": "한국 전통 모자는?",
+    "Answers": [ "갓", "카우보이모자", "베레모" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "문화",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Easy_076",
+    "Question": "7 × 11은?",
+    "Answers": [ "77", "84", "88" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "수학",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Easy_077",
+    "Question": "한국 전통 춤은?",
+    "Answers": [ "탈춤", "탱고", "왈츠" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "예술",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Easy_078",
+    "Question": "99 + 88은?",
+    "Answers": [ "177", "187", "197" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Easy",
+    "Category": "수학",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Easy_079",
+    "Question": "한국의 바다는?",
+    "Answers": [ "동해", "지중해", "카리브해" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "지리",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Easy_080",
+    "Question": "한국 전통 의상은?",
+    "Answers": [ "한복", "기모노", "사리" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "문화",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Easy_081",
+    "Question": "56 ÷ 7은?",
+    "Answers": [ "7", "8", "9" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Easy",
+    "Category": "수학",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Easy_082",
+    "Question": "한국의 전통 악기는?",
+    "Answers": [ "장구", "드럼", "색소폰" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "예술",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Easy_083",
+    "Question": "124 + 99는?",
+    "Answers": [ "213", "223", "233" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Easy",
+    "Category": "수학",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Easy_084",
+    "Question": "한국의 전통 명절은?",
+    "Answers": [ "설날", "할로윈", "크리스마스" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "문화",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Easy_085",
+    "Question": "240 ÷ 8는?",
+    "Answers": [ "25", "30", "35" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Easy",
+    "Category": "수학",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Easy_086",
+    "Question": "한국의 전통 부채는?",
+    "Answers": [ "합죽선", "양산", "우산" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "문화",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Easy_087",
+    "Question": "9 × 11은?",
+    "Answers": [ "99", "108", "110" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "수학",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Easy_088",
+    "Question": "한국의 전통 탈은?",
+    "Answers": [ "하회탈", "베네치아 가면", "할로윈 마스크" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "문화",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Easy_089",
+    "Question": "365 + 248은?",
+    "Answers": [ "603", "613", "623" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Easy",
+    "Category": "수학",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Easy_090",
+    "Question": "한국의 전통 차는?",
+    "Answers": [ "녹차", "커피", "코코아" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "문화",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Easy_091",
+    "Question": "12 × 13은?",
+    "Answers": [ "146", "156", "166" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Easy",
+    "Category": "수학",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Easy_092",
+    "Question": "한국의 전통 그릇은?",
+    "Answers": [ "옹기", "플라스틱", "유리" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "문화",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Easy_093",
+    "Question": "480 ÷ 12는?",
+    "Answers": [ "30", "40", "50" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Easy",
+    "Category": "수학",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Easy_094",
+    "Question": "한국의 전통 문은?",
+    "Answers": [ "대문", "슬라이딩 도어", "자동문" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "문화",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Easy_095",
+    "Question": "15 × 12은?",
+    "Answers": [ "170", "180", "190" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Easy",
+    "Category": "수학",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Easy_096",
+    "Question": "한국의 전통 종이접기는?",
+    "Answers": [ "한지접기", "오리가미", "종이비행기" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "문화",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Easy_097",
+    "Question": "777 + 666은?",
+    "Answers": [ "1343", "1443", "1543" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Easy",
+    "Category": "수학",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Easy_098",
+    "Question": "한국의 전통 북은?",
+    "Answers": [ "북", "드럼", "탬버린" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Easy",
+    "Category": "예술",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Easy_099",
+    "Question": "840 ÷ 7는?",
+    "Answers": [ "110", "120", "130" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Easy",
+    "Category": "수학",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Easy_100",
+    "Question": "한국에서 가장 큰 섬은?",
+    "Answers": [ "울릉도", "제주도", "독도" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Easy",
+    "Category": "지리",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Medium_001",
+    "Question": "광합성은 엽록소가 필요하다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "과학",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Medium_002",
+    "Question": "한국전쟁은 1950년 6월 25일 시작됐다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "역사",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Medium_003",
+    "Question": "RAM은 비휘발성 메모리이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Medium",
+    "Category": "IT",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Medium_004",
+    "Question": "나일강은 아마존강보다 길다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Medium",
+    "Category": "지리",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Medium_005",
+    "Question": "HTTP는 상태를 유지하는 프로토콜이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Medium",
+    "Category": "IT",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Medium_006",
+    "Question": "피타고라스 정리는 직각삼각형에만 적용된다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "수학",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Medium_007",
+    "Question": "세종대왕은 조선 4대 왕이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "역사",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Medium_008",
+    "Question": "DNA는 이중나선 구조이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "과학",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Medium_009",
+    "Question": "TCP는 연결지향형 프로토콜이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "IT",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Medium_010",
+    "Question": "사하라 사막은 세계에서 가장 큰 사막이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Medium",
+    "Category": "지리",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Medium_011",
+    "Question": "빛의 속도는 진공에서 약 300,000km/s이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "과학",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Medium_012",
+    "Question": "셰익스피어의 4대 비극에 '햄릿'이 포함된다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "문학",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Medium_013",
+    "Question": "한국은 세계 인구밀도 10위권 안에 든다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "지리",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Medium_014",
+    "Question": "미토콘드리아는 세포의 에너지 공장이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "과학",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Medium_015",
+    "Question": "IPv6 주소는 128비트이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "IT",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Medium_016",
+    "Question": "프랑스 혁명은 1789년에 시작됐다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "역사",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Medium_017",
+    "Question": "원주율 π는 무리수이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "수학",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Medium_018",
+    "Question": "백제의 마지막 도읍지는 부여였다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "역사",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Medium_019",
+    "Question": "지구 공전 주기는 약 365.25일이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "과학",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Medium_020",
+    "Question": "SSD는 HDD보다 읽기/쓰기 속도가 빠르다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "IT",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Medium_021",
+    "Question": "임진왜란은 1592년과 1597년 두 차례 있었다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "역사",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Medium_022",
+    "Question": "지구 대기의 약 78%는 질소이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "과학",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Medium_023",
+    "Question": "한국은 2024년 기준 세계 GDP 10위권이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "경제",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Medium_024",
+    "Question": "√2는 유리수가 아니다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "수학",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Medium_025",
+    "Question": "고려는 왕건이 918년에 건국했다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "역사",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Medium_026",
+    "Question": "인체에서 가장 큰 장기는 피부이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "과학",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Medium_027",
+    "Question": "비트코인은 블록체인 기술을 사용한다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "경제",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Medium_028",
+    "Question": "훈민정음은 1443년에 창제됐다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "역사",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Medium_029",
+    "Question": "삼국통일은 신라와 당나라가 함께 이뤘다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "역사",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Medium_030",
+    "Question": "마리아나 해구는 지구에서 가장 깊은 곳이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "지리",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Medium_031",
+    "Question": "REST API는 상태를 유지하지 않는다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "IT",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Medium_032",
+    "Question": "한국은 세계 최대 메모리 반도체 수출국이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "경제",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Medium_033",
+    "Question": "이차방정식 ax² + bx + c = 0의 근의 공식은 판별식 D = b² - 4ac를 사용한다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "수학",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Medium_034",
+    "Question": "이순신 장군은 명량 해전에서 12척으로 승리했다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "역사",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Medium_035",
+    "Question": "우주 나이는 약 138억 년으로 추정된다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "과학",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Medium_036",
+    "Question": "Git은 분산 버전 관리 시스템이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "IT",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Medium_037",
+    "Question": "고려청자는 12세기경 전성기를 이루었다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "문화",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Medium_038",
+    "Question": "캐스피해는 면적으로 세계 최대 호수이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "지리",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Medium_039",
+    "Question": "중력은 거리의 제곱에 반비례한다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "과학",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Medium_040",
+    "Question": "한국은 1948년 8월 15일 정부를 수립했다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "역사",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Medium_041",
+    "Question": "소리는 진공에서는 전파되지 않는다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "과학",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Medium_042",
+    "Question": "조선의 개국 공신 1등은 정도전이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "역사",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Medium_043",
+    "Question": "Docker는 컨테이너 기술이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "IT",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Medium_044",
+    "Question": "한국 드라마는 '한류'의 주축이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "문화",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Medium_045",
+    "Question": "소수는 2부터 시작한다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "수학",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Medium_046",
+    "Question": "직지심체요절은 구텐베르크 성서보다 빠른 금속활자본이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "문화",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Medium_047",
+    "Question": "남극 대륙은 세계에서 가장 큰 사막이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "지리",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Medium_048",
+    "Question": "블랙홀은 빛도 탈출하지 못한다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "과학",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Medium_049",
+    "Question": "K-POP은 전 세계적으로 인기를 끌고 있다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "문화",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Medium_050",
+    "Question": "양자 컴퓨터는 기존 컴퓨터와 완전히 호환된다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Medium",
+    "Category": "IT",
+    "Type": "OX"
+  },
+
+  {
+    "Name": "Q_Medium_051",
+    "Question": "세계에서 가장 긴 강은?",
+    "Answers": [ "아마존강", "나일강", "양쯔강" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Medium",
+    "Category": "지리",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Medium_052",
+    "Question": "한국의 마지막 왕은?",
+    "Answers": [ "고종", "순종", "영친왕" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Medium",
+    "Category": "역사",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Medium_053",
+    "Question": "원소기호 Au는?",
+    "Answers": [ "은", "철", "금" ],
+    "CorrectAnswerIndex": 2,
+    "Difficulty": "Medium",
+    "Category": "과학",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Medium_054",
+    "Question": "한국의 첫 대통령은?",
+    "Answers": [ "김구", "이승만", "윤보선" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Medium",
+    "Category": "역사",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Medium_055",
+    "Question": "OSI 7계층 중 4계층은?",
+    "Answers": [ "네트워크 계층", "전송 계층", "응용 계층" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Medium",
+    "Category": "IT",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Medium_056",
+    "Question": "169의 제곱근은?",
+    "Answers": [ "11", "12", "13" ],
+    "CorrectAnswerIndex": 2,
+    "Difficulty": "Medium",
+    "Category": "수학",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Medium_057",
+    "Question": "세계에서 가장 큰 섬은?",
+    "Answers": [ "그린란드", "뉴기니", "보르네오" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "지리",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Medium_058",
+    "Question": "한국의 3대 발명품에 들어가지 않는 것은?",
+    "Answers": [ "거북선", "측우기", "인터넷" ],
+    "CorrectAnswerIndex": 2,
+    "Difficulty": "Medium",
+    "Category": "역사",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Medium_059",
+    "Question": "빛의 삼원색이 아닌 것은?",
+    "Answers": [ "빨강", "초록", "노랑" ],
+    "CorrectAnswerIndex": 2,
+    "Difficulty": "Medium",
+    "Category": "과학",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Medium_060",
+    "Question": "한국에서 가장 오래된 대학은?",
+    "Answers": [ "서울대", "고려대", "성균관" ],
+    "CorrectAnswerIndex": 2,
+    "Difficulty": "Medium",
+    "Category": "문화",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Medium_061",
+    "Question": "다음 중 소수가 아닌 것은?",
+    "Answers": [ "97", "89", "91" ],
+    "CorrectAnswerIndex": 2,
+    "Difficulty": "Medium",
+    "Category": "수학",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Medium_062",
+    "Question": "한국의 대표적인 전통 춤은?",
+    "Answers": [ "탈춤", "탱고", "살사" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "문화",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Medium_063",
+    "Question": "세계에서 가장 높은 폭포는?",
+    "Answers": [ "나이아가라", "빅토리아", "앙헬 폭포" ],
+    "CorrectAnswerIndex": 2,
+    "Difficulty": "Medium",
+    "Category": "지리",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Medium_064",
+    "Question": "한국의 대표적인 전통 악기는?",
+    "Answers": [ "가야금", "기타", "바이올린" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "문화",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Medium_065",
+    "Question": "(x+5)(x-3)의 전개 결과는?",
+    "Answers": [ "x²+2x-15", "x²+15x-8", "x²-15" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "수학",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Medium_066",
+    "Question": "지구에서 가장 깊은 해구는?",
+    "Answers": [ "마리아나 해구", "통가 해구", "필리핀 해구" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "지리",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Medium_067",
+    "Question": "빛의 속도는 약 얼마인가?",
+    "Answers": [ "약 30만 km/s", "약 3만 km/s", "약 300km/s" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "과학",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Medium_068",
+    "Question": "인류 최초로 달에 착륙한 인물은?",
+    "Answers": [ "닐 암스트롱", "버즈 올드린", "유리 가가린" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "역사",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Medium_069",
+    "Question": "CPU의 주요 역할은?",
+    "Answers": [ "연산 및 제어", "데이터 저장", "화면 출력" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "기술",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Medium_070",
+    "Question": "지구 대기 중 가장 많은 기체는?",
+    "Answers": [ "질소", "산소", "이산화탄소" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "과학",
+    "Type": "3Choice"
+  },
+
+  {
+    "Name": "Q_Medium_071",
+    "Question": "축구 경기에서 한 팀의 필드 플레이어 수는?",
+    "Answers": [ "10명", "9명", "11명" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "스포츠",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Medium_072",
+    "Question": "인류 최초의 문명으로 알려진 곳은?",
+    "Answers": [ "메소포타미아", "이집트", "인더스" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "역사",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Medium_073",
+    "Question": "태양의 에너지원은 어떤 반응인가?",
+    "Answers": [ "핵융합", "핵분열", "화학 반응" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "과학",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Medium_074",
+    "Question": "세계에서 가장 큰 사막은?",
+    "Answers": [ "사하라 사막", "고비 사막", "안데스 사막" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "지리",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Medium_075",
+    "Question": "혈액형 중 가장 희귀한 타입은?",
+    "Answers": [ "AB형", "O형", "A형" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "과학",
+    "Type": "3Choice"
+  },
+
+  {
+    "Name": "Q_Medium_076",
+    "Question": "스페인의 수도는?",
+    "Answers": [ "마드리드", "바르셀로나", "세비야" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "지리",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Medium_077",
+    "Question": "원소 주기율표에서 'Fe'는 어떤 원소인가?",
+    "Answers": [ "철", "은", "구리" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "과학",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Medium_078",
+    "Question": "세계에서 가장 많이 쓰이는 프로그래밍 언어 중 하나는?",
+    "Answers": [ "Python", "Fortran", "Assembly" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "기술",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Medium_079",
+    "Question": "로마 제국의 대표적인 건축물은?",
+    "Answers": [ "콜로세움", "파르테논 신전", "피라미드" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "역사",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Medium_080",
+    "Question": "인간의 평균 체온은 몇 도인가?",
+    "Answers": [ "약 36.5도", "약 35도", "약 38도" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "과학",
+    "Type": "3Choice"
+  },
+
+  {
+    "Name": "Q_Medium_081",
+    "Question": "세계에서 면적이 가장 큰 국가는?",
+    "Answers": [ "러시아", "캐나다", "중국" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "지리",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Medium_082",
+    "Question": "지구의 자전 속도는?",
+    "Answers": [ "약 24시간", "약 12시간", "약 48시간" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "과학",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Medium_083",
+    "Question": "블랙홀은 어떤 힘이 극도로 강한 천체인가?",
+    "Answers": [ "중력", "전기력", "자기력" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "과학",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Medium_084",
+    "Question": "컴퓨터 저장 장치 중 가장 빠른 것은?",
+    "Answers": [ "RAM", "HDD", "SSD" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "기술",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Medium_085",
+    "Question": "세계에서 인구가 가장 많은 도시는?",
+    "Answers": [ "도쿄", "뉴욕", "상하이" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "지리",
+    "Type": "3Choice"
+  },
+
+  {
+    "Name": "Q_Medium_086",
+    "Question": "비트코인의 창시자로 알려진 인물은?",
+    "Answers": [ "사토시 나카모토", "일론 머스크", "빌 게이츠" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "기술",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Medium_087",
+    "Question": "지구가 태양을 한 바퀴 도는 데 걸리는 시간은?",
+    "Answers": [ "약 365일", "약 200일", "약 400일" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "과학",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Medium_088",
+    "Question": "영화 '어벤져스' 시리즈를 제작한 회사는?",
+    "Answers": [ "마블", "DC", "픽사" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "엔터",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Medium_089",
+    "Question": "자바스크립트에서 변수를 선언하는 키워드는?",
+    "Answers": [ "let", "set", "var2" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "기술",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Medium_090",
+    "Question": "한국에서 국보 1호로 지정되었던 문화재는?",
+    "Answers": [ "숭례문", "불국사", "팔만대장경" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "역사",
+    "Type": "3Choice"
+  },
+
+  {
+    "Name": "Q_Medium_091",
+    "Question": "세계 3대 미항 중 하나로 꼽히는 도시는?",
+    "Answers": [ "시드니", "런던", "싱가포르" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "지리",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Medium_092",
+    "Question": "포유류 중 유일하게 하늘을 나는 동물은?",
+    "Answers": [ "박쥐", "날다람쥐", "올빼미" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "과학",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Medium_093",
+    "Question": "지구의 중심에 있는 것은?",
+    "Answers": [ "핵", "맨틀", "지각" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "과학",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Medium_094",
+    "Question": "바다의 소금기가 생기는 이유는?",
+    "Answers": [ "암석의 용해", "화산 활동", "해양 생물" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "과학",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Medium_095",
+    "Question": "기술 스타트업에서 흔히 말하는 '유니콘 기업'이란?",
+    "Answers": [ "기업 가치 10억 달러 이상", "10만 명 이상 고용", "10개국 이상 진출" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "경제",
+    "Type": "3Choice"
+  },
+
+  {
+    "Name": "Q_Medium_096",
+    "Question": "북극의 대표적 포식자는?",
+    "Answers": [ "북극곰", "호랑이", "늑대" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "과학",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Medium_097",
+    "Question": "기후 변화의 주요 원인으로 꼽히는 것은?",
+    "Answers": [ "이산화탄소 증가", "자외선 감소", "지구 자전 속도 증가" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "환경",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Medium_098",
+    "Question": "우리 은하의 형태는?",
+    "Answers": [ "나선형", "타원형", "부정형" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "과학",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Medium_099",
+    "Question": "세계에서 가장 오래된 문학 작품 중 하나는?",
+    "Answers": [ "길가메시 서사시", "일리아스", "데카메론" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "문학",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Medium_100",
+    "Question": "인터넷에서 IP 주소는 무엇을 의미하는가?",
+    "Answers": [ "기기 식별 주소", "파일 크기", "암호 알고리즘" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Medium",
+    "Category": "기술",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Hard_001",
+    "Question": "핵융합 반응은 태양의 주 에너지원이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "과학",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Hard_002",
+    "Question": "슈뢰딩거 방정식은 양자역학의 기본 방정식이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "과학",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Hard_003",
+    "Question": "광합성의 명반응은 틸라코이드 막에서 일어난다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "과학",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Hard_004",
+    "Question": "엔트로피는 열역학 제2법칙과 관련이 있다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "과학",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Hard_005",
+    "Question": "도플러 효과는 빛에도 적용된다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "과학",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Hard_006",
+    "Question": "우주의 암흑에너지는 약 68%를 차지한다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "과학",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Hard_007",
+    "Question": "멘델의 독립의 법칙은 유전자마다 독립적으로 유전된다는 것이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "과학",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Hard_008",
+    "Question": "카이랄 분자는 거울상 이성질체를 가진다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "과학",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Hard_009",
+    "Question": "블랙홀의 사건의 지평선 안에서는 탈출 속도가 광속을 초과한다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "과학",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Hard_010",
+    "Question": "양자 얽힘은 아인슈타인이 ‘유령 같은 원격 작용’이라 불렀다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "과학",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Hard_011",
+    "Question": "베르사유 조약은 제1차 세계대전의 종전 조약이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "역사",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Hard_012",
+    "Question": "30년 전쟁은 1618년부터 1648년까지 지속됐다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "역사",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Hard_013",
+    "Question": "마그나 카르타는 1215년에 제정됐다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "역사",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Hard_014",
+    "Question": "야전 조약은 1925년 체결됐다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "역사",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Hard_015",
+    "Question": "한국전쟁 휴전협정은 1953년 7월 27일 체결됐다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "역사",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Hard_016",
+    "Question": "임진왜란은 1592년과 1597년 두 차례 일어났다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "역사",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Hard_017",
+    "Question": "고려는 918년 왕건에 의해 건국됐다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "역사",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Hard_018",
+    "Question": "삼국통일은 668년 신라 문무왕 때 완성됐다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "역사",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Hard_019",
+    "Question": "백제는 660년 나당연합군에 의해 멸망했다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "역사",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Hard_020",
+    "Question": "고구려는 668년 나당연합군에 의해 멸망했다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "역사",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Hard_021",
+    "Question": "TCP 3-way 핸드셰이크는 SYN → SYN-ACK → ACK 순서이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "IT",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Hard_022",
+    "Question": "RSA 암호화는 소인수분해의 난제를 이용한다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "IT",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Hard_023",
+    "Question": "SHA-256은 비트코인에서 사용되는 해시 알고리즘이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "IT",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Hard_024",
+    "Question": "Kubernetes는 컨테이너 오케스트레이션 도구이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "IT",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Hard_025",
+    "Question": "OAuth 2.0은 인증 프로토콜이 아니라 인가 프레임워크이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "IT",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Hard_026",
+    "Question": "TLS 1.3은 이전 버전보다 핸드셰이크 라운드를 줄였다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "IT",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Hard_027",
+    "Question": "DNS는 UDP 53번 포트를 기본으로 사용한다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "IT",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Hard_028",
+    "Question": "IPv6는 128비트 주소 체계이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "IT",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Hard_029",
+    "Question": "Zero Trust 모델은 ‘절대 신뢰하지 말고 항상 검증하라’는 원칙이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "IT",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Hard_030",
+    "Question": "P vs NP 문제는 아직 해결되지 않았다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "IT",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Hard_031",
+    "Question": "마리아나 해구의 최대 깊이는 약 11,034m이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "지리",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Hard_032",
+    "Question": "남극 대륙은 세계에서 가장 큰 사막이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "지리",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Hard_033",
+    "Question": "바이칼 호수는 세계에서 가장 깊은 담수호이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "지리",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Hard_034",
+    "Question": "킬리만자로는 아프리카 최고봉이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "지리",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Hard_035",
+    "Question": "앙헬 폭포는 세계에서 가장 높은 폭포이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "지리",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Hard_036",
+    "Question": "캐스피해는 면적으로 세계 최대 호수이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "지리",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Hard_037",
+    "Question": "안데스 산맥은 세계에서 가장 긴 산맥이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "지리",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Hard_038",
+    "Question": "사하라 사막은 아프리카 북부에 위치한다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "지리",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Hard_039",
+    "Question": "그린란드는 세계에서 가장 큰 섬이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "지리",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Hard_040",
+    "Question": "아마존강 유역은 세계 최대 열대우림이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "지리",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Hard_041",
+    "Question": "페르마의 마지막 정리는 1994년 앤드루 와일스에 의해 증명됐다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "수학",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Hard_042",
+    "Question": "골드바흐 추측은 아직 증명되지 않았다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "수학",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Hard_043",
+    "Question": "리만 가설은 아직 미해결 문제이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "수학",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Hard_044",
+    "Question": "e^(iπ) + 1 = 0은 오일러 항등식이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "수학",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Hard_045",
+    "Question": "π는 초월수이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "수학",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Hard_046",
+    "Question": "나비 효과는 카오스 이론의 대표적 예이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "수학",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Hard_047",
+    "Question": "7은 천밀레니엄 문제 중 하나이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "수학",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Hard_048",
+    "Question": "삼각함수의 주기는 2π이다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "수학",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Hard_049",
+    "Question": "비트코인은 2008년 사토시 나카모토의 논문에서 처음 제안됐다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "경제",
+    "Type": "OX"
+  },
+  {
+    "Name": "Q_Hard_050",
+    "Question": "케인즈 경제학은 정부 개입을 강조한다",
+    "Answers": [ "O", "X" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "경제",
+    "Type": "OX"
+  },
+
+  {
+    "Name": "Q_Hard_051",
+    "Question": "세계에서 가장 깊은 해구는?",
+    "Answers": [ "통가 해구", "푸에르토리코 해구", "마리아나 해구" ],
+    "CorrectAnswerIndex": 2,
+    "Difficulty": "Hard",
+    "Category": "지리",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Hard_052",
+    "Question": "다음 중 암호화 알고리즘이 아닌 것은?",
+    "Answers": [ "AES", "RSA", "JPEG" ],
+    "CorrectAnswerIndex": 2,
+    "Difficulty": "Hard",
+    "Category": "IT",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Hard_053",
+    "Question": "다음 중 OSI 7계층의 3계층은?",
+    "Answers": [ "전송 계층", "네트워크 계층", "세션 계층" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Hard",
+    "Category": "IT",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Hard_054",
+    "Question": "다음 중 소수가 아닌 것은?",
+    "Answers": [ "997", "991", "993" ],
+    "CorrectAnswerIndex": 2,
+    "Difficulty": "Hard",
+    "Category": "수학",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Hard_055",
+    "Question": "세계에서 가장 큰 호수는?",
+    "Answers": [ "슈피리어 호", "캐스피해", "빅토리아 호" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Hard",
+    "Category": "지리",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Hard_056",
+    "Question": "세계에서 가장 긴 산맥은?",
+    "Answers": [ "히말라야", "안데스", "로키" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Hard",
+    "Category": "지리",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Hard_057",
+    "Question": "다음 중 양자 컴퓨팅의 핵심 요소가 아닌 것은?",
+    "Answers": [ "큐비트", "중첩", "트랜지스터" ],
+    "CorrectAnswerIndex": 2,
+    "Difficulty": "Hard",
+    "Category": "IT",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Hard_058",
+    "Question": "다음 중 비트코인 합의 알고리즘이 아닌 것은?",
+    "Answers": [ "PoW", "PoS", "RSA" ],
+    "CorrectAnswerIndex": 2,
+    "Difficulty": "Hard",
+    "Category": "IT",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Hard_059",
+    "Question": "다음 중 무리수가 아닌 것은?",
+    "Answers": [ "√2", "√4", "π" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Hard",
+    "Category": "수학",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Hard_060",
+    "Question": "세계에서 가장 높은 폭포는?",
+    "Answers": [ "나이아가라", "빅토리아", "앙헬" ],
+    "CorrectAnswerIndex": 2,
+    "Difficulty": "Hard",
+    "Category": "지리",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Hard_061",
+    "Question": "다음 중 천밀레니엄 문제에 속하지 않는 것은?",
+    "Answers": [ "P vs NP", "골드바흐 추측", "리만 가설" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Hard",
+    "Category": "수학",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Hard_062",
+    "Question": "다음 중 블록체인의 특징이 아닌 것은?",
+    "Answers": [ "분산원장", "불변성", "중앙 집중" ],
+    "CorrectAnswerIndex": 2,
+    "Difficulty": "Hard",
+    "Category": "IT",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Hard_063",
+    "Question": "다음 중 양자 얽힘의 특징은?",
+    "Answers": [ "벨 부등식 위반", "초광속 통신", "고전 상관관계" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "과학",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Hard_064",
+    "Question": "다음 중 초월수가 아닌 것은?",
+    "Answers": [ "π", "e", "√2" ],
+    "CorrectAnswerIndex": 2,
+    "Difficulty": "Hard",
+    "Category": "수학",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Hard_065",
+    "Question": "다음 중 제1차 세계대전 종전 조약은?",
+    "Answers": [ "베르사유 조약", "야전 조약", "로카르노 조약" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "역사",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Hard_066",
+    "Question": "다음 중 RSA 암호화의 기반 난제는?",
+    "Answers": [ "이산로그", "소인수분해", "타원곡선" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Hard",
+    "Category": "IT",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Hard_067",
+    "Question": "세계에서 가장 큰 사막은?",
+    "Answers": [ "사하라", "고비", "남극" ],
+    "CorrectAnswerIndex": 2,
+    "Difficulty": "Hard",
+    "Category": "지리",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Hard_068",
+    "Question": "다음 중 멘델의 법칙이 아닌 것은?",
+    "Answers": [ "분리의 법칙", "독립의 법칙", "연관의 법칙" ],
+    "CorrectAnswerIndex": 2,
+    "Difficulty": "Hard",
+    "Category": "과학",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Hard_069",
+    "Question": "다음 중 한국전쟁 휴전협정 체결 장소는?",
+    "Answers": [ "서울", "개성", "판문점" ],
+    "CorrectAnswerIndex": 2,
+    "Difficulty": "Hard",
+    "Category": "역사",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Hard_070",
+    "Question": "다음 중 오일러 항등식에 포함되지 않는 것은?",
+    "Answers": [ "π", "e", "i", "1", "2" ],
+    "CorrectAnswerIndex": 4,
+    "Difficulty": "Hard",
+    "Category": "수학",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Hard_071",
+    "Question": "다음 중 컨테이너 오케스트레이션 도구는?",
+    "Answers": [ "Docker", "Kubernetes", "Vagrant" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Hard",
+    "Category": "IT",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Hard_072",
+    "Question": "세계에서 가장 깊은 담수호는?",
+    "Answers": [ "탕가니카 호", "바이칼 호", "슈피리어 호" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Hard",
+    "Category": "지리",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Hard_073",
+    "Question": "다음 중 아직 증명되지 않은 것은?",
+    "Answers": [ "페르마의 마지막 정리", "골드바흐 추측", "피타고라스 정리" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Hard",
+    "Category": "수학",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Hard_074",
+    "Question": "다음 중 블랙홀의 특징이 아닌 것은?",
+    "Answers": [ "사건의 지평선", "특이점", "탈출 속도 < 광속" ],
+    "CorrectAnswerIndex": 2,
+    "Difficulty": "Hard",
+    "Category": "과학",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Hard_075",
+    "Question": "다음 중 30년 전쟁을 끝낸 조약은?",
+    "Answers": [ "베스트팔렌 조약", "위트레흐트 조약", "파리 조약" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "역사",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Hard_076",
+    "Question": "다음 중 양자 컴퓨팅에서 큐비트의 상태는?",
+    "Answers": [ "0 또는 1", "0과 1의 중첩", "고전 비트와 동일" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Hard",
+    "Category": "IT",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Hard_077",
+    "Question": "세계에서 가장 큰 섬은?",
+    "Answers": [ "뉴기니", "그린란드", "보르네오" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Hard",
+    "Category": "지리",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Hard_078",
+    "Question": "다음 중 엔트로피가 증가하는 방향은?",
+    "Answers": [ "질서 → 무질서", "무질서 → 질서", "변화 없음" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "과학",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Hard_079",
+    "Question": "다음 중 1929년 대공황의 원인으로 가장 직접적인 것은?",
+    "Answers": [ "제1차 세계대전", "주식 시장 붕괴", "금본위제 폐지" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Hard",
+    "Category": "경제",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Hard_080",
+    "Question": "다음 중 TLS의 최신 버전은?",
+    "Answers": [ "TLS 1.0", "TLS 1.2", "TLS 1.3" ],
+    "CorrectAnswerIndex": 2,
+    "Difficulty": "Hard",
+    "Category": "IT",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Hard_081",
+    "Question": "세계에서 가장 긴 강은?",
+    "Answers": [ "아마존강", "나일강", "양쯔강" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Hard",
+    "Category": "지리",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Hard_082",
+    "Question": "다음 중 카오스 이론의 대표적 예는?",
+    "Answers": [ "나비 효과", "빌리아드 공", "양자 터널링" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "수학",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Hard_083",
+    "Question": "다음 중 한국전쟁 발발 연도는?",
+    "Answers": [ "1948년", "1950년", "1953년" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Hard",
+    "Category": "역사",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Hard_084",
+    "Question": "다음 중 SHA-3는 어떤 알고리즘을 기반으로 하나?",
+    "Answers": [ "Merkle-Damgård", "Keccak", "MD5" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Hard",
+    "Category": "IT",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Hard_085",
+    "Question": "세계에서 가장 큰 대륙은?",
+    "Answers": [ "아프리카", "아시아", "유라시아" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Hard",
+    "Category": "지리",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Hard_086",
+    "Question": "다음 중 광합성의 암반응 장소는?",
+    "Answers": [ "틸라코이드 막", "스트로마", "엽록체 외막" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Hard",
+    "Category": "과학",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Hard_087",
+    "Question": "다음 중 P2P 네트워크의 대표적 예는?",
+    "Answers": [ "비트코인", "HTTP", "DNS" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "IT",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Hard_088",
+    "Question": "세계에서 가장 높은 산은?",
+    "Answers": [ "K2", "캉첸중가", "에베레스트" ],
+    "CorrectAnswerIndex": 2,
+    "Difficulty": "Hard",
+    "Category": "지리",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Hard_089",
+    "Question": "다음 중 양자 중첩의 대표적 실험은?",
+    "Answers": [ "이중 슬릿 실험", "슈뢰딩거의 고양이", "밀리컨 실험" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "과학",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Hard_090",
+    "Question": "다음 중 7대 불가사의에 속하는 현대 건축물은?",
+    "Answers": [ "에펠탑", "피라미드", "타지마할" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "역사",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Hard_091",
+    "Question": "다음 중 DNS의 기본 포트는?",
+    "Answers": [ "53", "80", "443" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "IT",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Hard_092",
+    "Question": "세계에서 가장 큰 대양은?",
+    "Answers": [ "대서양", "태평양", "인도양" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Hard",
+    "Category": "지리",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Hard_093",
+    "Question": "다음 중 리만 가설이 다루는 함수는?",
+    "Answers": [ "제타 함수", "감마 함수", "베타 함수" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "수학",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Hard_094",
+    "Question": "다음 중 블랙홀의 중심은?",
+    "Answers": [ "특이점", "사건의 지평선", "에르고스피어" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "과학",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Hard_095",
+    "Question": "다음 중 1925년 체결된 조약은?",
+    "Answers": [ "로카르노 조약", "야전 조약", "파리 조약" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "역사",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Hard_096",
+    "Question": "다음 중 Zero Trust의 핵심 원칙은?",
+    "Answers": [ "항상 검증", "신뢰하지만 검증", "신뢰하지 않음" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "IT",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Hard_097",
+    "Question": "세계에서 가장 큰 열대우림은?",
+    "Answers": [ "콩고 분지", "아마존", "보르네오" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Hard",
+    "Category": "지리",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Hard_098",
+    "Question": "다음 중 양자 터널링은?",
+    "Answers": [ "고전적으로 불가능한 영역 통과", "광속 초과", "시간 여행" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "과학",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Hard_099",
+    "Question": "다음 중 케인즈가 제안한 경제 이론은?",
+    "Answers": [ "수요 중심", "공급 중심", "화폐주의" ],
+    "CorrectAnswerIndex": 0,
+    "Difficulty": "Hard",
+    "Category": "경제",
+    "Type": "3Choice"
+  },
+  {
+    "Name": "Q_Hard_100",
+    "Question": "다음 중 아직 증명되지 않은 천밀레니엄 문제는?",
+    "Answers": [ "푸앵카레 추측", "리만 가설", "페르마의 마지막 정리" ],
+    "CorrectAnswerIndex": 1,
+    "Difficulty": "Hard",
+    "Category": "수학",
+    "Type": "3Choice"
   }
 ]

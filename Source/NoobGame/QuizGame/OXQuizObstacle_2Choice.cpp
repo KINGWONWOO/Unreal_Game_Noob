@@ -34,29 +34,49 @@ AOXQuizObstacle_2Choice::AOXQuizObstacle_2Choice()
 
 void AOXQuizObstacle_2Choice::SetupQuizVisualsAndCollision()
 {
-    // QuestionText와 CurrentQuizData는 부모(AQuizObstacleBase)의 멤버입니다.
-    QuestionText->SetText(CurrentQuizData.Question);
-
-    int32 NumAnswers = CurrentQuizData.Answers.Num();
-
-    if (NumAnswers != NumEntrances)
+    // 1. 질문 텍스트 (부모 Helper 사용)
+    if (QuestionText)
     {
-        UE_LOG(LogTemp, Warning, TEXT("AOXQuizObstacle_2Choice: 퀴즈 데이터의 답 개수(%d)가 2개가 아닙니다!"), NumAnswers);
-        return;
+        FString QStr = CurrentQuizData.Question.ToString();
+
+        float NewSize = CalculateFontSize(QStr.Len(), QuestionMaxSize, QuestionMinSize);
+        QuestionText->SetWorldSize(NewSize);
+
+        int32 LineLen = (NewSize < (QuestionMaxSize + QuestionMinSize) * 0.5f) ? 25 : 15;
+        QuestionText->SetText(FText::FromString(AddLineBreaksToText(QStr, LineLen)));
     }
+
+    // 2. 선택지 텍스트
+    int32 NumAnswers = CurrentQuizData.Answers.Num();
+    if (NumAnswers > NumEntrances) NumAnswers = NumEntrances;
 
     for (int32 i = 0; i < NumEntrances; ++i)
     {
-        EntranceAnswerTexts[i]->SetText(CurrentQuizData.Answers[i]);
-
-        if (i == CurrentQuizData.CorrectAnswerIndex)
+        if (i < NumAnswers)
         {
-            EntranceCollisions[i]->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+            FString AnsStr = CurrentQuizData.Answers[i].ToString();
+
+            float NewSize = CalculateFontSize(AnsStr.Len(), AnswerMaxSize, AnswerMinSize);
+            EntranceAnswerTexts[i]->SetWorldSize(NewSize);
+
+            int32 LineLen = (NewSize < 20.0f) ? 15 : 10;
+            EntranceAnswerTexts[i]->SetText(FText::FromString(AddLineBreaksToText(AnsStr, LineLen)));
+            EntranceAnswerTexts[i]->SetVisibility(true);
+
+            if (i == CurrentQuizData.CorrectAnswerIndex)
+            {
+                EntranceCollisions[i]->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+            }
+            else
+            {
+                EntranceCollisions[i]->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
+                EntranceCollisions[i]->SetCollisionResponseToAllChannels(ECR_Block);
+            }
         }
         else
         {
+            EntranceAnswerTexts[i]->SetVisibility(false);
             EntranceCollisions[i]->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
-            EntranceCollisions[i]->SetCollisionResponseToAllChannels(ECR_Block);
         }
     }
 }

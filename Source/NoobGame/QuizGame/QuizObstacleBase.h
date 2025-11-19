@@ -1,14 +1,12 @@
-// QuizObstacleBase.h
-
-#pragma once
+ï»¿#pragma once
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "GameTypes.h"// FQuizData ±¸Á¶Ã¼¸¦ ¾Ë±â À§ÇØ Æ÷ÇÔ
+#include "GameTypes.h" // FQuizData í¬í•¨
 #include "QuizObstacleBase.generated.h"
 
-// .h ÆÄÀÏ¿¡¼­´Â Àü¹æ ¼±¾ğÀ» »ç¿ëÇÕ´Ï´Ù.
 class UTextRenderComponent;
+class UBoxComponent;
 
 UCLASS(Abstract)
 class NOOBGAME_API AQuizObstacleBase : public AActor
@@ -18,32 +16,84 @@ class NOOBGAME_API AQuizObstacleBase : public AActor
 public:
     AQuizObstacleBase();
 
-    /** [¼­¹ö] ½ºÆù ½Ã GameMode°¡ È£ÃâÇÏ´Â ÃÊ±âÈ­ ÇÔ¼ö */
+    virtual void Tick(float DeltaTime) override;
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+
     void InitializeObstacle(const FQuizData& NewQuizData, float NewMoveSpeed);
 
 protected:
     virtual void BeginPlay() override;
-    virtual void Tick(float DeltaTime) override;
 
-    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-
+    // --- Components ---
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
     TObjectPtr<USceneComponent> Root;
 
+    // íŠ¸ë¦¬ê±° ë°•ìŠ¤ë“¤
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
+    TObjectPtr<UBoxComponent> Trigger_1;
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
+    TObjectPtr<UBoxComponent> Trigger_2;
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
+    TObjectPtr<UBoxComponent> Trigger_3;
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
+    TObjectPtr<UBoxComponent> Trigger_4;
+
+    // [Common] ì¹´í…Œê³ ë¦¬ í…ìŠ¤íŠ¸ (New)
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
+    TObjectPtr<UTextRenderComponent> CategoryText;
+
+    // [Common] ì§ˆë¬¸ í…ìŠ¤íŠ¸
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
     TObjectPtr<UTextRenderComponent> QuestionText;
 
+    // --- Replicated Data ---
     UPROPERTY(ReplicatedUsing = OnRep_CurrentQuizData)
     FQuizData CurrentQuizData;
 
     UPROPERTY(Replicated)
     float MoveSpeed;
 
+    UPROPERTY(ReplicatedUsing = OnRep_IsMoving)
+    bool bIsMoving;
+
+    UFUNCTION()
+    void OnRep_IsMoving();
+
     UFUNCTION()
     virtual void OnRep_CurrentQuizData();
 
-    /**
-     * [ÇÙ½É] ÄûÁî µ¥ÀÌÅÍ¿¡ ¸ÂÃç ÅØ½ºÆ®¿Í Äİ¸®ÀüÀ» ¼³Á¤ÇÏ´Â ¼ø¼ö °¡»ó ÇÔ¼ö.
-     */
+    /** ìì‹ í´ë˜ìŠ¤ëŠ” ì´ í•¨ìˆ˜ì—ì„œ 'ì •ë‹µ(Answers)'ì— ëŒ€í•œ ë¹„ì£¼ì–¼ë§Œ ì²˜ë¦¬í•˜ë©´ ë©ë‹ˆë‹¤. */
     virtual void SetupQuizVisualsAndCollision() PURE_VIRTUAL(AQuizObstacleBase::SetupQuizVisualsAndCollision, );
+
+    // --- [Settings] ê¸€ì í¬ê¸° ì„¤ì • ---
+
+    // ì¹´í…Œê³ ë¦¬ (New)
+    UPROPERTY(EditDefaultsOnly, Category = "Quiz Visuals|Category")
+    float CategoryMaxSize = 35.0f; // ì¹´í…Œê³ ë¦¬ëŠ” ë³´í†µ ì§§ìœ¼ë‹ˆ ì¢€ í¬ê²Œ
+
+    UPROPERTY(EditDefaultsOnly, Category = "Quiz Visuals|Category")
+    float CategoryMinSize = 20.0f;
+
+    // ì§ˆë¬¸
+    UPROPERTY(EditDefaultsOnly, Category = "Quiz Visuals|Question")
+    float QuestionMaxSize = 25.0f;
+
+    UPROPERTY(EditDefaultsOnly, Category = "Quiz Visuals|Question")
+    float QuestionMinSize = 15.0f;
+
+    // ì •ë‹µ
+    UPROPERTY(EditDefaultsOnly, Category = "Quiz Visuals|Answer")
+    float AnswerMaxSize = 26.0f;
+
+    UPROPERTY(EditDefaultsOnly, Category = "Quiz Visuals|Answer")
+    float AnswerMinSize = 15.0f;
+
+    // --- Helpers ---
+    float CalculateFontSize(int32 TextLength, float MaxSize, float MinSize);
+
+    UFUNCTION(BlueprintCallable, Category = "Quiz Helper")
+    FString AddLineBreaksToText(FString InText, int32 MaxLineLength);
+
+private:
+    void PushOverlappingCharacters(float DeltaTime);
 };

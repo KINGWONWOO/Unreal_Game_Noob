@@ -35,6 +35,9 @@ public:
 	UPROPERTY(Replicated, BlueprintReadOnly, Category = "Game State")
 	bool bIsReady_Instructions;
 
+	UPROPERTY(Replicated, BlueprintReadOnly, Category = "Game State")
+	bool bIsRoomOwner = false;
+
 	// ──────────────────────────────────────────────────────────────────────────
 	// Replicated Properties (Combat State)
 	// ──────────────────────────────────────────────────────────────────────────
@@ -50,4 +53,10 @@ public:
 	/** 다음 펀치가 왼쪽인지 여부 */
 	UPROPERTY(Replicated, BlueprintReadOnly, Category = "Combat")
 	bool bIsNextPunchLeft;
+
+	/** * [Helper] 현재 클라이언트(로컬 플레이어)의 PlayerState를 가져오는 함수
+	 * 블루프린트에서 "Get OX Player State"로 검색해서 사용하세요.
+	 */
+	UFUNCTION(BlueprintPure, Category = "Game Helper", meta = (WorldContext = "WorldContextObject"))
+	static AOXQuizPlayerState* GetOXPlayerState(const UObject* WorldContextObject);
 };

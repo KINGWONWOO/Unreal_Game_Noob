@@ -1,12 +1,11 @@
 #include "FruitGame/FruitGameState.h"
 #include "Net/UnrealNetwork.h"
 #include "GameFramework/PlayerState.h"
-#include "FruitGame/FruitPlayerController.h" // (신규!) PlayerController 참조
-#include "Kismet/GameplayStatics.h" // (신규!) UGameplayStatics 참조
+#include "FruitGame/FruitPlayerController.h"
+#include "Kismet/GameplayStatics.h"
 
 AFruitGameState::AFruitGameState()
 {
-	// 기본값 초기화
 	CurrentGamePhase = EFruitGamePhase::GP_WaitingToStart;
 	CurrentActivePlayer = nullptr;
 	ServerTimeAtTurnStart = 0.0f;
@@ -25,18 +24,21 @@ void AFruitGameState::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutL
 	DOREPLIFETIME(AFruitGameState, WinningCharacterType);
 }
 
+// [New] 멀티캐스트 함수 구현
+void AFruitGameState::Multicast_AnnounceWinner_Implementation(const FString& WinnerName)
+{
+	// UI 위젯이 듣고 있을 델리게이트 실행 -> 화면 중앙 텍스트 출력
+	OnWinnerAnnouncement.Broadcast(WinnerName);
+}
+
 void AFruitGameState::OnRep_GamePhase()
 {
-	// 게임 단계가 변경되었음을 UI(블루프린트)에 알립니다.
 	OnGamePhaseChanged.Broadcast(CurrentGamePhase);
 
-	// 이 함수는 모든 클라이언트에서 실행됩니다.
 	if (CurrentGamePhase == EFruitGamePhase::GP_GameOver)
 	{
 		UE_LOG(LogTemp, Warning, TEXT("OnRep_GamePhase: Detected GP_GameOver on Client."));
 
-
-		// 로컬 플레이어 컨트롤러를 가져옵니다. (멀티플레이어에서는 0번 인덱스가 로컬 플레이어)
 		AFruitPlayerController* PC = Cast<AFruitPlayerController>(UGameplayStatics::GetPlayerController(this, 0));
 		if (PC)
 		{
@@ -46,11 +48,8 @@ void AFruitGameState::OnRep_GamePhase()
 				bAmIWinner = true;
 			}
 
-			UE_LOG(LogTemp, Warning, TEXT("OnRep_GamePhase: Calling Event_SetupResultsScreen and Event_ShowResultsScreen. WinnerType: %s"), *UEnum::GetValueAsString(WinningCharacterType));
-
-			// 1. 카메라/입력 설정
+			UE_LOG(LogTemp, Warning, TEXT("OnRep_GamePhase: Calling Event_SetupResultsScreen..."));
 			PC->Event_SetupResultsScreen();
-			// 2. UI 및 애니메이션 설정
 			PC->Event_ShowResultsScreen(WinningCharacterType, bAmIWinner);
 		}
 		else
@@ -62,34 +61,15 @@ void AFruitGameState::OnRep_GamePhase()
 
 void AFruitGameState::OnRep_CurrentActivePlayer()
 {
-
+	// (기존 로직 유지)
 	APlayerState* LocalPlayerState = nullptr;
 	if (GetWorld() && GetWorld()->GetFirstPlayerController())
 	{
 		LocalPlayerState = GetWorld()->GetFirstPlayerController()->PlayerState;
-		if (LocalPlayerState)
-		{
-			UE_LOG(LogTemp, Warning, TEXT("[OnRep_CurrentActivePlayer] -- Client: %s --"), *LocalPlayerState->GetPlayerName());
-		}
 	}
 
 	if (CurrentGamePhase == EFruitGamePhase::GP_PlayerTurn && CurrentActivePlayer)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("   CurrentActivePlayer: %s (Addr: %p)"), *CurrentActivePlayer->GetPlayerName(), (void*)CurrentActivePlayer);
-
-		UE_LOG(LogTemp, Warning, TEXT("   PlayerArray Order:"));
-		for (int32 i = 0; i < PlayerArray.Num(); ++i)
-		{
-			if (PlayerArray[i])
-			{
-				UE_LOG(LogTemp, Warning, TEXT("     [%d]: %s (Addr: %p)"), i, *PlayerArray[i]->GetPlayerName(), (void*)PlayerArray[i]);
-			}
-			else
-			{
-				UE_LOG(LogTemp, Warning, TEXT("     [%d]: nullptr"), i);
-			}
-		}
-
 		int32 StartingPlayerIndex = INDEX_NONE;
 		for (int32 i = 0; i < PlayerArray.Num(); ++i)
 		{
@@ -100,20 +80,9 @@ void AFruitGameState::OnRep_CurrentActivePlayer()
 			}
 		}
 
-		UE_LOG(LogTemp, Warning, TEXT("   Calculated StartingPlayerIndex: %d"), StartingPlayerIndex);
-
 		if (StartingPlayerIndex != INDEX_NONE)
 		{
 			OnFirstTurnPlayerDetermined.Broadcast(StartingPlayerIndex);
-			UE_LOG(LogTemp, Warning, TEXT("   Broadcasted Index: %d"), StartingPlayerIndex);
 		}
-		else
-		{
-			UE_LOG(LogTemp, Error, TEXT("   ERROR: CurrentActivePlayer not found in PlayerArray!"));
-		}
-	}
-	else
-	{
-		UE_LOG(LogTemp, Warning, TEXT("[OnRep_CurrentActivePlayer] CurrentGamePhase is not GP_PlayerTurn or CurrentActivePlayer is invalid."));
 	}
 }

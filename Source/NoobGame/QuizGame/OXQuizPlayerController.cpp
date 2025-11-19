@@ -9,6 +9,7 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Camera/CameraActor.h"
 #include "Net/UnrealNetwork.h"
+#include "Kismet/GameplayStatics.h"
 #include "Camera/CameraShakeBase.h"
 
 void AOXQuizPlayerController::PlayerReady()
@@ -52,6 +53,22 @@ void AOXQuizPlayerController::Client_SetUIOnlyInput_Implementation(bool bIsWinne
     // Ʈ  BP ̺Ʈ ȣ
     OnGameOver.Broadcast(bIsWinner);
     Event_ShowResultsScreen(WinnerType, bIsWinner);
+}
+
+void AOXQuizPlayerController::Server_RequestSetDifficulty_Implementation(EQuizDifficulty NewDifficulty)
+{
+    // 이 함수는 서버에서 실행됩니다.
+    // 따라서 여기서 GameMode를 가져오면 NULL이 아닙니다!
+    if (AOXQuizGameMode* GM = Cast<AOXQuizGameMode>(UGameplayStatics::GetGameMode(this)))
+    {
+        GM->SetGameDifficulty(NewDifficulty);
+
+        UE_LOG(LogTemp, Warning, TEXT("[Server] Difficulty Changed to %d by Client"), (int32)NewDifficulty);
+    }
+    else
+    {
+        UE_LOG(LogTemp, Error, TEXT("[Server] Failed to find GameMode!"));
+    }
 }
 
 void AOXQuizPlayerController::Multicast_PlayHitReaction_Implementation(ACharacter* TargetCharacter, UAnimMontage* MontageToPlay)

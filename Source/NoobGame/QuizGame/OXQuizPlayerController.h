@@ -74,6 +74,10 @@ public:
 	/** [Server] GameMode가 호출하는 엔딩 처리 함수 */
 	UFUNCTION(Server, Reliable, WithValidation)
 	void Server_SetupEnding(bool bIsWinner, FVector TargetLocation, FRotator TargetRotation, ECharacterType WinnerType, ACameraActor* EndingCamera);
+	
+	UFUNCTION(Server, Reliable, BlueprintCallable, Category = "Game Logic")
+	void Server_RequestSetDifficulty(EQuizDifficulty NewDifficulty);
+	
 	// ──────────────────────────────────────────────────────────────────────────
 	// Client RPCs (Server -> Client)
 	// ──────────────────────────────────────────────────────────────────────────

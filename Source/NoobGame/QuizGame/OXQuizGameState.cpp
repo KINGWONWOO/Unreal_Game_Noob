@@ -1,43 +1,47 @@
-// OXQuizGameState.cpp
-
 #include "OXQuizGameState.h"
 #include "Net/UnrealNetwork.h"
 #include "GameFramework/PlayerState.h"
-#include "QuizGame/OXQuizPlayerController.h"
+#include "OXQuizPlayerController.h"
 #include "Kismet/GameplayStatics.h"
 
 AOXQuizGameState::AOXQuizGameState()
 {
-    CurrentGamePhase = EQuizGamePhase::GP_WaitingToStart;
-    Winner = nullptr;
+	CurrentGamePhase = EQuizGamePhase::GP_WaitingToStart;
+	Winner = nullptr;
 	WinningCharacterType = ECharacterType::ECT_None;
-    CurrentSpeedLevel = 0;
-    PlayingCountdown = -1;
+	CurrentSpeedLevel = 0;
+	PlayingCountdown = -1;
+	// [New] 초기 난이도 설정
+	CurrentDifficulty = EQuizDifficulty::Easy;
 }
 
 void AOXQuizGameState::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
 {
-    Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 
-    DOREPLIFETIME(AOXQuizGameState, CurrentGamePhase);
-    DOREPLIFETIME(AOXQuizGameState, Winner);
-    DOREPLIFETIME(AOXQuizGameState, WinningCharacterType);
-    DOREPLIFETIME(AOXQuizGameState, CurrentSpeedLevel);
-    DOREPLIFETIME(AOXQuizGameState, PlayingCountdown);
+	DOREPLIFETIME(AOXQuizGameState, CurrentGamePhase);
+	DOREPLIFETIME(AOXQuizGameState, Winner);
+	DOREPLIFETIME(AOXQuizGameState, WinningCharacterType);
+	DOREPLIFETIME(AOXQuizGameState, CurrentSpeedLevel);
+	DOREPLIFETIME(AOXQuizGameState, PlayingCountdown);
+
+	// [New] 난이도 변수 복제 등록
+	DOREPLIFETIME(AOXQuizGameState, CurrentDifficulty);
+}
+
+void AOXQuizGameState::Multicast_AnnounceWinner_Implementation(const FString& WinnerName)
+{
+	OnWinnerAnnouncement.Broadcast(WinnerName);
 }
 
 void AOXQuizGameState::OnRep_GamePhase()
 {
-	// 게임 단계가 변경되었음을 UI(블루프린트)에 알립니다.
 	OnGamePhaseChanged.Broadcast(CurrentGamePhase);
 
-	// 이 함수는 모든 클라이언트에서 실행됩니다.
 	if (CurrentGamePhase == EQuizGamePhase::GP_GameOver)
 	{
 		UE_LOG(LogTemp, Warning, TEXT("OnRep_GamePhase: Detected GP_GameOver on Client."));
 
-
-		// 로컬 플레이어 컨트롤러를 가져옵니다. (멀티플레이어에서는 0번 인덱스가 로컬 플레이어)
 		AOXQuizPlayerController* PC = Cast<AOXQuizPlayerController>(UGameplayStatics::GetPlayerController(this, 0));
 		if (PC)
 		{
@@ -46,48 +50,66 @@ void AOXQuizGameState::OnRep_GamePhase()
 			{
 				bAmIWinner = true;
 			}
-
-			UE_LOG(LogTemp, Warning, TEXT("OnRep_GamePhase: Calling Event_SetupResultsScreen and Event_ShowResultsScreen. WinnerType: %s"), *UEnum::GetValueAsString(WinningCharacterType));
-
-			// 1. 카메라/입력 설정
 			PC->Event_SetupResultsScreen();
-			// 2. UI 및 애니메이션 설정
 			PC->Event_ShowResultsScreen(WinningCharacterType, bAmIWinner);
-		}
-		else
-		{
-			UE_LOG(LogTemp, Error, TEXT("OnRep_GamePhase: FAILED to cast to AFruitPlayerController!"));
 		}
 	}
 }
 
-// --- Speed ---
 void AOXQuizGameState::SetCurrentSpeedLevel(int32 NewLevel)
 {
-    if (GetLocalRole() == ROLE_Authority)
-    {
-        if (CurrentSpeedLevel != NewLevel)
-        {
-            CurrentSpeedLevel = NewLevel;
-            OnRep_CurrentSpeedLevel();
-        }
-    }
+	if (GetLocalRole() == ROLE_Authority)
+	{
+		if (CurrentSpeedLevel != NewLevel)
+		{
+			CurrentSpeedLevel = NewLevel;
+			OnRep_CurrentSpeedLevel();
+		}
+	}
 }
 void AOXQuizGameState::OnRep_CurrentSpeedLevel()
 {
-    OnSpeedLevelChanged.Broadcast(CurrentSpeedLevel);
+	OnSpeedLevelChanged.Broadcast(CurrentSpeedLevel);
 }
 
-// --- Playing Countdown ---
 void AOXQuizGameState::SetPlayingCountdown(int32 TimeLeft)
 {
-    if (GetLocalRole() == ROLE_Authority)
-    {
-        PlayingCountdown = TimeLeft;
-        OnRep_PlayingCountdown();
-    }
+	if (GetLocalRole() == ROLE_Authority)
+	{
+		PlayingCountdown = TimeLeft;
+		OnRep_PlayingCountdown();
+	}
 }
 void AOXQuizGameState::OnRep_PlayingCountdown()
 {
-    OnPlayingCountdownChanged.Broadcast(PlayingCountdown);
+	OnPlayingCountdownChanged.Broadcast(PlayingCountdown);
+}
+
+// [New] 난이도 설정 (GameMode에서 호출)
+void AOXQuizGameState::SetRepDifficulty(EQuizDifficulty NewDifficulty)
+{
+	if (HasAuthority())
+	{
+		if (CurrentDifficulty != NewDifficulty)
+		{
+			CurrentDifficulty = NewDifficulty;
+			// 서버에서도 델리게이트 호출을 위해 OnRep 수동 실행
+			OnRep_CurrentDifficulty();
+		}
+	}
+}
+
+AOXQuizGameState* AOXQuizGameState::GetOXGameState(const UObject* WorldContextObject)
+{
+	// 1. GameState를 가져와서
+	AGameStateBase* GS = UGameplayStatics::GetGameState(WorldContextObject);
+
+	// 2. 내 타입으로 캐스팅해서 반환 (실패 시 nullptr 자동 반환)
+	return Cast<AOXQuizGameState>(GS);
+}
+
+// [New] 난이도 변경 감지 시 UI에 방송
+void AOXQuizGameState::OnRep_CurrentDifficulty()
+{
+	OnDifficultyChanged.Broadcast(CurrentDifficulty);
 }
