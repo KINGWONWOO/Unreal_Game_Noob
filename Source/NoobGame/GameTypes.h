@@ -52,7 +52,7 @@ UENUM(BlueprintType)
 enum class EQuizGamePhase : uint8
 {
     GP_WaitingToStart   UMETA(DisplayName = "WaitingToStart"),
-    GP_Ready            UMETA(DisplayName = "Ready"),
+    GP_Instructions     UMETA(DisplayName = "Instructions"),
     GP_Playing          UMETA(DisplayName = "Playing"),
     GP_GameOver         UMETA(DisplayName = "GameOver")
 };
@@ -109,4 +109,14 @@ struct FQuizData : public FTableRowBase
     /** 문제 유형 (OX, 3Choice 등) */
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Quiz")
     FString Type;
+};
+
+//3. Maze Game
+UENUM(BlueprintType)
+enum class EMazeGamePhase : uint8
+{
+    GP_WaitingToStart   UMETA(DisplayName = "WaitingToStart"),
+    GP_Instructions     UMETA(DisplayName = "Instructions"),
+    GP_Playing          UMETA(DisplayName = "Playing"),
+    GP_GameOver         UMETA(DisplayName = "GameOver")
 };

@@ -41,6 +41,7 @@ ANoobGameCharacter::ANoobGameCharacter()
 void ANoobGameCharacter::BeginPlay()
 {
 	Super::BeginPlay();
+
 }
 
 void ANoobGameCharacter::OnConstruction(const FTransform& Transform)
@@ -52,31 +53,45 @@ void ANoobGameCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	// (신규!) 래그돌에서 애니메이션으로 블렌딩 중일 때 처리
+	// 래그돌에서 애니메이션으로 블렌딩 중일 때 처리
 	if (bIsBlendingFromRagdoll)
 	{
+		// ... (기존 블렌딩 로직 동일) ...
 		RagdollBlendWeight = FMath::FInterpTo(RagdollBlendWeight, 0.0f, DeltaTime, 1.0f / RagdollBlendDuration);
 		GetMesh()->SetPhysicsBlendWeight(RagdollBlendWeight);
 
 		if (FMath::IsNearlyZero(RagdollBlendWeight))
 		{
 			bIsBlendingFromRagdoll = false;
-			SetRagdoll(false); // 블렌딩 완료 후 래그돌 완전히 끄기
 
-			// 캡슐 위치를 메시 위치로 강제 설정 (일어나는 위치)
-			FVector NewCapsuleLocation = GetMesh()->GetSocketLocation(FName("root"));
-			NewCapsuleLocation.Z = GetCapsuleComponent()->GetScaledCapsuleHalfHeight(); // 바닥에 붙이기
-			SetActorLocation(NewCapsuleLocation);
+			// 1. 캡슐(Actor)을 현재 메시(누워있는 곳) 위치로 이동
+			// (일어날 때 제자리에서 일어나게 하기 위함)
+			FVector NewCapsuleLocation = GetMesh()->GetSocketLocation(FName("root")); // 혹은 "Pelvis"
 
-			// 카메라 복구 시작
+			// 바닥 높이 보정 (캡슐의 절반 높이만큼 위로 올려야 함)
+			// 땅에 파묻히지 않게 하기 위해 LineTrace를 쓰기도 하지만, 간단히는 아래처럼 처리
+			float CapsuleHalfHeight = GetCapsuleComponent()->GetScaledCapsuleHalfHeight();
+			NewCapsuleLocation.Z += CapsuleHalfHeight;
+
+			SetActorLocation(NewCapsuleLocation, false, nullptr, ETeleportType::TeleportPhysics);
+
+			// 2. 래그돌 끄기
+			SetRagdoll(false);
+
+			// 3. [핵심 추가] 메시를 캡슐 내부의 원래 위치로 '즉시' 복구
+			// 이 코드가 없으면 캡슐은 서 있어도 메시는 캡슐 옆에 누워있게 됩니다.
+			GetMesh()->AttachToComponent(GetCapsuleComponent(), FAttachmentTransformRules::SnapToTargetNotIncludingScale);
+
+			// 생성자에서 설정했던 초기값(Z -97, Yaw -90 등)을 그대로 넣어주세요.
+			GetMesh()->SetRelativeLocationAndRotation(FVector(0.0f, 0.0f, -97.0f), FRotator(0.0f, -90.0f, 0.0f));
+
+			// 4. 카메라 및 이동 복구 (기존 코드 유지)
 			if (APlayerController* PC = Cast<APlayerController>(GetController()))
 			{
 				TargetControlRotation = GetActorRotation();
-				PC->SetControlRotation(TargetControlRotation); // 일단 정면을 보게 함
-				//GetWorldTimerManager().SetTimer(CameraRecoveryTimer, this, &ANoobGameCharacter::UpdateCameraRecovery, GetWorld()->GetDeltaSeconds(), true);
+				PC->SetControlRotation(TargetControlRotation);
 			}
 
-			// 0.2초 후 이동 활성화 (일어나는 애니메이션 시간 확보)
 			GetWorldTimerManager().SetTimer(RecoveryMovementTimerHandle, this, &ANoobGameCharacter::EnableMovementAfterRecovery, 0.2f, false);
 		}
 	}
@@ -156,19 +171,11 @@ void ANoobGameCharacter::SetRagdoll(bool bEnable)
 	}
 	else
 	{
-		// 래그돌 비활성화 (애니메이션 모드로)
 		GetMesh()->SetSimulatePhysics(false);
 		GetMesh()->SetCollisionProfileName(TEXT("CharacterMesh"));
 
-		// 메시를 캡슐에 다시 부착 (이 코드는 물리 블렌딩 사용 시 Tick에서 처리)
-		// GetMesh()->AttachToComponent(GetCapsuleComponent(), FAttachmentTransformRules::SnapToTargetNotIncludingScale);
-		// GetMesh()->SetRelativeLocationAndRotation(FVector(0.0f, 0.0f, -97.0f), FRotator(0.0f, -90.0f, 0.0f));
-
-		// GetCharacterMovement()->SetMovementMode(EMovementMode::MOVE_Walking); 
-		// GetCharacterMovement()->SetComponentTickEnabled(true);
-
 		GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
-		bUseControllerRotationYaw = false; // 기본값 복원
+		bUseControllerRotationYaw = false;
 	}
 }
 

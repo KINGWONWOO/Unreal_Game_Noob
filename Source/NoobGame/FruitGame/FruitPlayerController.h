@@ -1,34 +1,25 @@
 ﻿#pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/PlayerController.h"
-#include "GameTypes.h"
-#include "Camera/CameraActor.h"
+#include "NoobPlayerController.h" // Parent
 #include "FruitPlayerController.generated.h"
 
-// --- Forward Declarations ---
 class AInteractableFruitObject;
-class ACharacter;
-class UAnimMontage;
-class ACameraActor;
 
-// --- Delegates ---
+// 과일 게임 전용 델리게이트
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnTurnStarted);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnGuessResultReceived, const TArray<EFruitType>&, Guess, int32, MatchCount);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnOpponentGuessReceived, const TArray<EFruitType>&, Guess, int32, MatchCount);
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnGameOver, bool, bYouWon);
 
 UCLASS()
-class NOOBGAME_API AFruitPlayerController : public APlayerController
+class NOOBGAME_API AFruitPlayerController : public ANoobPlayerController
 {
 	GENERATED_BODY()
 
 public:
-	// ──────────────────────────────────────────────────────────────────────────
-	// Public Interface (UI & Input) - BlueprintCallable
-	// ──────────────────────────────────────────────────────────────────────────
+	// -- Fruit Game Specific API --
 	UFUNCTION(BlueprintCallable, Category = "Fruit Game")
-	void PlayerReady();
+	void PlayerReady(); // (GameMode Phase 전환용)
 
 	UFUNCTION(BlueprintCallable, Category = "Fruit Game")
 	void SubmitSecretFruits(const TArray<EFruitType>& SecretFruits);
@@ -39,44 +30,14 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Fruit Game")
 	void RequestStartPlayerTurn();
 
-	UFUNCTION(BlueprintCallable, Category = "Combat")
-	void RequestPunch(ACharacter* HitCharacter);
-
-	UFUNCTION(BlueprintCallable, Category = "Combat")
-	void RequestPlayPunchMontage();
-
 	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "Fruit Game")
 	const TArray<EFruitType>& GetMyLocalSecretAnswers() const;
 
-
-	// ──────────────────────────────────────────────────────────────────────────
-	// Blueprint Implementable Events (To be implemented in BP)
-	// ──────────────────────────────────────────────────────────────────────────
-
-	// -- Animation / Visuals --
+	// -- Blueprint Events (Visuals) --
 	UFUNCTION(BlueprintImplementableEvent, Category = "Fruit Game|Animation")
 	void PlaySpinnerAnimationEvent(int32 WinningPlayerIndex);
 
-	UFUNCTION(BlueprintImplementableEvent, Category = "Combat")
-	void PlayHitReactionOnCharacter(ACharacter* TargetCharacter);
-
-	UFUNCTION(BlueprintImplementableEvent, Category = "Combat")
-	void PlayPunchEvent(ACharacter* PunchingCharacter, bool bIsLeftPunch);
-
-	UFUNCTION(BlueprintImplementableEvent, Category = "Combat|Camera")
-	void ApplyKnockdownCameraEffect(bool bEnableEffect);
-
-	// -- UI / Game Flow --
-	UFUNCTION(BlueprintImplementableEvent, Category = "Game")
-	void Event_ShowResultsScreen(ECharacterType WinnerType, bool bYouWon);
-
-	UFUNCTION(BlueprintImplementableEvent, Category = "Game")
-	void Event_SetupResultsScreen();
-
-
-	// ──────────────────────────────────────────────────────────────────────────
-	// Server RPCs (Client -> Server)
-	// ──────────────────────────────────────────────────────────────────────────
+	// -- Server RPCs --
 	UFUNCTION(Server, Reliable, WithValidation)
 	void Server_PlayerReady();
 
@@ -89,20 +50,7 @@ public:
 	UFUNCTION(Server, Reliable, WithValidation)
 	void Server_RequestStartPlayerTurn();
 
-	UFUNCTION(Server, Reliable, WithValidation)
-	void Server_RequestPunch(ACharacter* HitCharacter);
-
-	UFUNCTION(Server, Reliable, WithValidation)
-	void Server_RequestPlayPunchMontage();
-
-	/** [Server] GameMode가 호출하는 엔딩 처리 함수 (폰 이동, 카메라 설정 등) */
-	UFUNCTION(Server, Reliable, WithValidation)
-	void Server_SetupEnding(bool bIsWinner, FVector TargetLocation, FRotator TargetRotation, ECharacterType WinnerType, ACameraActor* EndingCamera);
-
-
-	// ──────────────────────────────────────────────────────────────────────────
-	// Client RPCs (Server -> Client)
-	// ──────────────────────────────────────────────────────────────────────────
+	// -- Client RPCs --
 	UFUNCTION(Client, Reliable)
 	void Client_StartTurn();
 
@@ -115,29 +63,7 @@ public:
 	UFUNCTION(Client, Reliable)
 	void Client_PlaySpinnerAnimation(int32 WinningPlayerIndex);
 
-	UFUNCTION(Client, Reliable)
-	void Client_SetCameraEffect(bool bEnableKnockdownEffect);
-
-	UFUNCTION(Client, Reliable)
-	void Client_SetUIOnlyInput(bool bYouWon, ECharacterType WinnerType, ACameraActor* EndingCamera);
-
-	UFUNCTION(Client, Reliable)
-	void Client_EnableMovementAfterEnding();
-
-
-	// ──────────────────────────────────────────────────────────────────────────
-	// NetMulticast RPCs (Server -> All Clients)
-	// ──────────────────────────────────────────────────────────────────────────
-	UFUNCTION(NetMulticast, Reliable)
-	void Multicast_PlayHitReaction(ACharacter* TargetCharacter, UAnimMontage* MontageToPlay);
-
-	UFUNCTION(NetMulticast, Reliable)
-	void Multicast_PlayPunchMontage(ACharacter* PunchingCharacter, UAnimMontage* MontageToPlay);
-
-
-	// ──────────────────────────────────────────────────────────────────────────
-	// Delegates (UI Binding)
-	// ──────────────────────────────────────────────────────────────────────────
+	// -- Delegates --
 	UPROPERTY(BlueprintAssignable, Category = "Fruit Game")
 	FOnTurnStarted OnTurnStarted;
 
@@ -146,17 +72,6 @@ public:
 
 	UPROPERTY(BlueprintAssignable, Category = "Fruit Game")
 	FOnOpponentGuessReceived OnOpponentGuessReceived;
-
-	UPROPERTY(BlueprintAssignable, Category = "Fruit Game")
-	FOnGameOver OnGameOver;
-
-
-protected:
-	// ──────────────────────────────────────────────────────────────────────────
-	// Internal Helpers & Callbacks
-	// ──────────────────────────────────────────────────────────────────────────
-	UFUNCTION()
-	void OnEndingMontageEnded(UAnimMontage* Montage, bool bInterrupted);
 
 private:
 	TArray<EFruitType> MyLocalSecretAnswers;

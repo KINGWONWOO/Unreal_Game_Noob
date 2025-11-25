@@ -1,45 +1,28 @@
 #include "FruitGame/FruitPlayerState.h"
-#include "Net/UnrealNetwork.h" // DOREPLIFETIME을 위해 필요
+#include "Net/UnrealNetwork.h"
 
 AFruitPlayerState::AFruitPlayerState()
 {
-	// 변수 초기화
-	bIsReady_Instructions = false;
+	// 부모 생성자(ANoobPlayerState)가 공통 변수는 이미 초기화함
 	bHasSubmittedFruits = false;
-	PunchHitCount = 0;
-	bIsKnockedDown = false;
-	bIsNextPunchLeft = true;
 }
 
-/** 리플리케이션(복제)할 변수 등록 */
 void AFruitPlayerState::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
 {
-	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps); // 부모 변수 리플리케이션 포함
 
-	DOREPLIFETIME(AFruitPlayerState, bIsReady_Instructions);
+	// Fruit 고유 변수만 추가 등록
 	DOREPLIFETIME(AFruitPlayerState, bHasSubmittedFruits);
 	DOREPLIFETIME(AFruitPlayerState, SecretAnswers);
-	DOREPLIFETIME(AFruitPlayerState, PunchHitCount);
-	DOREPLIFETIME(AFruitPlayerState, bIsKnockedDown);
-	DOREPLIFETIME(AFruitPlayerState, bIsNextPunchLeft);
-	DOREPLIFETIME(AFruitPlayerState, SelectedPawnClass);
-}
-
-// 이 함수들은 PlayerController의 Server RPC에서 호출되어야 함.
-void AFruitPlayerState::SetInstructionReady_Server()
-{
-	if (HasAuthority())
-	{
-		bIsReady_Instructions = true;
-		// OnRep은 클라이언트에서 자동 호출
-	}
 }
 
 void AFruitPlayerState::SetSecretAnswers_Server(const TArray<EFruitType>& SecretFruits)
 {
-	// 이 코드는 서버에서만 실행되어야 함.
-	SecretAnswers = SecretFruits;
-	bHasSubmittedFruits = true;
+	if (HasAuthority())
+	{
+		SecretAnswers = SecretFruits;
+		bHasSubmittedFruits = true;
+	}
 }
 
 const TArray<EFruitType>& AFruitPlayerState::GetSecretAnswers_Server() const
