@@ -29,6 +29,10 @@ protected:
 	virtual bool IsGameInProgress() const override;
 	virtual void AnnounceWinnerToClients(APlayerState* Winner) override;
 
+	// 현재 정답 확인 로직이 진행 중인지 여부 (중복 클릭 방지용)
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Game Logic")
+	bool bIsProcessingGuess;
+
 	void CheckBothPlayersReady_Instructions();
 	void CheckBothPlayersReady_Setup();
 	void StartSpinnerPhase();

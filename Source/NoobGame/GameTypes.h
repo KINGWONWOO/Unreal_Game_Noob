@@ -117,6 +117,33 @@ enum class EMazeGamePhase : uint8
 {
     GP_WaitingToStart   UMETA(DisplayName = "WaitingToStart"),
     GP_Instructions     UMETA(DisplayName = "Instructions"),
+    GP_MapSelection     UMETA(DisplayName = "MapSelection"),
     GP_Playing          UMETA(DisplayName = "Playing"),
     GP_GameOver         UMETA(DisplayName = "GameOver")
+};
+
+USTRUCT(BlueprintType)
+struct FMazePropData
+{
+    GENERATED_BODY()
+    UPROPERTY() int32 MeshIndex;
+    UPROPERTY() FVector RelativePos;
+    UPROPERTY() FRotator Rotation;
+};
+
+USTRUCT(BlueprintType)
+struct FMazeLightData
+{
+    GENERATED_BODY()
+    UPROPERTY() int32 LightIndex;     // RandomLightClasses 배열의 인덱스
+    UPROPERTY() FVector RelativePos;  // 미로 기준 상대 위치
+    UPROPERTY() FRotator Rotation;    // 회전값
+};
+
+UENUM(BlueprintType)
+enum class EMazeMapSize : uint8
+{
+    Small   UMETA(DisplayName = "Small (9x9)"),
+    Medium  UMETA(DisplayName = "Medium (15x15)"),
+    Big     UMETA(DisplayName = "Big (23x23)")
 };

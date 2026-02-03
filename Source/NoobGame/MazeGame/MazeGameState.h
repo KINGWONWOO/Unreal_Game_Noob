@@ -1,55 +1,60 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "GameFramework/GameStateBase.h"
 #include "NoobGameStateBase.h"
 #include "MazeGameState.generated.h"
 
-// [Delegates]
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnMazeGamePhaseChanged, EMazeGamePhase, NewPhase);
-// [New] 카운트다운 변경 알림 델리게이트 추가
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnMazePlayingCountdownChanged, int32, TimeLeft);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnMazeSeedChanged, int32, NewSeed);
 
 UCLASS()
 class NOOBGAME_API AMazeGameState : public ANoobGameStateBase
 {
-	GENERATED_BODY()
+    GENERATED_BODY()
 
 public:
-	AMazeGameState();
+    AMazeGameState();
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 
-	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    UPROPERTY(ReplicatedUsing = OnRep_GamePhase, BlueprintReadOnly, Category = "Maze")
+    EMazeGamePhase CurrentGamePhase;
 
-	// ──────────────────────────────────────────────────────────────────────────
-	// Replicated Properties
-	// ──────────────────────────────────────────────────────────────────────────
-	UPROPERTY(ReplicatedUsing = OnRep_GamePhase, BlueprintReadOnly, Category = "Maze Game State")
-	EMazeGamePhase CurrentGamePhase;
+    UPROPERTY(ReplicatedUsing = OnRep_PlayingCountdown, BlueprintReadOnly, Category = "Maze")
+    int32 PlayingCountdown;
 
-	// ──────────────────────────────────────────────────────────────────────────
-	// Setters (Server Only)
-	// ──────────────────────────────────────────────────────────────────────────
-	// [New] 카운트다운 설정 함수
-	void SetPlayingCountdown(int32 TimeLeft);
+    UPROPERTY(ReplicatedUsing = OnRep_MazeSeed, BlueprintReadOnly, Category = "Maze")
+    int32 MazeSeed;
 
-	// ──────────────────────────────────────────────────────────────────────────
-	// Delegates (UI Binding)
-	// ──────────────────────────────────────────────────────────────────────────
-	UPROPERTY(BlueprintAssignable, Category = "Maze Game State")
-	FOnMazeGamePhaseChanged OnGamePhaseChanged;
+    UPROPERTY(Replicated, BlueprintReadOnly, Category = "Maze")
+    EMazeMapSize MapSize;
 
-	// [New] UI 바인딩용 카운트다운 델리게이트
-	UPROPERTY(BlueprintAssignable, Category = "Maze Game State")
-	FOnMazePlayingCountdownChanged OnPlayingCountdownChanged;
+    UPROPERTY(BlueprintAssignable, Category = "Maze")
+    FOnMazeGamePhaseChanged OnGamePhaseChanged;
 
-protected:
-	// [New] 리플리케이션 변수 (카운트다운)
-	UPROPERTY(ReplicatedUsing = OnRep_PlayingCountdown, BlueprintReadOnly, Category = "Maze Game State")
-	int32 PlayingCountdown;
+    UPROPERTY(BlueprintAssignable, Category = "Maze")
+    FOnMazePlayingCountdownChanged OnPlayingCountdownChanged;
 
-	UFUNCTION()
-	void OnRep_GamePhase();
+    UPROPERTY(BlueprintAssignable, Category = "Maze")
+    FOnMazeSeedChanged OnMazeSeedChanged;
 
-	// [New] OnRep 함수
-	UFUNCTION()
-	void OnRep_PlayingCountdown();
+    // 프롭 동기화
+    UPROPERTY(ReplicatedUsing = OnRep_PropData, BlueprintReadOnly, Category = "Maze")
+    TArray<FMazePropData> ReplicatedProps;
+    UFUNCTION() void OnRep_PropData();
+    void SetMazePropData(const TArray<FMazePropData>& NewData);
+
+    // 조명 동기화
+    UPROPERTY(ReplicatedUsing = OnRep_LightData, BlueprintReadOnly, Category = "Maze")
+    TArray<FMazeLightData> ReplicatedLights;
+    UFUNCTION() void OnRep_LightData();
+    void SetMazeLightData(const TArray<FMazeLightData>& NewData);
+
+    void SetPlayingCountdown(int32 TimeLeft);
+    void SetMazeSeed(int32 NewSeed);
+
+    UFUNCTION() void OnRep_GamePhase();
+    UFUNCTION() void OnRep_PlayingCountdown();
+    UFUNCTION() void OnRep_MazeSeed();
 };

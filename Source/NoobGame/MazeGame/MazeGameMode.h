@@ -15,8 +15,12 @@ class NOOBGAME_API AMazeGameMode : public ANoobGameModeBase
 public:
 	AMazeGameMode();
 
+	/** 플레이어 준비 상태 확인 (설명 단계) */
 	void PlayerIsReady(AController* PlayerController);
+
+	/** 플레이어 도착 처리 */
 	void ProcessPlayerReachedGoal(AController* WinnerController);
+
 	virtual void EndGame(APlayerState* Winner) override;
 
 protected:
@@ -24,20 +28,20 @@ protected:
 	virtual bool IsGameInProgress() const override;
 	virtual void AnnounceWinnerToClients(APlayerState* Winner) override;
 
+	/** 2명 준비 완료 시 맵 선택 단계로 전환 */
 	void CheckBothPlayersReady();
 
-	// [New] 카운트다운 타이머 함수 (OXQuiz 방식)
-	void UpdatePlayingCountdown();
+	/** 실제 미로 레벨 로드 시 게임 시작 처리 */
+	void StartPlayingPhase();
 
-	// [New] 실제 이동 잠금 해제 함수
+	void UpdatePlayingCountdown();
 	void EnablePlayerMovement();
 
 	UPROPERTY()
 	AMazeGameState* MyGameState;
 
-	// [New] 카운트다운 설정
 	UPROPERTY(EditDefaultsOnly, Category = "Game Rules")
-	int32 PlayingStartCountdownDuration = 5; // 3초
+	int32 PlayingStartCountdownDuration = 3;
 
 	int32 RemainingPlayingCountdown = 0;
 	FTimerHandle TimerHandle_GamePhase;

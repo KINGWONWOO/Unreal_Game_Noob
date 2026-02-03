@@ -66,9 +66,11 @@ void AOXQuizObstacle_2Choice::SetupQuizVisualsAndCollision()
             if (i == CurrentQuizData.CorrectAnswerIndex)
             {
                 EntranceCollisions[i]->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+                EntranceMeshes[i]->SetCollisionEnabled(ECollisionEnabled::NoCollision);
             }
             else
             {
+                EntranceMeshes[i]->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
                 EntranceCollisions[i]->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
                 EntranceCollisions[i]->SetCollisionResponseToAllChannels(ECR_Block);
             }

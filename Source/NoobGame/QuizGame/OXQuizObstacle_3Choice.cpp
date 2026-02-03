@@ -70,10 +70,12 @@ void AOXQuizObstacle_3Choice::SetupQuizVisualsAndCollision()
             // 충돌 처리 (정답: 통과, 오답: 막힘)
             if (i == CurrentQuizData.CorrectAnswerIndex)
             {
+                EntranceMeshes[i]->SetCollisionEnabled(ECollisionEnabled::NoCollision);
                 EntranceCollisions[i]->SetCollisionEnabled(ECollisionEnabled::NoCollision);
             }
             else
             {
+                EntranceMeshes[i]->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
                 EntranceCollisions[i]->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
                 EntranceCollisions[i]->SetCollisionResponseToAllChannels(ECR_Block);
             }

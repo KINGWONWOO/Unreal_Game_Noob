@@ -2,11 +2,22 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "GameTypes.h" // FQuizData 포함
+#include "GameTypes.h"
+#include "NiagaraFunctionLibrary.h"
 #include "QuizObstacleBase.generated.h"
 
 class UTextRenderComponent;
 class UBoxComponent;
+class UNiagaraSystem;
+class USoundBase;
+
+UENUM(BlueprintType)
+enum class EObstacleState : uint8
+{
+    Falling,
+    Landing,
+    Moving
+};
 
 UCLASS(Abstract)
 class NOOBGAME_API AQuizObstacleBase : public AActor
@@ -28,7 +39,6 @@ protected:
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
     TObjectPtr<USceneComponent> Root;
 
-    // 트리거 박스들
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
     TObjectPtr<UBoxComponent> Trigger_1;
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
@@ -38,13 +48,30 @@ protected:
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
     TObjectPtr<UBoxComponent> Trigger_4;
 
-    // [Common] 카테고리 텍스트 (New)
+    UPROPERTY(EditDefaultsOnly, Category = "Settings|Movement")
+    float GravityScale = 4.0f; // 중력 배수 (높을수록 빠르게 가속)
+
+    UPROPERTY(EditDefaultsOnly, Category = "Effects")
+    TSubclassOf<UCameraShakeBase> LandingCameraShake;
+
+    UPROPERTY(EditDefaultsOnly, Category = "Effects")
+    float ShakeInnerRadius = 500.f;
+
+    UPROPERTY(EditDefaultsOnly, Category = "Effects")
+    float ShakeOuterRadius = 2000.f;
+
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
     TObjectPtr<UTextRenderComponent> CategoryText;
 
-    // [Common] 질문 텍스트
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
     TObjectPtr<UTextRenderComponent> QuestionText;
+
+    // --- Effects ---
+    UPROPERTY(EditDefaultsOnly, Category = "Effects")
+    TObjectPtr<UNiagaraSystem> LandingParticle;
+
+    UPROPERTY(EditDefaultsOnly, Category = "Effects")
+    TObjectPtr<USoundBase> LandingSound;
 
     // --- Replicated Data ---
     UPROPERTY(ReplicatedUsing = OnRep_CurrentQuizData)
@@ -53,47 +80,51 @@ protected:
     UPROPERTY(Replicated)
     float MoveSpeed;
 
-    UPROPERTY(ReplicatedUsing = OnRep_IsMoving)
-    bool bIsMoving;
+    UPROPERTY(ReplicatedUsing = OnRep_ObstacleState)
+    EObstacleState ObstacleState;
 
     UFUNCTION()
-    void OnRep_IsMoving();
+    void OnRep_ObstacleState();
 
     UFUNCTION()
     virtual void OnRep_CurrentQuizData();
 
-    /** 자식 클래스는 이 함수에서 '정답(Answers)'에 대한 비주얼만 처리하면 됩니다. */
     virtual void SetupQuizVisualsAndCollision() PURE_VIRTUAL(AQuizObstacleBase::SetupQuizVisualsAndCollision, );
 
-    // --- [Settings] 글자 크기 설정 ---
-
-    // 카테고리 (New)
-    UPROPERTY(EditDefaultsOnly, Category = "Quiz Visuals|Category")
-    float CategoryMaxSize = 35.0f; // 카테고리는 보통 짧으니 좀 크게
-
-    UPROPERTY(EditDefaultsOnly, Category = "Quiz Visuals|Category")
-    float CategoryMinSize = 20.0f;
-
-    // 질문
+    // --- Settings (복구됨) ---
     UPROPERTY(EditDefaultsOnly, Category = "Quiz Visuals|Question")
     float QuestionMaxSize = 25.0f;
 
     UPROPERTY(EditDefaultsOnly, Category = "Quiz Visuals|Question")
     float QuestionMinSize = 15.0f;
 
-    // 정답
     UPROPERTY(EditDefaultsOnly, Category = "Quiz Visuals|Answer")
     float AnswerMaxSize = 26.0f;
 
     UPROPERTY(EditDefaultsOnly, Category = "Quiz Visuals|Answer")
-    float AnswerMinSize = 15.0f;
+    float AnswerMinSize = 10.0f;
 
-    // --- Helpers ---
+    UPROPERTY(EditDefaultsOnly, Category = "Settings|Movement")
+    float FallSpeed = 2500.f;
+
+    UPROPERTY(EditDefaultsOnly, Category = "Settings|Movement")
+    float LandingDelay = 0.6f;
+
+    UPROPERTY(EditDefaultsOnly, Category = "Settings|Movement")
+    float SpawnHeightOffset = 1800.f;
+
+    // --- Logic Helpers ---
+    void HandleFalling(float DeltaTime);
+    void HandleMoving(float DeltaTime);
+    void ExecuteLandingSequence();
+
+    float TargetZ;
+    FTimerHandle TimerHandle_Landing;
+
     float CalculateFontSize(int32 TextLength, float MaxSize, float MinSize);
-
-    UFUNCTION(BlueprintCallable, Category = "Quiz Helper")
     FString AddLineBreaksToText(FString InText, int32 MaxLineLength);
+    void PushOverlappingCharacters(float DeltaTime);
 
 private:
-    void PushOverlappingCharacters(float DeltaTime);
+        float CurrentVerticalVelocity = 0.0f;
 };

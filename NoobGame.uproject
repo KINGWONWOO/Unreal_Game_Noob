@@ -10,18 +10,14 @@
 			"LoadingPhase": "Default",
 			"AdditionalDependencies": [
 				"Engine",
-				"AIModule",
-				"UMG"
+				"MazeGenerator"
 			]
 		}
 	],
 	"Plugins": [
 		{
 			"Name": "ModelingToolsEditorMode",
-			"Enabled": true,
-			"TargetAllowList": [
-				"Editor"
-			]
+			"Enabled": true
 		},
 		{
 			"Name": "StateTree",
@@ -40,8 +36,35 @@
 			"Enabled": true
 		},
 		{
+			"Name": "OnlineSubsystemUtils",
+			"Enabled": true
+		},
+		{
 			"Name": "SteamSockets",
 			"Enabled": true
+		},
+		{
+			"Name": "HDRIBackdrop",
+			"Enabled": true
+		},
+		{
+			"Name": "VisualStudioTools",
+			"Enabled": false,
+			"SupportedTargetPlatforms": [
+				"Win64"
+			]
+		},
+		{
+			"Name": "Water",
+			"Enabled": true
+		},
+		{
+			"Name": "MazeGenerator",
+			"Enabled": true,
+			"MarketplaceURL": "https://www.fab.com/listings/12e5c02d-ee39-44fc-98f4-1b1fe9923f57"
 		}
+	],
+	"TargetPlatforms": [
+		"Windows"
 	]
 }

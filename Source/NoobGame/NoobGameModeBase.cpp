@@ -17,6 +17,7 @@ ANoobGameModeBase::ANoobGameModeBase()
 	PlayerStateClass = ANoobPlayerState::StaticClass();
 	PlayerControllerClass = ANoobPlayerController::StaticClass();
 	bHasAssignedRoomOwner = false;
+	bUseSeamlessTravel = true;
 }
 
 void ANoobGameModeBase::PostLogin(APlayerController* NewPlayer)
@@ -33,11 +34,6 @@ void ANoobGameModeBase::PostLogin(APlayerController* NewPlayer)
 		{
 			PS->bIsRoomOwner = true;
 			bHasAssignedRoomOwner = true;
-
-			// 서버 로그 확인용
-			UE_LOG(LogTemp, Warning, TEXT("[Server] Player %s is assigned as Room Owner."), *NewPlayer->GetName());
-
-			// [중요] 호스트(Listen Server)인 경우 OnRep이 호출되지 않으므로 수동 호출
 			if (NewPlayer->IsLocalController())
 			{
 				PS->OnRep_IsRoomOwner();
@@ -46,7 +42,6 @@ void ANoobGameModeBase::PostLogin(APlayerController* NewPlayer)
 		else
 		{
 			PS->bIsRoomOwner = false;
-			UE_LOG(LogTemp, Warning, TEXT("[Server] Player %s joined as Guest."), *NewPlayer->GetName());
 		}
 	}
 }
@@ -54,7 +49,6 @@ void ANoobGameModeBase::PostLogin(APlayerController* NewPlayer)
 void ANoobGameModeBase::Logout(AController* Exiting)
 {
 	Super::Logout(Exiting);
-
 	if (IsGameInProgress())
 	{
 		HandlePlayerDisconnect(Exiting);
@@ -161,8 +155,17 @@ void ANoobGameModeBase::ProcessPunch(APlayerController* PuncherController, AChar
 	{
 		HitPS->bIsKnockedDown = true;
 		HitPS->PunchHitCount = 0;
-		if (ANoobGameCharacter* HitChar = Cast<ANoobGameCharacter>(HitCharacter)) HitChar->SetRagdollState_Server(true);
-		if (ANoobPlayerController* HitPC = Cast<ANoobPlayerController>(HitCharacter->GetController())) HitPC->Client_SetCameraEffect(true);
+
+		if (ANoobGameCharacter* HitChar = Cast<ANoobGameCharacter>(HitCharacter))
+		{
+			HitChar->SetDownState_Server(true);
+		}
+
+		if (ANoobPlayerController* HitPC = Cast<ANoobPlayerController>(HitCharacter->GetController()))
+		{
+			HitPC->Client_SetCameraEffect(true);
+		}
+
 
 		FTimerHandle KDTimer;
 		FTimerDelegate Del = FTimerDelegate::CreateUObject(this, &ANoobGameModeBase::RecoverCharacter, HitCharacter);
@@ -171,6 +174,14 @@ void ANoobGameModeBase::ProcessPunch(APlayerController* PuncherController, AChar
 	}
 	else
 	{
+		if (APlayerController* HitPC = Cast<APlayerController>(HitCharacter->GetController()))
+		{
+			if (ANoobPlayerController* NoobPC = Cast<ANoobPlayerController>(HitPC))
+			{
+				NoobPC->Client_PlayHitCameraShake();
+			}
+		}
+
 		ANoobGameCharacter* HitChar = Cast<ANoobGameCharacter>(HitCharacter);
 		if (!HitChar) return;
 
@@ -184,16 +195,24 @@ void ANoobGameModeBase::ProcessPunch(APlayerController* PuncherController, AChar
 		else
 			Selected = (RightDot > 0) ? HitChar->HitReaction_Right : HitChar->HitReaction_Left;
 
-		ProcessPunchAnimation(HitCharacter, Selected ? Selected : HitChar->HitReaction_Front);
+		// [수정 포인트] 에러 발생 지점: Selected가 null일 경우 기본값 지정 및 인자 2개 전달
+		UAnimMontage* FinalMontage = Selected ? Selected : HitChar->HitReaction_Front;
+
+		ProcessPunchAnimation(HitChar, FinalMontage);
 	}
 }
 
+/** [정의 확인] 인자가 2개(Character, Montage)인지 확인하세요 */
 void ANoobGameModeBase::ProcessPunchAnimation(ACharacter* PunchingCharacter, UAnimMontage* MontageToPlay)
 {
+	if (!PunchingCharacter || !MontageToPlay) return;
+
 	for (FConstPlayerControllerIterator It = GetWorld()->GetPlayerControllerIterator(); It; ++It)
 	{
 		if (ANoobPlayerController* NPC = Cast<ANoobPlayerController>(It->Get()))
+		{
 			NPC->Multicast_PlayPunchMontage(PunchingCharacter, MontageToPlay);
+		}
 	}
 }
 
@@ -206,7 +225,27 @@ void ANoobGameModeBase::RecoverCharacter(ACharacter* CharacterToRecover)
 	if (NoobPS && NoobPS->bIsKnockedDown)
 	{
 		NoobPS->bIsKnockedDown = false;
-		if (ANoobGameCharacter* C = Cast<ANoobGameCharacter>(CharacterToRecover)) C->SetRagdollState_Server(false);
-		if (ANoobPlayerController* PC = Cast<ANoobPlayerController>(CharacterToRecover->GetController())) PC->Client_SetCameraEffect(false);
+
+		// [수정] 래그돌 대신 애니메이션 기반 상태 해제(일어나기 애니메이션 시작) 호출
+		if (ANoobGameCharacter* C = Cast<ANoobGameCharacter>(CharacterToRecover))
+		{
+			C->SetDownState_Server(false);
+		}
+
+		if (ANoobPlayerController* PC = Cast<ANoobPlayerController>(CharacterToRecover->GetController()))
+		{
+			PC->Client_SetCameraEffect(false);
+		}
+	}
+}
+
+void ANoobGameModeBase::Server_TransitionToSelectedMap(FString MapName)
+{
+	for (FConstPlayerControllerIterator It = GetWorld()->GetPlayerControllerIterator(); It; ++It)
+	{
+		if (ANoobPlayerController* PC = Cast<ANoobPlayerController>(It->Get()))
+		{
+			PC->Client_ShowLoadingScreen();
+		}
 	}
 }

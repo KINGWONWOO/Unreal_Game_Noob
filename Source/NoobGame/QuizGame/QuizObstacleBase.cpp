@@ -2,9 +2,10 @@
 #include "Components/TextRenderComponent.h"
 #include "Components/BoxComponent.h"
 #include "Net/UnrealNetwork.h"
-#include "Components/SceneComponent.h"
 #include "GameFramework/Character.h"
 #include "GameFramework/CharacterMovementComponent.h"
+#include "NiagaraFunctionLibrary.h"
+#include "Kismet/GameplayStatics.h"
 
 AQuizObstacleBase::AQuizObstacleBase()
 {
@@ -13,7 +14,7 @@ AQuizObstacleBase::AQuizObstacleBase()
 
     bReplicates = true;
     bAlwaysRelevant = true;
-    SetReplicateMovement(false);
+    SetReplicateMovement(true);
 
     Root = CreateDefaultSubobject<USceneComponent>(TEXT("RootComponent"));
     RootComponent = Root;
@@ -23,21 +24,21 @@ AQuizObstacleBase::AQuizObstacleBase()
     Trigger_3 = CreateDefaultSubobject<UBoxComponent>(TEXT("Trigger_3")); Trigger_3->SetupAttachment(Root);
     Trigger_4 = CreateDefaultSubobject<UBoxComponent>(TEXT("Trigger_4")); Trigger_4->SetupAttachment(Root);
 
-    // [New] 카테고리 텍스트 생성
     CategoryText = CreateDefaultSubobject<UTextRenderComponent>(TEXT("CategoryText"));
     CategoryText->SetupAttachment(Root);
     CategoryText->SetHorizontalAlignment(EHorizTextAligment::EHTA_Center);
     CategoryText->SetVerticalAlignment(EVerticalTextAligment::EVRTA_TextCenter);
-    CategoryText->SetTextRenderColor(FColor::Yellow); // 카테고리는 노란색으로 강조
+    CategoryText->SetTextRenderColor(FColor::Yellow);
 
-    // 질문 텍스트 생성
     QuestionText = CreateDefaultSubobject<UTextRenderComponent>(TEXT("QuestionText"));
     QuestionText->SetupAttachment(Root);
     QuestionText->SetHorizontalAlignment(EHorizTextAligment::EHTA_Center);
     QuestionText->SetVerticalAlignment(EVerticalTextAligment::EVRTA_TextCenter);
 
     MoveSpeed = 0.0f;
-    bIsMoving = false;
+    ObstacleState = EObstacleState::Falling;
+    TargetZ = 0.0f;
+    CurrentVerticalVelocity = 0.0f;
 }
 
 void AQuizObstacleBase::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
@@ -45,7 +46,7 @@ void AQuizObstacleBase::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Ou
     Super::GetLifetimeReplicatedProps(OutLifetimeProps);
     DOREPLIFETIME(AQuizObstacleBase, CurrentQuizData);
     DOREPLIFETIME(AQuizObstacleBase, MoveSpeed);
-    DOREPLIFETIME(AQuizObstacleBase, bIsMoving);
+    DOREPLIFETIME(AQuizObstacleBase, ObstacleState);
 }
 
 void AQuizObstacleBase::BeginPlay()
@@ -60,10 +61,17 @@ void AQuizObstacleBase::BeginPlay()
 void AQuizObstacleBase::Tick(float DeltaTime)
 {
     Super::Tick(DeltaTime);
-    if (bIsMoving && MoveSpeed > 0.f)
+
+    switch (ObstacleState)
     {
-        PushOverlappingCharacters(DeltaTime);
-        AddActorWorldOffset(GetActorForwardVector() * MoveSpeed * DeltaTime, true);
+    case EObstacleState::Falling:
+        HandleFalling(DeltaTime);
+        break;
+    case EObstacleState::Moving:
+        HandleMoving(DeltaTime);
+        break;
+    default:
+        break;
     }
 }
 
@@ -73,87 +81,167 @@ void AQuizObstacleBase::InitializeObstacle(const FQuizData& NewQuizData, float N
     {
         CurrentQuizData = NewQuizData;
         MoveSpeed = NewMoveSpeed;
-        bIsMoving = true;
-        OnRep_IsMoving();
+
+        // 1. 목표 지점 저장 (현재 바닥 높이)
+        TargetZ = GetActorLocation().Z;
+
+        // 2. 시작 위치로 강제 이동 (하늘 위 오프셋 적용)
+        FVector NewLoc = GetActorLocation();
+        NewLoc.Z += SpawnHeightOffset;
+        SetActorLocation(NewLoc);
+
+        ForceNetUpdate();
+
+        // 3. 상태 및 물리 초기화
+        CurrentVerticalVelocity = 0.0f;
+        ObstacleState = EObstacleState::Falling;
+        SetActorTickEnabled(true);
+
         OnRep_CurrentQuizData();
+        OnRep_ObstacleState();
     }
 }
 
-void AQuizObstacleBase::OnRep_IsMoving()
+void AQuizObstacleBase::HandleFalling(float DeltaTime)
 {
-    SetActorTickEnabled(bIsMoving);
+    // [보정] 중력 가속도 적용 (v = v0 + at)
+    // GravityScale이 높을수록(예: 4.0) 묵직하게 떨어집니다.
+    float Gravity = GetWorld()->GetGravityZ() * GravityScale;
+    CurrentVerticalVelocity += Gravity * DeltaTime;
+
+    FVector Loc = GetActorLocation();
+    Loc.Z += CurrentVerticalVelocity * DeltaTime;
+
+    // 착지 판정
+    if (Loc.Z <= TargetZ)
+    {
+        Loc.Z = TargetZ;
+        SetActorLocation(Loc);
+
+        // [핵심 보정] 클라이언트/서버 공통으로 즉시 이펙트 실행 (지연 시간 제거)
+        if (ObstacleState == EObstacleState::Falling)
+        {
+            ExecuteLandingSequence();
+        }
+
+        if (HasAuthority())
+        {
+            ObstacleState = EObstacleState::Landing;
+
+            // 일정 대기 후 전진 상태로 전환
+            GetWorldTimerManager().SetTimer(TimerHandle_Landing, [this]() {
+                ObstacleState = EObstacleState::Moving;
+                OnRep_ObstacleState();
+                }, LandingDelay, false);
+        }
+    }
+    else
+    {
+        SetActorLocation(Loc);
+    }
+}
+
+void AQuizObstacleBase::OnRep_ObstacleState()
+{
+    // Landing 상태가 복제되어 왔을 때, 아직 이펙트가 실행되지 않았다면 실행 (안전장치)
+    if (ObstacleState == EObstacleState::Landing)
+    {
+        ExecuteLandingSequence();
+    }
+
+    SetActorTickEnabled(ObstacleState != EObstacleState::Landing);
+}
+
+void AQuizObstacleBase::ExecuteLandingSequence()
+{
+    // 중복 실행 방지 로직 (Falling -> Landing 전환 시 1회만 실행)
+    // 여기서 사용되는 변수는 헤더에 bool bLandedEffectDone; 추가를 권장합니다.
+
+    // 1. 니아가라 먼지 효과
+    if (LandingParticle)
+    {
+        UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), LandingParticle, GetActorLocation());
+    }
+
+    // 2. 착지 사운드
+    if (LandingSound)
+    {
+        UGameplayStatics::PlaySoundAtLocation(this, LandingSound, GetActorLocation());
+    }
+
+    // 3. 카메라 흔들림
+    if (LandingCameraShake)
+    {
+        UGameplayStatics::PlayWorldCameraShake(
+            GetWorld(),
+            LandingCameraShake,
+            GetActorLocation(),
+            ShakeInnerRadius,
+            ShakeOuterRadius
+        );
+    }
+
+    // 물리 속도 초기화
+    CurrentVerticalVelocity = 0.0f;
+}
+
+void AQuizObstacleBase::HandleMoving(float DeltaTime)
+{
+    if (MoveSpeed > 0.f)
+    {
+        PushOverlappingCharacters(DeltaTime);
+        AddActorWorldOffset(GetActorForwardVector() * MoveSpeed * DeltaTime, true);
+    }
 }
 
 void AQuizObstacleBase::OnRep_CurrentQuizData()
 {
-    // 1. [수정됨] 카테고리 텍스트 업데이트 (크기 10 고정)
     if (CategoryText)
     {
         FString CatStr = CurrentQuizData.Category.IsEmpty() ? TEXT("Quiz") : CurrentQuizData.Category;
-
-        // 기존: 계산된 크기 사용
-        // float NewSize = CalculateFontSize(CatStr.Len(), CategoryMaxSize, CategoryMinSize);
-
-        // [변경] 요청하신 대로 10.0f로 고정
         CategoryText->SetWorldSize(15.0f);
         CategoryText->SetText(FText::FromString(CatStr));
     }
 
-    // 2. 질문 텍스트 업데이트 (공통)
     if (QuestionText)
     {
         FString QStr = CurrentQuizData.Question.ToString();
-
         float NewSize = CalculateFontSize(QStr.Len(), QuestionMaxSize, QuestionMinSize);
         QuestionText->SetWorldSize(NewSize);
-
-        // 글자가 작으면(20이하) 한 줄에 25자, 크면 15자
         int32 LineLen = (NewSize < 20.0f) ? 25 : 15;
         QuestionText->SetText(FText::FromString(AddLineBreaksToText(QStr, LineLen)));
     }
 
-    // 3. 정답(선택지) 업데이트는 자식 클래스에게 위임
+    // 클라이언트에서 첫 장애물 실종 방지: 데이터가 오면 틱을 강제로 켬
+    if (ObstacleState == EObstacleState::Falling)
+    {
+        SetActorTickEnabled(true);
+    }
+
     SetupQuizVisualsAndCollision();
 }
 
-// --- Helpers ---
-
 float AQuizObstacleBase::CalculateFontSize(int32 TextLength, float MaxSize, float MinSize)
 {
-    const float ShortLen = 1.0f;
-    const float LongLen = 5.0f;
-
-    // FMath::GetMappedRangeValueClamped를 사용하여 반대로 작동하는 실수 방지
-    // 글자수 5 -> MaxSize, 글자수 30 -> MinSize
-    return FMath::GetMappedRangeValueClamped(
-        FVector2D(ShortLen, LongLen),
-        FVector2D(MaxSize, MinSize),
-        (float)TextLength
-    );
+    return FMath::GetMappedRangeValueClamped(FVector2D(2.f, 6.f), FVector2D(MaxSize, MinSize), (float)TextLength);
 }
 
 FString AQuizObstacleBase::AddLineBreaksToText(FString InText, int32 MaxLineLength)
 {
     if (InText.IsEmpty() || MaxLineLength <= 0) return InText;
-
     FString Result = InText;
     int32 CurrentLength = 0;
     int32 LastSpaceIndex = -1;
-
     for (int32 i = 0; i < Result.Len(); i++)
     {
         CurrentLength++;
         if (Result[i] == ' ') LastSpaceIndex = i;
         else if (Result[i] == '\n') { CurrentLength = 0; LastSpaceIndex = -1; }
-
-        if (CurrentLength >= MaxLineLength)
+        if (CurrentLength >= MaxLineLength && LastSpaceIndex != -1)
         {
-            if (LastSpaceIndex != -1)
-            {
-                Result[LastSpaceIndex] = '\n';
-                CurrentLength = i - LastSpaceIndex;
-                LastSpaceIndex = -1;
-            }
+            Result[LastSpaceIndex] = '\n';
+            CurrentLength = i - LastSpaceIndex;
+            LastSpaceIndex = -1;
         }
     }
     return Result;
@@ -178,22 +266,12 @@ void AQuizObstacleBase::PushOverlappingCharacters(float DeltaTime)
 
     for (AActor* Actor : UniqueActors) {
         ACharacter* Char = Cast<ACharacter>(Actor);
-        if (Char) {
-            bool bIsServer = HasAuthority();
-            bool bIsLocalPlayer = Char->IsLocallyControlled();
-            if (bIsServer || bIsLocalPlayer) {
-                UCharacterMovementComponent* CMC = Char->GetCharacterMovement();
-                if (!CMC) continue;
-                Char->AddActorWorldOffset(PushDelta, true);
-                FVector NewVelocity = WallVelocity;
-                NewVelocity.Z = CMC->Velocity.Z;
-                CMC->Velocity = NewVelocity;
-                if (CMC->MovementMode == MOVE_Walking) {
-                    CMC->FindFloor(Char->GetActorLocation(), CMC->CurrentFloor, true, NULL);
-                    CMC->SetMovementMode(MOVE_Walking);
-                }
-                CMC->AddInputVector(WallVelocity.GetSafeNormal());
-            }
+        if (Char && (HasAuthority() || Char->IsLocallyControlled())) {
+            UCharacterMovementComponent* CMC = Char->GetCharacterMovement();
+            if (!CMC) continue;
+            Char->AddActorWorldOffset(PushDelta, true);
+            CMC->Velocity.X = WallVelocity.X;
+            CMC->Velocity.Y = WallVelocity.Y;
         }
     }
 }

@@ -28,41 +28,38 @@ void ADeadZoneVolume::BeginPlay()
 
 void ADeadZoneVolume::OnOverlapBegin(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
-	if (!HasAuthority()) return;
+    // 1. 서버 권한 및 중복 실행 방지 체크
+    if (!HasAuthority() || bHasTriggered) return;
 
-	// 캐릭터 확인
-	ANoobGameCharacter* VictimCharacter = Cast<ANoobGameCharacter>(OtherActor);
-	if (VictimCharacter)
-	{
-		// GameMode가 캐싱되지 않았다면 다시 가져옴
-		if (!CachedGameMode)
-		{
-			CachedGameMode = GetWorld() ? GetWorld()->GetAuthGameMode<ANoobGameModeBase>() : nullptr;
-		}
+    // 캐릭터 확인
+    ANoobGameCharacter* VictimCharacter = Cast<ANoobGameCharacter>(OtherActor);
+    if (VictimCharacter)
+    {
+        // 2. 캐릭터 확인 직후 즉시 플래그를 true로 설정 (중복 진입 방지)
+        bHasTriggered = true;
 
-		if (CachedGameMode)
-		{
-			// [로직 변경] HandlePlayerDeath가 삭제되었으므로, 여기서 승자를 판별해 넘겨줍니다.
+        if (!CachedGameMode)
+        {
+            CachedGameMode = GetWorld() ? GetWorld()->GetAuthGameMode<ANoobGameModeBase>() : nullptr;
+        }
 
-			AController* VictimController = VictimCharacter->GetController();
-			APlayerState* WinnerState = nullptr;
+        if (CachedGameMode)
+        {
+            AController* VictimController = VictimCharacter->GetController();
+            APlayerState* WinnerState = nullptr;
 
-			// 전체 플레이어 중 '떨어진 사람'이 아닌 사람을 찾음
-			for (FConstPlayerControllerIterator It = GetWorld()->GetPlayerControllerIterator(); It; ++It)
-			{
-				AController* OtherPC = It->Get();
-				if (OtherPC && OtherPC != VictimController)
-				{
-					WinnerState = OtherPC->GetPlayerState<APlayerState>();
-					break;
-				}
-			}
+            for (FConstPlayerControllerIterator It = GetWorld()->GetPlayerControllerIterator(); It; ++It)
+            {
+                AController* OtherPC = It->Get();
+                if (OtherPC && OtherPC != VictimController)
+                {
+                    WinnerState = OtherPC->GetPlayerState<APlayerState>();
+                    break;
+                }
+            }
 
-			// 승자 발표 시작 (승자가 없으면 무승부 처리됨)
-			CachedGameMode->StartWinnerAnnouncement(WinnerState);
-
-			// (선택 사항) 떨어진 캐릭터 파괴 또는 비활성화
-			// VictimCharacter->Destroy(); 
-		}
-	}
+            // 승자 발표 시작
+            CachedGameMode->StartWinnerAnnouncement(WinnerState);
+        }
+    }
 }

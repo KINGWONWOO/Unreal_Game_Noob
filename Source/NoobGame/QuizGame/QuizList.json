@@ -9,30 +9,12 @@
     "Type": "OX"
   },
   {
-    "Name": "Q_Easy_002",
-    "Question": "지구는 둥글다",
-    "Answers": [ "O", "X" ],
-    "CorrectAnswerIndex": 0,
-    "Difficulty": "Easy",
-    "Category": "과학",
-    "Type": "OX"
-  },
-  {
     "Name": "Q_Easy_003",
     "Question": "한글은 세종대왕이 만들었다",
     "Answers": [ "O", "X" ],
     "CorrectAnswerIndex": 0,
     "Difficulty": "Easy",
     "Category": "역사",
-    "Type": "OX"
-  },
-  {
-    "Name": "Q_Easy_004",
-    "Question": "모니터는 소리가 난다",
-    "Answers": [ "O", "X" ],
-    "CorrectAnswerIndex": 1,
-    "Difficulty": "Easy",
-    "Category": "IT",
     "Type": "OX"
   },
   {
@@ -163,7 +145,7 @@
   },
   {
     "Name": "Q_Easy_019",
-    "Question": "삼각형의 세 변의 길이 합은 가장 긴 변보다 커야 한다",
+    "Question": "삼각형에서 두 변의 길이의 합은 나머지 한 변(가장 긴 변)의 길이보다 커야 한다",
     "Answers": [ "O", "X" ],
     "CorrectAnswerIndex": 0,
     "Difficulty": "Easy",
@@ -396,15 +378,6 @@
     "Type": "OX"
   },
   {
-    "Name": "Q_Easy_045",
-    "Question": "한복은 한국 전통 의상이다",
-    "Answers": [ "O", "X" ],
-    "CorrectAnswerIndex": 0,
-    "Difficulty": "Easy",
-    "Category": "문화",
-    "Type": "OX"
-  },
-  {
     "Name": "Q_Easy_046",
     "Question": "48 ÷ 6 = 8이다",
     "Answers": [ "O", "X" ],
@@ -440,16 +413,6 @@
     "Category": "상식",
     "Type": "OX"
   },
-  {
-    "Name": "Q_Easy_050",
-    "Question": "한옥은 한국 전통 집이다",
-    "Answers": [ "O", "X" ],
-    "CorrectAnswerIndex": 0,
-    "Difficulty": "Easy",
-    "Category": "문화",
-    "Type": "OX"
-  },
-
   {
     "Name": "Q_Easy_051",
     "Question": "지구에서 가장 큰 대륙은?",
@@ -586,15 +549,6 @@
     "Type": "3Choice"
   },
   {
-    "Name": "Q_Easy_066",
-    "Question": "한국 전통 음식은?",
-    "Answers": [ "피자", "김치", "스시" ],
-    "CorrectAnswerIndex": 1,
-    "Difficulty": "Easy",
-    "Category": "문화",
-    "Type": "3Choice"
-  },
-  {
     "Name": "Q_Easy_067",
     "Question": "8 x 9는?",
     "Answers": [ "64", "72", "81" ],
@@ -604,30 +558,12 @@
     "Type": "3Choice"
   },
   {
-    "Name": "Q_Easy_068",
-    "Question": "한국 전통 집은?",
-    "Answers": [ "한옥", "이글루", "티피" ],
-    "CorrectAnswerIndex": 0,
-    "Difficulty": "Easy",
-    "Category": "문화",
-    "Type": "3Choice"
-  },
-  {
     "Name": "Q_Easy_069",
     "Question": "서울의 강은?",
     "Answers": [ "템스강", "한강", "센강" ],
     "CorrectAnswerIndex": 1,
     "Difficulty": "Easy",
     "Category": "지리",
-    "Type": "3Choice"
-  },
-  {
-    "Name": "Q_Easy_070",
-    "Question": "한국 전통 악기는?",
-    "Answers": [ "가야금", "기타", "피아노" ],
-    "CorrectAnswerIndex": 0,
-    "Difficulty": "Easy",
-    "Category": "예술",
     "Type": "3Choice"
   },
   {
@@ -649,15 +585,6 @@
     "Type": "3Choice"
   },
   {
-    "Name": "Q_Easy_073",
-    "Question": "한국 전통 놀이는?",
-    "Answers": [ "윷놀이", "체스", "모노폴리" ],
-    "CorrectAnswerIndex": 0,
-    "Difficulty": "Easy",
-    "Category": "문화",
-    "Type": "3Choice"
-  },
-  {
     "Name": "Q_Easy_074",
     "Question": "360 ÷ 9는?",
     "Answers": [ "30", "40", "45" ],
@@ -667,30 +594,12 @@
     "Type": "3Choice"
   },
   {
-    "Name": "Q_Easy_075",
-    "Question": "한국 전통 모자는?",
-    "Answers": [ "갓", "카우보이모자", "베레모" ],
-    "CorrectAnswerIndex": 0,
-    "Difficulty": "Easy",
-    "Category": "문화",
-    "Type": "3Choice"
-  },
-  {
     "Name": "Q_Easy_076",
     "Question": "7 × 11은?",
     "Answers": [ "77", "84", "88" ],
     "CorrectAnswerIndex": 0,
     "Difficulty": "Easy",
     "Category": "수학",
-    "Type": "3Choice"
-  },
-  {
-    "Name": "Q_Easy_077",
-    "Question": "한국 전통 춤은?",
-    "Answers": [ "탈춤", "탱고", "왈츠" ],
-    "CorrectAnswerIndex": 0,
-    "Difficulty": "Easy",
-    "Category": "예술",
     "Type": "3Choice"
   },
   {
@@ -712,30 +621,12 @@
     "Type": "3Choice"
   },
   {
-    "Name": "Q_Easy_080",
-    "Question": "한국 전통 의상은?",
-    "Answers": [ "한복", "기모노", "사리" ],
-    "CorrectAnswerIndex": 0,
-    "Difficulty": "Easy",
-    "Category": "문화",
-    "Type": "3Choice"
-  },
-  {
     "Name": "Q_Easy_081",
     "Question": "56 ÷ 7은?",
     "Answers": [ "7", "8", "9" ],
     "CorrectAnswerIndex": 1,
     "Difficulty": "Easy",
     "Category": "수학",
-    "Type": "3Choice"
-  },
-  {
-    "Name": "Q_Easy_082",
-    "Question": "한국의 전통 악기는?",
-    "Answers": [ "장구", "드럼", "색소폰" ],
-    "CorrectAnswerIndex": 0,
-    "Difficulty": "Easy",
-    "Category": "예술",
     "Type": "3Choice"
   },
   {
@@ -748,30 +639,12 @@
     "Type": "3Choice"
   },
   {
-    "Name": "Q_Easy_084",
-    "Question": "한국의 전통 명절은?",
-    "Answers": [ "설날", "할로윈", "크리스마스" ],
-    "CorrectAnswerIndex": 0,
-    "Difficulty": "Easy",
-    "Category": "문화",
-    "Type": "3Choice"
-  },
-  {
     "Name": "Q_Easy_085",
     "Question": "240 ÷ 8는?",
     "Answers": [ "25", "30", "35" ],
     "CorrectAnswerIndex": 1,
     "Difficulty": "Easy",
     "Category": "수학",
-    "Type": "3Choice"
-  },
-  {
-    "Name": "Q_Easy_086",
-    "Question": "한국의 전통 부채는?",
-    "Answers": [ "합죽선", "양산", "우산" ],
-    "CorrectAnswerIndex": 0,
-    "Difficulty": "Easy",
-    "Category": "문화",
     "Type": "3Choice"
   },
   {
@@ -784,30 +657,12 @@
     "Type": "3Choice"
   },
   {
-    "Name": "Q_Easy_088",
-    "Question": "한국의 전통 탈은?",
-    "Answers": [ "하회탈", "베네치아 가면", "할로윈 마스크" ],
-    "CorrectAnswerIndex": 0,
-    "Difficulty": "Easy",
-    "Category": "문화",
-    "Type": "3Choice"
-  },
-  {
     "Name": "Q_Easy_089",
     "Question": "365 + 248은?",
     "Answers": [ "603", "613", "623" ],
     "CorrectAnswerIndex": 1,
     "Difficulty": "Easy",
     "Category": "수학",
-    "Type": "3Choice"
-  },
-  {
-    "Name": "Q_Easy_090",
-    "Question": "한국의 전통 차는?",
-    "Answers": [ "녹차", "커피", "코코아" ],
-    "CorrectAnswerIndex": 0,
-    "Difficulty": "Easy",
-    "Category": "문화",
     "Type": "3Choice"
   },
   {
@@ -820,30 +675,12 @@
     "Type": "3Choice"
   },
   {
-    "Name": "Q_Easy_092",
-    "Question": "한국의 전통 그릇은?",
-    "Answers": [ "옹기", "플라스틱", "유리" ],
-    "CorrectAnswerIndex": 0,
-    "Difficulty": "Easy",
-    "Category": "문화",
-    "Type": "3Choice"
-  },
-  {
     "Name": "Q_Easy_093",
     "Question": "480 ÷ 12는?",
     "Answers": [ "30", "40", "50" ],
     "CorrectAnswerIndex": 1,
     "Difficulty": "Easy",
     "Category": "수학",
-    "Type": "3Choice"
-  },
-  {
-    "Name": "Q_Easy_094",
-    "Question": "한국의 전통 문은?",
-    "Answers": [ "대문", "슬라이딩 도어", "자동문" ],
-    "CorrectAnswerIndex": 0,
-    "Difficulty": "Easy",
-    "Category": "문화",
     "Type": "3Choice"
   },
   {
@@ -856,30 +693,12 @@
     "Type": "3Choice"
   },
   {
-    "Name": "Q_Easy_096",
-    "Question": "한국의 전통 종이접기는?",
-    "Answers": [ "한지접기", "오리가미", "종이비행기" ],
-    "CorrectAnswerIndex": 0,
-    "Difficulty": "Easy",
-    "Category": "문화",
-    "Type": "3Choice"
-  },
-  {
     "Name": "Q_Easy_097",
     "Question": "777 + 666은?",
     "Answers": [ "1343", "1443", "1543" ],
     "CorrectAnswerIndex": 1,
     "Difficulty": "Easy",
     "Category": "수학",
-    "Type": "3Choice"
-  },
-  {
-    "Name": "Q_Easy_098",
-    "Question": "한국의 전통 북은?",
-    "Answers": [ "북", "드럼", "탬버린" ],
-    "CorrectAnswerIndex": 0,
-    "Difficulty": "Easy",
-    "Category": "예술",
     "Type": "3Choice"
   },
   {
@@ -1362,7 +1181,7 @@
   },
   {
     "Name": "Q_Medium_052",
-    "Question": "한국의 마지막 왕은?",
+    "Question": "대한제국의 마지막 황제는?",
     "Answers": [ "고종", "순종", "영친왕" ],
     "CorrectAnswerIndex": 1,
     "Difficulty": "Medium",
@@ -1451,30 +1270,12 @@
     "Type": "3Choice"
   },
   {
-    "Name": "Q_Medium_062",
-    "Question": "한국의 대표적인 전통 춤은?",
-    "Answers": [ "탈춤", "탱고", "살사" ],
-    "CorrectAnswerIndex": 0,
-    "Difficulty": "Medium",
-    "Category": "문화",
-    "Type": "3Choice"
-  },
-  {
     "Name": "Q_Medium_063",
     "Question": "세계에서 가장 높은 폭포는?",
     "Answers": [ "나이아가라", "빅토리아", "앙헬 폭포" ],
     "CorrectAnswerIndex": 2,
     "Difficulty": "Medium",
     "Category": "지리",
-    "Type": "3Choice"
-  },
-  {
-    "Name": "Q_Medium_064",
-    "Question": "한국의 대표적인 전통 악기는?",
-    "Answers": [ "가야금", "기타", "바이올린" ],
-    "CorrectAnswerIndex": 0,
-    "Difficulty": "Medium",
-    "Category": "문화",
     "Type": "3Choice"
   },
   {
@@ -1926,7 +1727,7 @@
   },
   {
     "Name": "Q_Hard_014",
-    "Question": "야전 조약은 1925년 체결됐다",
+    "Question": "로카르노 조약은 1925년 체결됐다",
     "Answers": [ "O", "X" ],
     "CorrectAnswerIndex": 0,
     "Difficulty": "Hard",
@@ -2223,7 +2024,7 @@
   },
   {
     "Name": "Q_Hard_047",
-    "Question": "7은 천밀레니엄 문제 중 하나이다",
+    "Question": "밀레니엄 난제는 총 7개이다",
     "Answers": [ "O", "X" ],
     "CorrectAnswerIndex": 0,
     "Difficulty": "Hard",
@@ -2427,15 +2228,6 @@
     "CorrectAnswerIndex": 2,
     "Difficulty": "Hard",
     "Category": "역사",
-    "Type": "3Choice"
-  },
-  {
-    "Name": "Q_Hard_070",
-    "Question": "다음 중 오일러 항등식에 포함되지 않는 것은?",
-    "Answers": [ "π", "e", "i", "1", "2" ],
-    "CorrectAnswerIndex": 4,
-    "Difficulty": "Hard",
-    "Category": "수학",
     "Type": "3Choice"
   },
   {

@@ -32,6 +32,10 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Game")
 	void ProcessPunchAnimation(ACharacter* PunchingCharacter, UAnimMontage* MontageToPlay);
 
+	// 방장이 호출할 맵 전환 함수
+	UFUNCTION(BlueprintCallable, Category = "Game Flow")
+	void Server_TransitionToSelectedMap(FString MapName);
+
 protected:
 	virtual void PostLogin(APlayerController* NewPlayer) override;
 	virtual void Logout(AController* Exiting) override;
@@ -53,10 +57,10 @@ protected:
 	// Configuration
 	// ──────────────────────────────────────────────────────────────────────────
 	UPROPERTY(EditDefaultsOnly, Category = "Combat")
-	float PunchPushForce = 50000.0f;
+	float PunchPushForce = 500.0f;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Combat")
-	float KnockdownDuration = 4.0f;
+	float KnockdownDuration = 8.0f;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Game Rules")
 	float WinnerAnnouncementDuration = 3.0f;

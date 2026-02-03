@@ -27,4 +27,6 @@ protected:
 	// [변경] 특정 게임모드 대신 부모 게임모드를 캐싱하여 재사용성 높임
 	UPROPERTY()
 	TObjectPtr<ANoobGameModeBase> CachedGameMode;
+
+	bool bHasTriggered = false;
 };

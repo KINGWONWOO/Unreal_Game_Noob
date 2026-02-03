@@ -13,6 +13,7 @@ AFruitGameMode::AFruitGameMode()
 	PlayerStateClass = AFruitPlayerState::StaticClass();
 	PlayerControllerClass = AFruitPlayerController::StaticClass();
 	MyGameState = nullptr;
+	bIsProcessingGuess = false;
 }
 
 void AFruitGameMode::PostLogin(APlayerController* NewPlayer)
@@ -135,15 +136,24 @@ void AFruitGameMode::OnTurnTimerExpired() { EndTurn(true); }
 
 void AFruitGameMode::PlayerInteracted(AController* PlayerController, AActor* HitActor, EFruitGamePhase CurrentPhase)
 {
+
 	if (CurrentPhase == EFruitGamePhase::GP_PlayerTurn)
 	{
-		if (!IsPlayerTurn(PlayerController)) return;
+		// 2. 턴 주인 확인: 상대방이 인터랙트해서 가로채는 것을 방지
+		if (!IsPlayerTurn(PlayerController))
+		{
+			UE_LOG(LogTemp, Warning, TEXT("Not your turn: %s"), *PlayerController->GetName());
+			return;
+		}
+
 		if (AInteractableFruitObject* GuessObject = Cast<AInteractableFruitObject>(HitActor))
 		{
 			GuessObject->CycleFruit();
 		}
 		else if (ASubmitGuessButton* GuessSubmitButton = Cast<ASubmitGuessButton>(HitActor))
 		{
+			if (bIsProcessingGuess) return;
+			// 정답 제출 버튼 클릭 시 처리 시작
 			ProcessGuessFromWorldObjects(PlayerController);
 		}
 	}
@@ -151,9 +161,19 @@ void AFruitGameMode::PlayerInteracted(AController* PlayerController, AActor* Hit
 
 void AFruitGameMode::ProcessGuessFromWorldObjects(AController* PlayerController)
 {
+	if (bIsProcessingGuess) return;
+	bIsProcessingGuess = true;
+
 	TArray<AActor*> FoundActors;
 	UGameplayStatics::GetAllActorsOfClass(GetWorld(), AInteractableFruitObject::StaticClass(), FoundActors);
-	if (FoundActors.Num() != 5) return;
+
+	// 1. 유효성 검사 실패 시 즉시 플래그 복구
+	if (FoundActors.Num() != 5)
+	{
+		UE_LOG(LogTemp, Error, TEXT("Fruit objects count mismatch!"));
+		bIsProcessingGuess = false;
+		return;
+	}
 
 	FoundActors.Sort([](const AActor& A, const AActor& B) {
 		const AInteractableFruitObject* ObjA = Cast<AInteractableFruitObject>(&A);
@@ -174,7 +194,16 @@ void AFruitGameMode::ProcessGuessFromWorldObjects(AController* PlayerController)
 		}
 		else bAllValid = false;
 	}
-	if (bAllValid) ProcessPlayerGuess(PlayerController, GuessedFruits);
+
+	if (bAllValid)
+	{
+		ProcessPlayerGuess(PlayerController, GuessedFruits);
+	}
+	else
+	{
+		// 2. 데이터가 유효하지 않을 때도 다시 누를 수 있게 해줘야 함
+		bIsProcessingGuess = false;
+	}
 }
 
 void AFruitGameMode::ProcessPlayerGuess(AController* PlayerController, const TArray<EFruitType>& GuessedFruits)
@@ -246,6 +275,7 @@ void AFruitGameMode::EndTurn(bool bTimeOut)
 	{
 		MyGameState->CurrentActivePlayer = NextPlayer;
 		StartTurn();
+		bIsProcessingGuess = false;
 	}
 	else EndGame(nullptr);
 }

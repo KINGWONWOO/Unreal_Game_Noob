@@ -23,7 +23,8 @@ public class NoobGame : ModuleRules
             "AudioMixer",
 			"AudioCapture",
 			"AudioCaptureCore",
-            "Voice"
+            "Voice",
+			"Niagara"
         });
 
 		PrivateDependencyModuleNames.AddRange(new string[] { });
