@@ -10,39 +10,37 @@ class AMazeGameState;
 UCLASS()
 class NOOBGAME_API AMazeGameMode : public ANoobGameModeBase
 {
-	GENERATED_BODY()
+    GENERATED_BODY()
 
 public:
-	AMazeGameMode();
+    AMazeGameMode();
 
-	/** 플레이어 준비 상태 확인 (설명 단계) */
-	void PlayerIsReady(AController* PlayerController);
+    // 플레이어 접속 및 준비 관련 인터페이스
+    virtual void PostLogin(APlayerController* NewPlayer) override;
+    void PlayerIsReady(AController* PlayerController);
 
-	/** 플레이어 도착 처리 */
-	void ProcessPlayerReachedGoal(AController* WinnerController);
-
-	virtual void EndGame(APlayerState* Winner) override;
+    // 게임 진행 및 승리 판정
+    void ProcessPlayerReachedGoal(AController* WinnerController);
+    virtual void EndGame(APlayerState* Winner) override;
 
 protected:
-	virtual void PostLogin(APlayerController* NewPlayer) override;
-	virtual bool IsGameInProgress() const override;
-	virtual void AnnounceWinnerToClients(APlayerState* Winner) override;
+    // 게임 상태 확인 및 네트워크 알림
+    virtual bool IsGameInProgress() const override;
+    virtual void AnnounceWinnerToClients(APlayerState* Winner) override;
 
-	/** 2명 준비 완료 시 맵 선택 단계로 전환 */
-	void CheckBothPlayersReady();
+    // 내부 게임 단계 제어 로직
+    void CheckBothPlayersReady();
+    void StartPlayingPhase();
+    void UpdatePlayingCountdown();
+    void EnablePlayerMovement();
 
-	/** 실제 미로 레벨 로드 시 게임 시작 처리 */
-	void StartPlayingPhase();
+    // 게임 관리 변수 및 타이머
+    UPROPERTY()
+    AMazeGameState* MyGameState;
 
-	void UpdatePlayingCountdown();
-	void EnablePlayerMovement();
+    UPROPERTY(EditDefaultsOnly, Category = "Game Rules")
+    int32 PlayingStartCountdownDuration = 3;
 
-	UPROPERTY()
-	AMazeGameState* MyGameState;
-
-	UPROPERTY(EditDefaultsOnly, Category = "Game Rules")
-	int32 PlayingStartCountdownDuration = 3;
-
-	int32 RemainingPlayingCountdown = 0;
-	FTimerHandle TimerHandle_GamePhase;
+    int32 RemainingPlayingCountdown = 0;
+    FTimerHandle TimerHandle_GamePhase;
 };

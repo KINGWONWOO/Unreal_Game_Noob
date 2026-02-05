@@ -1,9 +1,7 @@
-// 파일명: Source/NoobGame/OXQuizGameMode.h
-
 #pragma once
 
 #include "CoreMinimal.h"
-#include "NoobGameModeBase.h" // [중요] 부모 헤더 포함
+#include "NoobGameModeBase.h"
 #include "GameTypes.h"
 #include "OXQuizGameMode.generated.h"
 
@@ -14,63 +12,71 @@ class UDataTable;
 UCLASS()
 class NOOBGAME_API AOXQuizGameMode : public ANoobGameModeBase
 {
-	GENERATED_BODY()
+    GENERATED_BODY()
 
 public:
-	AOXQuizGameMode();
+    // 초기화 및 기본 설정
+    AOXQuizGameMode();
+    virtual void PostLogin(APlayerController* NewPlayer) override;
+    virtual bool IsGameInProgress() const override;
 
-	// [Fix] HandlePlayerDeath 삭제됨 (부모 클래스의 Logout -> HandlePlayerDisconnect가 자동 처리)
+    // 플레이어 상호작용 및 난이도 설정
+    void PlayerIsReady(AController* PlayerController);
+    void SetGameDifficulty(EQuizDifficulty NewDifficulty);
 
-	void PlayerIsReady(AController* PlayerController);
-	void SetGameDifficulty(EQuizDifficulty NewDifficulty);
-
-	virtual void EndGame(APlayerState* Winner) override;
+    // 게임 종료 및 정리 로직
+    virtual void EndGame(APlayerState* Winner) override;
 
 protected:
-	virtual void PostLogin(APlayerController* NewPlayer) override;
-	virtual bool IsGameInProgress() const override;
-	virtual void AnnounceWinnerToClients(APlayerState* Winner) override;
-	virtual void CleanupLevelActors() override;
+    // 게임 내부 페이즈 관리
+    void CheckBothPlayersReady_Instruction();
+    void UpdatePlayingCountdown();
+    void StartQuizSpawning();
 
-	void CheckBothPlayersReady_Instruction();
-	void StartQuizSpawning();
-	void SpawnNextQuizObstacle();
-	void LoadQuizListByDifficulty();
-	void UpdatePlayingCountdown();
+    // 퀴즈 데이터 처리 및 스폰
+    void LoadQuizListByDifficulty();
+    void SpawnNextQuizObstacle();
 
-	UPROPERTY()
-	AOXQuizGameState* MyGameState;
+    // 동기화 및 클린업
+    virtual void AnnounceWinnerToClients(APlayerState* Winner) override;
+    virtual void CleanupLevelActors() override;
 
-	UPROPERTY(EditDefaultsOnly, Category = "Quiz")
-	TObjectPtr<UDataTable> QuizDataTable;
+    // 멤버 변수: 상태 및 에셋 참조
+    UPROPERTY()
+    AOXQuizGameState* MyGameState;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Quiz")
-	EQuizDifficulty CurrentGameDifficulty = EQuizDifficulty::Easy;
+    UPROPERTY(EditDefaultsOnly, Category = "Quiz")
+    TObjectPtr<UDataTable> QuizDataTable;
 
-	UPROPERTY(EditDefaultsOnly, Category = "Quiz")
-	TSubclassOf<AQuizObstacleBase> QuizObstacleClass_2Choice;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Quiz")
+    EQuizDifficulty CurrentGameDifficulty = EQuizDifficulty::Easy;
 
-	UPROPERTY(EditDefaultsOnly, Category = "Quiz")
-	TSubclassOf<AQuizObstacleBase> QuizObstacleClass_3Choice;
+    UPROPERTY(EditDefaultsOnly, Category = "Quiz")
+    TSubclassOf<AQuizObstacleBase> QuizObstacleClass_2Choice;
 
-	UPROPERTY(EditDefaultsOnly, Category = "Quiz", meta = (MakeEditWidget = true))
-	FTransform ObstacleSpawnTransform;
+    UPROPERTY(EditDefaultsOnly, Category = "Quiz")
+    TSubclassOf<AQuizObstacleBase> QuizObstacleClass_3Choice;
 
-	UPROPERTY(EditDefaultsOnly, Category = "Quiz|Timing")
-	int32 PlayingStartCountdownDuration = 5;
+    UPROPERTY(EditDefaultsOnly, Category = "Quiz", meta = (MakeEditWidget = true))
+    FTransform ObstacleSpawnTransform;
 
-	UPROPERTY(EditDefaultsOnly, Category = "Quiz|Timing")
-	float TimeBetweenSpawns = 10.f;
+    // 타이밍 및 난이도 밸런스 설정
+    UPROPERTY(EditDefaultsOnly, Category = "Quiz|Timing")
+    int32 PlayingStartCountdownDuration = 5;
 
-	UPROPERTY(EditDefaultsOnly, Category = "Quiz|Speed")
-	TArray<float> SpeedLevels;
+    UPROPERTY(EditDefaultsOnly, Category = "Quiz|Timing")
+    float TimeBetweenSpawns = 10.f;
 
-	FTimerHandle TimerHandle_SpawnQuiz;
-	FTimerHandle TimerHandle_GamePhase;
-	TArray<FQuizData> RemainingQuizList;
+    UPROPERTY(EditDefaultsOnly, Category = "Quiz|Speed")
+    TArray<float> SpeedLevels;
 
-	float CurrentMoveSpeed = 0.f;
-	int32 SpawnedQuizCount = 0;
-	int32 CurrentSpeedLevelIndex = 0;
-	int32 RemainingPlayingCountdown = 0;
+    // 핸들 및 내부 데이터 리스트
+    FTimerHandle TimerHandle_SpawnQuiz;
+    FTimerHandle TimerHandle_GamePhase;
+    TArray<FQuizData> RemainingQuizList;
+
+    float CurrentMoveSpeed = 0.f;
+    int32 SpawnedQuizCount = 0;
+    int32 CurrentSpeedLevelIndex = 0;
+    int32 RemainingPlayingCountdown = 0;
 };

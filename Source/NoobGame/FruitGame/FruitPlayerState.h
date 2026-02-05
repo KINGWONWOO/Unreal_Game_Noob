@@ -1,35 +1,32 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "NoobPlayerState.h" // Parent
-#include "GameTypes.h"       // EFruitType
+#include "NoobPlayerState.h" 
+#include "GameTypes.h"       
 #include "FruitPlayerState.generated.h"
 
 UCLASS()
 class NOOBGAME_API AFruitPlayerState : public ANoobPlayerState
 {
-	GENERATED_BODY()
+    GENERATED_BODY()
 
 public:
-	AFruitPlayerState();
+    AFruitPlayerState();
 
-	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    //네트워크 복제 설정
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 
-	// ──────────────────────────────────────────────────────────────────────────
-	// Fruit Game Specific API
-	// ──────────────────────────────────────────────────────────────────────────
-	void SetSecretAnswers_Server(const TArray<EFruitType>& SecretFruits);
-	const TArray<EFruitType>& GetSecretAnswers_Server() const;
+    //데이터 접근 API (Getters/Setters)
+    void SetSecretAnswers_Server(const TArray<EFruitType>& SecretFruits);
+    const TArray<EFruitType>& GetSecretAnswers_Server() const;
 
-	// ──────────────────────────────────────────────────────────────────────────
-	// Fruit Game Specific Properties
-	// ──────────────────────────────────────────────────────────────────────────
+    //동기화 변수 (Replicated Properties)
 
-	/** Setup 단계 과일 제출 완료 여부 */
-	UPROPERTY(Replicated, BlueprintReadOnly, Category = "Fruit Game")
-	bool bHasSubmittedFruits;
+    //Setup 단계 과일 제출 완료 여부
+    UPROPERTY(Replicated, BlueprintReadOnly, Category = "Fruit Game")
+    bool bHasSubmittedFruits;
 
-	/** 이 플레이어의 비밀 정답 (서버 저장 및 복제) */
-	UPROPERTY(Replicated)
-	TArray<EFruitType> SecretAnswers;
+    //이 플레이어의 비밀 정답 (서버 저장 및 복제)
+    UPROPERTY(Replicated)
+    TArray<EFruitType> SecretAnswers;
 };

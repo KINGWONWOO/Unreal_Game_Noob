@@ -8,37 +8,43 @@
 UCLASS()
 class NOOBGAME_API AInteractableFruitObject : public AActor
 {
-	GENERATED_BODY()
+    GENERATED_BODY()
 
 public:
-	AInteractableFruitObject();
+    AInteractableFruitObject();
 
-	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    // 네트워크 복제 설정
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 
-	// (신규) 추측 배열에서 이 오브젝트의 인덱스 (0~4). 에디터에서 설정
-	UPROPERTY(EditInstanceOnly, Category = "Fruit Game")
-	int32 GuessIndex;
+    // 게임 로직 관련 변수
+    // 에디터의 레벨 배치 뷰에서 직접 설정하는 정답 배열 인덱스 (0~4)
+    UPROPERTY(EditInstanceOnly, Category = "Fruit Game")
+    int32 GuessIndex;
 
-	// (신규) 현재 이 오브젝트가 표시하는 과일
-	UPROPERTY(ReplicatedUsing = OnRep_CurrentFruit)
-	EFruitType CurrentFruit;
+    // 현재 오브젝트가 상태 (서버에서 관리하며 값이 변하면 OnRep 함수 실행)
+    UPROPERTY(ReplicatedUsing = OnRep_CurrentFruit)
+    EFruitType CurrentFruit;
 
-	// (신규) 과일 종류에 따라 머티리얼(텍스처)을 변경하기 위한 맵. BP에서 설정
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Fruit Game")
-	TMap<EFruitType, UMaterialInterface*> FruitMaterials;
+    // 외형 및 컴포넌트 설정
+    // 과일 타입별 머티리얼을 매칭하기 위한 데이터 맵
+    UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Fruit Game")
+    TMap<EFruitType, UMaterialInterface*> FruitMaterials;
 
-	// (신규) 메시 컴포넌트
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
-	UStaticMeshComponent* MeshComponent;
+    // 실제 화면에 보여질 메쉬 컴포넌트
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
+    UStaticMeshComponent* MeshComponent;
 
-	// (신규) 서버에서 과일 종류를 순환시킴
-	UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable, Category = "Fruit Game")
-	EFruitType CycleFruit();
+    // 주요 기능 함수
+    // 서버 전용: 호출 시 다음 과일 종류로 순환시킴
+    UFUNCTION(BlueprintAuthorityOnly, BlueprintCallable, Category = "Fruit Game")
+    EFruitType CycleFruit();
 
 protected:
-	// (신규) 클라이언트에서 머티리얼 변경
-	UFUNCTION()
-	void OnRep_CurrentFruit();
+    // 게임 시작 시 초기화
+    virtual void BeginPlay() override;
 
-	virtual void BeginPlay() override;
+    // 클라이언트 응답 함수
+    // 서버로부터 과일 타입 변수를 받았을 때 머티리얼을 실제 변경함
+    UFUNCTION()
+    void OnRep_CurrentFruit();
 };

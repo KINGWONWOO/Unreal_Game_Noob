@@ -9,50 +9,56 @@ class AFruitGameState;
 UCLASS()
 class NOOBGAME_API AFruitGameMode : public ANoobGameModeBase
 {
-	GENERATED_BODY()
+    GENERATED_BODY()
 
 public:
-	AFruitGameMode();
+    // 초기화 및 기본 설정
+    AFruitGameMode();
+    virtual void PostLogin(APlayerController* NewPlayer) override;
+    virtual bool IsGameInProgress() const override;
 
-	bool IsPlayerTurn(AController* PlayerController) const;
+    // 게임 단계(Phase) 관리
+    void PlayerIsReady(AController* PlayerController);                                      // 준비 완료 확인
+    void PlayerSubmittedFruits(AController* PlayerController, const TArray<EFruitType>& SecretFruits); // 과일 설정
+    void PlayerRequestsStartTurn(AController* PlayerController);                            // 턴 시작 요청
 
-	void PlayerIsReady(AController* PlayerController);
-	void PlayerSubmittedFruits(AController* PlayerController, const TArray<EFruitType>& SecretFruits);
-	void PlayerRequestsStartTurn(AController* PlayerController);
-	void ProcessPlayerGuess(AController* PlayerController, const TArray<EFruitType>& GuessedFruits);
-	void PlayerInteracted(AController* PlayerController, AActor* HitActor, EFruitGamePhase CurrentPhase);
+    // 상호작용 및 게임 로직
+    void PlayerInteracted(AController* PlayerController, AActor* HitActor, EFruitGamePhase CurrentPhase);
+    void ProcessPlayerGuess(AController* PlayerController, const TArray<EFruitType>& GuessedFruits);
+    bool IsPlayerTurn(AController* PlayerController) const;
 
-	virtual void EndGame(APlayerState* Winner) override;
+    // 게임 종료 처리
+    virtual void EndGame(APlayerState* Winner) override;
 
 protected:
-	virtual void PostLogin(APlayerController* NewPlayer) override;
-	virtual bool IsGameInProgress() const override;
-	virtual void AnnounceWinnerToClients(APlayerState* Winner) override;
+    // 내부 단계 처리 함수
+    void CheckBothPlayersReady_Instructions();
+    void CheckBothPlayersReady_Setup();
+    void StartSpinnerPhase();
+    void StartTurn();
+    void EndTurn(bool bTimeOut);
 
-	// 현재 정답 확인 로직이 진행 중인지 여부 (중복 클릭 방지용)
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Game Logic")
-	bool bIsProcessingGuess;
+    // 타이머 및 데이터 처리
+    void OnTurnTimerExpired();
+    void ProcessGuessFromWorldObjects(AController* PlayerController);
+    void OnGuessResultDelayExpired();
+    virtual void AnnounceWinnerToClients(APlayerState* Winner) override;
 
-	void CheckBothPlayersReady_Instructions();
-	void CheckBothPlayersReady_Setup();
-	void StartSpinnerPhase();
-	void StartTurn();
-	void EndTurn(bool bTimeOut);
-	void OnTurnTimerExpired();
-	void ProcessGuessFromWorldObjects(AController* PlayerController);
-	void OnGuessResultDelayExpired();
+    // 멤버 변수
+    UPROPERTY()
+    AFruitGameState* MyGameState;
 
-	UPROPERTY()
-	AFruitGameState* MyGameState;
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Game Logic")
+    bool bIsProcessingGuess;
 
-	UPROPERTY(EditDefaultsOnly, Category = "Game Rules")
-	float TurnDuration = 30.0f;
-	UPROPERTY(EditDefaultsOnly, Category = "Game Rules")
-	float GuessResultDisplayTime = 3.0f;
+    UPROPERTY(EditDefaultsOnly, Category = "Game Rules")
+    float TurnDuration = 30.0f;
+    UPROPERTY(EditDefaultsOnly, Category = "Game Rules")
+    float GuessResultDisplayTime = 3.0f;
 
-	FTimerHandle TurnTimerHandle;
-	FTimerHandle GuessResultTimerHandle;
+    FTimerHandle TurnTimerHandle;
+    FTimerHandle GuessResultTimerHandle;
 
-	int32 NumPlayersReady_Setup = 0;
-	int32 SpinnerResultIndex = -1;
+    int32 NumPlayersReady_Setup = 0;
+    int32 SpinnerResultIndex = -1;
 };

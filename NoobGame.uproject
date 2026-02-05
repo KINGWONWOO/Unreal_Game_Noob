@@ -55,10 +55,6 @@
 			]
 		},
 		{
-			"Name": "Water",
-			"Enabled": true
-		},
-		{
 			"Name": "MazeGenerator",
 			"Enabled": true,
 			"MarketplaceURL": "https://www.fab.com/listings/12e5c02d-ee39-44fc-98f4-1b1fe9923f57"

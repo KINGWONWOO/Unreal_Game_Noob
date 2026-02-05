@@ -10,15 +10,17 @@ class UArrowComponent;
 UCLASS()
 class NOOBGAME_API AMazeStartPoint : public AActor
 {
-	GENERATED_BODY()
+    GENERATED_BODY()
 
 public:
-	AMazeStartPoint();
+    AMazeStartPoint();
 
 protected:
-	UPROPERTY(VisibleAnywhere, Category = "Components")
-	TObjectPtr<UCapsuleComponent> CapsuleComp;
+    // 캡슐 컴포넌트
+    UPROPERTY(VisibleAnywhere, Category = "Components")
+    TObjectPtr<UCapsuleComponent> CapsuleComp;
 
-	UPROPERTY(VisibleAnywhere, Category = "Components")
-	TObjectPtr<UArrowComponent> ArrowComp;
+    // 바라볼 방향을 화살표로 시각화해주는 컴포넌트
+    UPROPERTY(VisibleAnywhere, Category = "Components")
+    TObjectPtr<UArrowComponent> ArrowComp;
 };

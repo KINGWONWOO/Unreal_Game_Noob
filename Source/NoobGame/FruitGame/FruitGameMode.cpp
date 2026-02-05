@@ -7,275 +7,276 @@
 #include "Kismet/GameplayStatics.h"
 #include "TimerManager.h"
 
+// =============================================================
+// 1. 초기화 및 초기 진입 (Initialization)
+// =============================================================
+
 AFruitGameMode::AFruitGameMode()
 {
-	GameStateClass = AFruitGameState::StaticClass();
-	PlayerStateClass = AFruitPlayerState::StaticClass();
-	PlayerControllerClass = AFruitPlayerController::StaticClass();
-	MyGameState = nullptr;
-	bIsProcessingGuess = false;
+    GameStateClass = AFruitGameState::StaticClass();
+    PlayerStateClass = AFruitPlayerState::StaticClass();
+    PlayerControllerClass = AFruitPlayerController::StaticClass();
+    MyGameState = nullptr;
+    bIsProcessingGuess = false;
 }
 
 void AFruitGameMode::PostLogin(APlayerController* NewPlayer)
 {
-	Super::PostLogin(NewPlayer);
-	if (!MyGameState) MyGameState = GetGameState<AFruitGameState>();
-	if (MyGameState && GetNumPlayers() == 2)
-	{
-		MyGameState->CurrentGamePhase = EFruitGamePhase::GP_Instructions;
-	}
+    Super::PostLogin(NewPlayer);
+    if (!MyGameState) MyGameState = GetGameState<AFruitGameState>();
+
+    // 두 명의 플레이어가 접속하면 지침(Instructions) 단계로 전환
+    if (MyGameState && GetNumPlayers() == 2)
+    {
+        MyGameState->CurrentGamePhase = EFruitGamePhase::GP_Instructions;
+    }
 }
 
 bool AFruitGameMode::IsGameInProgress() const
 {
-	return MyGameState && MyGameState->CurrentGamePhase != EFruitGamePhase::GP_GameOver;
+    return MyGameState && MyGameState->CurrentGamePhase != EFruitGamePhase::GP_GameOver;
 }
 
-bool AFruitGameMode::IsPlayerTurn(AController* PlayerController) const
-{
-	if (!MyGameState || !PlayerController || !PlayerController->PlayerState) return false;
-	return (MyGameState->CurrentActivePlayer == PlayerController->PlayerState);
-}
-
-void AFruitGameMode::AnnounceWinnerToClients(APlayerState* Winner)
-{
-	if (!MyGameState) return;
-	GetWorldTimerManager().ClearTimer(TurnTimerHandle);
-	GetWorldTimerManager().ClearTimer(GuessResultTimerHandle);
-
-	FString WinnerName = Winner ? Winner->GetPlayerName() : TEXT("Draw");
-	MyGameState->Multicast_AnnounceWinner(WinnerName);
-}
-
-void AFruitGameMode::EndGame(APlayerState* Winner)
-{
-	if (!MyGameState || MyGameState->CurrentGamePhase == EFruitGamePhase::GP_GameOver) return;
-	MyGameState->CurrentGamePhase = EFruitGamePhase::GP_GameOver;
-	MyGameState->Winner = Winner;
-	MyGameState->ServerTimeAtTurnStart = 0.0f;
-
-	GetWorldTimerManager().ClearTimer(TurnTimerHandle);
-	GetWorldTimerManager().ClearTimer(GuessResultTimerHandle);
-
-	Super::EndGame(Winner);
-}
+// =============================================================
+// 2. 준비 및 설정 단계 (Instructions & Setup Phase)
+// =============================================================
 
 void AFruitGameMode::PlayerIsReady(AController* PlayerController)
 {
-	if (!MyGameState || MyGameState->CurrentGamePhase != EFruitGamePhase::GP_Instructions) return;
-	if (AFruitPlayerState* PS = PlayerController->GetPlayerState<AFruitPlayerState>())
-	{
-		PS->SetInstructionReady_Server();
-		CheckBothPlayersReady_Instructions();
-	}
+    if (!MyGameState || MyGameState->CurrentGamePhase != EFruitGamePhase::GP_Instructions) return;
+    if (AFruitPlayerState* PS = PlayerController->GetPlayerState<AFruitPlayerState>())
+    {
+        PS->SetInstructionReady_Server();
+        CheckBothPlayersReady_Instructions();
+    }
 }
 
 void AFruitGameMode::CheckBothPlayersReady_Instructions()
 {
-	if (!MyGameState) return;
-	int32 ReadyPlayers = 0;
-	for (APlayerState* PS : MyGameState->PlayerArray)
-	{
-		if (AFruitPlayerState* FruitPS = Cast<AFruitPlayerState>(PS))
-		{
-			if (FruitPS->bIsReady_Instructions) ReadyPlayers++;
-		}
-	}
-	if (ReadyPlayers == 2) MyGameState->CurrentGamePhase = EFruitGamePhase::GP_Setup;
+    if (!MyGameState) return;
+    int32 ReadyPlayers = 0;
+    for (APlayerState* PS : MyGameState->PlayerArray)
+    {
+        if (AFruitPlayerState* FruitPS = Cast<AFruitPlayerState>(PS))
+        {
+            if (FruitPS->bIsReady_Instructions) ReadyPlayers++;
+        }
+    }
+    if (ReadyPlayers == 2) MyGameState->CurrentGamePhase = EFruitGamePhase::GP_Setup;
 }
 
 void AFruitGameMode::PlayerSubmittedFruits(AController* PlayerController, const TArray<EFruitType>& SecretFruits)
 {
-	if (!MyGameState || MyGameState->CurrentGamePhase != EFruitGamePhase::GP_Setup) return;
-	AFruitPlayerState* PS = PlayerController->GetPlayerState<AFruitPlayerState>();
-	if (PS && !PS->bHasSubmittedFruits)
-	{
-		PS->SetSecretAnswers_Server(SecretFruits);
-		NumPlayersReady_Setup++;
-		CheckBothPlayersReady_Setup();
-	}
+    if (!MyGameState || MyGameState->CurrentGamePhase != EFruitGamePhase::GP_Setup) return;
+    AFruitPlayerState* PS = PlayerController->GetPlayerState<AFruitPlayerState>();
+    if (PS && !PS->bHasSubmittedFruits)
+    {
+        PS->SetSecretAnswers_Server(SecretFruits);
+        NumPlayersReady_Setup++;
+        CheckBothPlayersReady_Setup();
+    }
 }
 
 void AFruitGameMode::CheckBothPlayersReady_Setup()
 {
-	if (NumPlayersReady_Setup == 2) StartSpinnerPhase();
+    if (NumPlayersReady_Setup == 2) StartSpinnerPhase();
 }
+
+// =============================================================
+// 3. 턴 결정 및 시작 (Spinner & Turn Management)
+// =============================================================
 
 void AFruitGameMode::StartSpinnerPhase()
 {
-	if (!MyGameState) return;
-	MyGameState->CurrentGamePhase = EFruitGamePhase::GP_SpinnerTurn;
-	SpinnerResultIndex = FMath::RandRange(0, 1);
-	for (APlayerState* PS : MyGameState->PlayerArray)
-	{
-		AFruitPlayerController* PC = Cast<AFruitPlayerController>(PS->GetPlayerController());
-		if (PC) PC->Client_PlaySpinnerAnimation(SpinnerResultIndex);
-	}
+    if (!MyGameState) return;
+    MyGameState->CurrentGamePhase = EFruitGamePhase::GP_SpinnerTurn;
+    SpinnerResultIndex = FMath::RandRange(0, 1);
+    for (APlayerState* PS : MyGameState->PlayerArray)
+    {
+        AFruitPlayerController* PC = Cast<AFruitPlayerController>(PS->GetPlayerController());
+        if (PC) PC->Client_PlaySpinnerAnimation(SpinnerResultIndex);
+    }
 }
 
 void AFruitGameMode::PlayerRequestsStartTurn(AController* PlayerController)
 {
-	if (!MyGameState || MyGameState->CurrentGamePhase != EFruitGamePhase::GP_SpinnerTurn || SpinnerResultIndex == -1) return;
-	if (MyGameState->CurrentGamePhase == EFruitGamePhase::GP_PlayerTurn) return;
+    if (!MyGameState || MyGameState->CurrentGamePhase != EFruitGamePhase::GP_SpinnerTurn || SpinnerResultIndex == -1) return;
+    if (MyGameState->CurrentGamePhase == EFruitGamePhase::GP_PlayerTurn) return;
 
-	MyGameState->CurrentActivePlayer = MyGameState->PlayerArray[SpinnerResultIndex];
-	MyGameState->CurrentGamePhase = EFruitGamePhase::GP_PlayerTurn;
-	StartTurn();
+    MyGameState->CurrentActivePlayer = MyGameState->PlayerArray[SpinnerResultIndex];
+    MyGameState->CurrentGamePhase = EFruitGamePhase::GP_PlayerTurn;
+    StartTurn();
 }
 
 void AFruitGameMode::StartTurn()
 {
-	if (!MyGameState || !MyGameState->CurrentActivePlayer) return;
-	MyGameState->ServerTimeAtTurnStart = GetWorld()->GetTimeSeconds();
-	GetWorldTimerManager().SetTimer(TurnTimerHandle, this, &AFruitGameMode::OnTurnTimerExpired, TurnDuration, false);
-	AFruitPlayerController* ActivePC = Cast<AFruitPlayerController>(MyGameState->CurrentActivePlayer->GetPlayerController());
-	if (ActivePC) ActivePC->Client_StartTurn();
+    if (!MyGameState || !MyGameState->CurrentActivePlayer) return;
+    MyGameState->ServerTimeAtTurnStart = GetWorld()->GetTimeSeconds();
+    GetWorldTimerManager().SetTimer(TurnTimerHandle, this, &AFruitGameMode::OnTurnTimerExpired, TurnDuration, false);
+    AFruitPlayerController* ActivePC = Cast<AFruitPlayerController>(MyGameState->CurrentActivePlayer->GetPlayerController());
+    if (ActivePC) ActivePC->Client_StartTurn();
 }
 
-void AFruitGameMode::OnTurnTimerExpired() { EndTurn(true); }
+bool AFruitGameMode::IsPlayerTurn(AController* PlayerController) const
+{
+    if (!MyGameState || !PlayerController || !PlayerController->PlayerState) return false;
+    return (MyGameState->CurrentActivePlayer == PlayerController->PlayerState);
+}
+
+// =============================================================
+// 4. 게임 플레이 상호작용 (Interaction & Guessing)
+// =============================================================
 
 void AFruitGameMode::PlayerInteracted(AController* PlayerController, AActor* HitActor, EFruitGamePhase CurrentPhase)
 {
+    if (CurrentPhase == EFruitGamePhase::GP_PlayerTurn)
+    {
+        if (!IsPlayerTurn(PlayerController)) return;
 
-	if (CurrentPhase == EFruitGamePhase::GP_PlayerTurn)
-	{
-		// 2. 턴 주인 확인: 상대방이 인터랙트해서 가로채는 것을 방지
-		if (!IsPlayerTurn(PlayerController))
-		{
-			UE_LOG(LogTemp, Warning, TEXT("Not your turn: %s"), *PlayerController->GetName());
-			return;
-		}
-
-		if (AInteractableFruitObject* GuessObject = Cast<AInteractableFruitObject>(HitActor))
-		{
-			GuessObject->CycleFruit();
-		}
-		else if (ASubmitGuessButton* GuessSubmitButton = Cast<ASubmitGuessButton>(HitActor))
-		{
-			if (bIsProcessingGuess) return;
-			// 정답 제출 버튼 클릭 시 처리 시작
-			ProcessGuessFromWorldObjects(PlayerController);
-		}
-	}
+        if (AInteractableFruitObject* GuessObject = Cast<AInteractableFruitObject>(HitActor))
+        {
+            GuessObject->CycleFruit();
+        }
+        else if (ASubmitGuessButton* GuessSubmitButton = Cast<ASubmitGuessButton>(HitActor))
+        {
+            if (bIsProcessingGuess) return;
+            ProcessGuessFromWorldObjects(PlayerController);
+        }
+    }
 }
 
 void AFruitGameMode::ProcessGuessFromWorldObjects(AController* PlayerController)
 {
-	if (bIsProcessingGuess) return;
-	bIsProcessingGuess = true;
+    if (bIsProcessingGuess) return;
+    bIsProcessingGuess = true;
 
-	TArray<AActor*> FoundActors;
-	UGameplayStatics::GetAllActorsOfClass(GetWorld(), AInteractableFruitObject::StaticClass(), FoundActors);
+    TArray<AActor*> FoundActors;
+    UGameplayStatics::GetAllActorsOfClass(GetWorld(), AInteractableFruitObject::StaticClass(), FoundActors);
 
-	// 1. 유효성 검사 실패 시 즉시 플래그 복구
-	if (FoundActors.Num() != 5)
-	{
-		UE_LOG(LogTemp, Error, TEXT("Fruit objects count mismatch!"));
-		bIsProcessingGuess = false;
-		return;
-	}
+    if (FoundActors.Num() != 5)
+    {
+        bIsProcessingGuess = false;
+        return;
+    }
 
-	FoundActors.Sort([](const AActor& A, const AActor& B) {
-		const AInteractableFruitObject* ObjA = Cast<AInteractableFruitObject>(&A);
-		const AInteractableFruitObject* ObjB = Cast<AInteractableFruitObject>(&B);
-		if (ObjA && ObjB) return ObjA->GuessIndex < ObjB->GuessIndex;
-		return false;
-		});
+    // 인덱스 순서대로 정렬하여 정답 배열 생성
+    FoundActors.Sort([](const AActor& A, const AActor& B) {
+        const AInteractableFruitObject* ObjA = Cast<AInteractableFruitObject>(&A);
+        const AInteractableFruitObject* ObjB = Cast<AInteractableFruitObject>(&B);
+        if (ObjA && ObjB) return ObjA->GuessIndex < ObjB->GuessIndex;
+        return false;
+        });
 
-	TArray<EFruitType> GuessedFruits;
-	GuessedFruits.Init(EFruitType::FT_None, 5);
-	bool bAllValid = true;
-	for (AActor* Actor : FoundActors)
-	{
-		AInteractableFruitObject* FruitObject = Cast<AInteractableFruitObject>(Actor);
-		if (FruitObject && GuessedFruits.IsValidIndex(FruitObject->GuessIndex))
-		{
-			GuessedFruits[FruitObject->GuessIndex] = FruitObject->CurrentFruit;
-		}
-		else bAllValid = false;
-	}
+    TArray<EFruitType> GuessedFruits;
+    GuessedFruits.Init(EFruitType::FT_None, 5);
+    bool bAllValid = true;
+    for (AActor* Actor : FoundActors)
+    {
+        AInteractableFruitObject* FruitObject = Cast<AInteractableFruitObject>(Actor);
+        if (FruitObject && GuessedFruits.IsValidIndex(FruitObject->GuessIndex))
+        {
+            GuessedFruits[FruitObject->GuessIndex] = FruitObject->CurrentFruit;
+        }
+        else bAllValid = false;
+    }
 
-	if (bAllValid)
-	{
-		ProcessPlayerGuess(PlayerController, GuessedFruits);
-	}
-	else
-	{
-		// 2. 데이터가 유효하지 않을 때도 다시 누를 수 있게 해줘야 함
-		bIsProcessingGuess = false;
-	}
+    if (bAllValid) ProcessPlayerGuess(PlayerController, GuessedFruits);
+    else bIsProcessingGuess = false;
 }
 
 void AFruitGameMode::ProcessPlayerGuess(AController* PlayerController, const TArray<EFruitType>& GuessedFruits)
 {
-	if (!IsPlayerTurn(PlayerController)) return;
+    if (!IsPlayerTurn(PlayerController)) return;
 
-	GetWorldTimerManager().ClearTimer(TurnTimerHandle);
-	if (MyGameState) MyGameState->ServerTimeAtTurnStart = 0.0f;
+    GetWorldTimerManager().ClearTimer(TurnTimerHandle);
+    if (MyGameState) MyGameState->ServerTimeAtTurnStart = 0.0f;
 
-	AFruitPlayerState* OpponentPS = nullptr;
-	for (APlayerState* PS : MyGameState->PlayerArray)
-	{
-		if (PS != PlayerController->PlayerState)
-		{
-			OpponentPS = Cast<AFruitPlayerState>(PS);
-			break;
-		}
-	}
-	if (!OpponentPS) return;
+    // 상대방 찾기 및 정답 비교
+    AFruitPlayerState* OpponentPS = nullptr;
+    for (APlayerState* PS : MyGameState->PlayerArray)
+    {
+        if (PS != PlayerController->PlayerState)
+        {
+            OpponentPS = Cast<AFruitPlayerState>(PS);
+            break;
+        }
+    }
+    if (!OpponentPS) return;
 
-	const TArray<EFruitType>& OpponentSecret = OpponentPS->GetSecretAnswers_Server();
-	int32 MatchCount = 0;
-	for (int32 i = 0; i < 5; ++i)
-	{
-		if (GuessedFruits.IsValidIndex(i) && OpponentSecret.IsValidIndex(i) &&
-			GuessedFruits[i] == OpponentSecret[i] && GuessedFruits[i] != EFruitType::FT_None)
-		{
-			MatchCount++;
-		}
-	}
+    const TArray<EFruitType>& OpponentSecret = OpponentPS->GetSecretAnswers_Server();
+    int32 MatchCount = 0;
+    for (int32 i = 0; i < 5; ++i)
+    {
+        if (GuessedFruits.IsValidIndex(i) && OpponentSecret.IsValidIndex(i) &&
+            GuessedFruits[i] == OpponentSecret[i] && GuessedFruits[i] != EFruitType::FT_None)
+        {
+            MatchCount++;
+        }
+    }
 
-	AFruitPlayerController* GuesserPC = Cast<AFruitPlayerController>(PlayerController);
-	AFruitPlayerController* OpponentPC = Cast<AFruitPlayerController>(OpponentPS->GetPlayerController());
-	if (GuesserPC) GuesserPC->Client_ReceiveGuessResult(GuessedFruits, MatchCount);
-	if (OpponentPC) OpponentPC->Client_OpponentGuessed(GuessedFruits, MatchCount);
+    AFruitPlayerController* GuesserPC = Cast<AFruitPlayerController>(PlayerController);
+    AFruitPlayerController* OpponentPC = Cast<AFruitPlayerController>(OpponentPS->GetPlayerController());
+    if (GuesserPC) GuesserPC->Client_ReceiveGuessResult(GuessedFruits, MatchCount);
+    if (OpponentPC) OpponentPC->Client_OpponentGuessed(GuessedFruits, MatchCount);
 
-	if (MatchCount == 5)
-	{
-		StartWinnerAnnouncement(PlayerController->PlayerState);
-	}
-	else
-	{
-		GetWorldTimerManager().SetTimer(GuessResultTimerHandle, this, &AFruitGameMode::OnGuessResultDelayExpired, GuessResultDisplayTime, false);
-	}
+    if (MatchCount == 5) StartWinnerAnnouncement(PlayerController->PlayerState);
+    else GetWorldTimerManager().SetTimer(GuessResultTimerHandle, this, &AFruitGameMode::OnGuessResultDelayExpired, GuessResultDisplayTime, false);
 }
 
-void AFruitGameMode::OnGuessResultDelayExpired()
-{
-	EndTurn(false);
-}
+// =============================================================
+// 5. 턴 종료 및 게임 종료 (Turn/Game Over)
+// =============================================================
+
+void AFruitGameMode::OnTurnTimerExpired() { EndTurn(true); }
+
+void AFruitGameMode::OnGuessResultDelayExpired() { EndTurn(false); }
 
 void AFruitGameMode::EndTurn(bool bTimeOut)
 {
-	if (!MyGameState) return;
-	if (bTimeOut) MyGameState->ServerTimeAtTurnStart = 0.0f;
+    if (!MyGameState) return;
+    if (bTimeOut) MyGameState->ServerTimeAtTurnStart = 0.0f;
 
-	GetWorldTimerManager().ClearTimer(GuessResultTimerHandle);
+    GetWorldTimerManager().ClearTimer(GuessResultTimerHandle);
 
-	APlayerState* NextPlayer = nullptr;
-	for (APlayerState* PS : MyGameState->PlayerArray)
-	{
-		if (PS != MyGameState->CurrentActivePlayer)
-		{
-			NextPlayer = PS;
-			break;
-		}
-	}
-	if (NextPlayer)
-	{
-		MyGameState->CurrentActivePlayer = NextPlayer;
-		StartTurn();
-		bIsProcessingGuess = false;
-	}
-	else EndGame(nullptr);
+    // 턴 교체 로직
+    APlayerState* NextPlayer = nullptr;
+    for (APlayerState* PS : MyGameState->PlayerArray)
+    {
+        if (PS != MyGameState->CurrentActivePlayer)
+        {
+            NextPlayer = PS;
+            break;
+        }
+    }
+
+    if (NextPlayer)
+    {
+        MyGameState->CurrentActivePlayer = NextPlayer;
+        StartTurn();
+        bIsProcessingGuess = false;
+    }
+    else EndGame(nullptr);
+}
+
+void AFruitGameMode::AnnounceWinnerToClients(APlayerState* Winner)
+{
+    if (!MyGameState) return;
+    GetWorldTimerManager().ClearTimer(TurnTimerHandle);
+    GetWorldTimerManager().ClearTimer(GuessResultTimerHandle);
+
+    FString WinnerName = Winner ? Winner->GetPlayerName() : TEXT("Draw");
+    MyGameState->Multicast_AnnounceWinner(WinnerName);
+}
+
+void AFruitGameMode::EndGame(APlayerState* Winner)
+{
+    if (!MyGameState || MyGameState->CurrentGamePhase == EFruitGamePhase::GP_GameOver) return;
+    MyGameState->CurrentGamePhase = EFruitGamePhase::GP_GameOver;
+    MyGameState->Winner = Winner;
+    MyGameState->ServerTimeAtTurnStart = 0.0f;
+
+    GetWorldTimerManager().ClearTimer(TurnTimerHandle);
+    GetWorldTimerManager().ClearTimer(GuessResultTimerHandle);
+
+    Super::EndGame(Winner);
 }

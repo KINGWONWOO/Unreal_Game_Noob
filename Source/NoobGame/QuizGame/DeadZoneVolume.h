@@ -5,28 +5,34 @@
 #include "DeadZoneVolume.generated.h"
 
 class UBoxComponent;
-class ANoobGameModeBase; // [변경] 부모 게임모드 전방 선언
+class ANoobGameModeBase;
 
 UCLASS()
 class NOOBGAME_API ADeadZoneVolume : public AActor
 {
-	GENERATED_BODY()
+    GENERATED_BODY()
 
 public:
-	ADeadZoneVolume();
+    ADeadZoneVolume();
 
 protected:
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
-	TObjectPtr<UBoxComponent> CollisionComponent;
+    // 물리적 감지 구역 설정을 위한 박스 컴포넌트
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
+    TObjectPtr<UBoxComponent> CollisionComponent;
 
-	virtual void BeginPlay() override;
+    // 초기 바인딩 및 캐싱 로직
+    virtual void BeginPlay() override;
 
-	UFUNCTION()
-	void OnOverlapBegin(UPrimitiveComponent* OverlapComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+    // 충돌 감지 시 호출되는 서버 사이드 로직
+    UFUNCTION()
+    void OnOverlapBegin(UPrimitiveComponent* OverlapComponent, AActor* OtherActor,
+        UPrimitiveComponent* OtherComp, int32 OtherBodyIndex,
+        bool bFromSweep, const FHitResult& SweepResult);
 
-	// [변경] 특정 게임모드 대신 부모 게임모드를 캐싱하여 재사용성 높임
-	UPROPERTY()
-	TObjectPtr<ANoobGameModeBase> CachedGameMode;
+    // 공통 게임모드 캐싱 (매번 찾지 않고 재사용하기 위함)
+    UPROPERTY()
+    TObjectPtr<ANoobGameModeBase> CachedGameMode;
 
-	bool bHasTriggered = false;
+    // 단 한 명의 승자만 결정되도록 보장하는 플래그
+    bool bHasTriggered = false;
 };

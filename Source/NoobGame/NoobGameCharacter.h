@@ -11,98 +11,97 @@ class USoundAttenuation;
 UCLASS()
 class NOOBGAME_API ANoobGameCharacter : public ACharacter
 {
-	GENERATED_BODY()
+    GENERATED_BODY()
 
 public:
-	ANoobGameCharacter();
+    ANoobGameCharacter();
 
-	virtual void BeginPlay() override;
-	virtual void Tick(float DeltaTime) override;
-	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+    // --- 프레임워크 기본 인터페이스 ---
+    virtual void BeginPlay() override;
+    virtual void Tick(float DeltaTime) override;
+    virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+    virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 
-	void SetDownState_Server(bool bInDown);
+    // 시선 입력 처리
+    UFUNCTION(BlueprintCallable, Category = "Input")
+    void Turn(float Value);
+    UFUNCTION(BlueprintCallable, Category = "Input")
+    void LookUp(float Value);
 
-	FORCEINLINE bool GetIsDown() const { return bIsDown; }
+    // --- 카메라 및 설정 ---
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera")
+    float CameraSensitivity;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera")
+    bool ReverseX;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera")
+    bool ReverseY;
 
-	UFUNCTION(Server, Reliable)
-	void Server_PlayHitSound();
 
-	UFUNCTION(NetMulticast, Reliable)
-	void Multicast_PlayEndGameAnim(bool bIsWinner);
+    // --- 전투 및 피해 처리 ---
+    virtual float TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser) override;
 
-	// --- 몽타주 애셋 ---
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Combat")
-	UAnimMontage* LeftPunchMontage;
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Combat")
-	UAnimMontage* RightPunchMontage;
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Combat|Hit")
-	UAnimMontage* HitReaction_Front;
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Combat|Hit")
-	UAnimMontage* HitReaction_Back;
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Combat|Hit")
-	UAnimMontage* HitReaction_Left;
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Combat|Hit")
-	UAnimMontage* HitReaction_Right;
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Combat|State")
-	UAnimMontage* KnockdownMontage;
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Combat|State")
-	UAnimMontage* GetUpMontage;
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Combat|Result")
-	UAnimMontage* VictoryMontage;
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Combat|Result")
-	UAnimMontage* DefeatMontage;
+    UFUNCTION(Server, Reliable)
+    void Server_PlayHitSound();
 
-	// --- 카메라 설정 ---
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera")
-	float CameraSensitivity;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera")
-	bool ReverseX;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera")
-	bool ReverseY;
+    UFUNCTION(NetMulticast, Unreliable)
+    void Multicast_PlayHitSound();
 
-	// 엔진의 기본 TakeDamage 함수를 오버라이드합니다.
-	virtual float TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser);
-	// 피격 사운드를 모든 클라이언트에서 재생하기 위한 멀티캐스트 RPC
-	UFUNCTION(NetMulticast, Unreliable)
-	void Multicast_PlayHitSound();
+    UFUNCTION(NetMulticast, Reliable)
+    void Multicast_PlayEndGameAnim(bool bIsWinner);
 
-	// [추가] 피격 시 재생할 사운드 에셋
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Audio")
-	USoundBase* HitSound;
+    // --- 상태 및 애니메이션 ---
+    void SetDownState_Server(bool bInDown);
+    FORCEINLINE bool GetIsDown() const { return bIsDown; }
 
-	// [추가] 사운드 감쇄 설정 (거리별 볼륨 조절)
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Audio")
-	USoundAttenuation* HitAttenuation;
+    // 공격 및 반응 몽타주 애셋
+    UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Combat")
+    UAnimMontage* LeftPunchMontage;
+    UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Combat")
+    UAnimMontage* RightPunchMontage;
+    UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Combat|Hit")
+    UAnimMontage* HitReaction_Front;
+    UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Combat|Hit")
+    UAnimMontage* HitReaction_Back;
+    UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Combat|Hit")
+    UAnimMontage* HitReaction_Left;
+    UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Combat|Hit")
+    UAnimMontage* HitReaction_Right;
+    UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Combat|State")
+    UAnimMontage* KnockdownMontage;
+    UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Combat|State")
+    UAnimMontage* GetUpMontage;
+    UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Combat|Result")
+    UAnimMontage* VictoryMontage;
+    UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Combat|Result")
+    UAnimMontage* DefeatMontage;
+
+    // --- 오디오 애셋 ---
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Audio")
+    USoundBase* HitSound;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Audio")
+    USoundAttenuation* HitAttenuation;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Audio")
+    USoundBase* KnockdownSound;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Audio")
+    USoundAttenuation* KnockdownAttenuation;
 
 protected:
-	UPROPERTY(ReplicatedUsing = OnRep_IsDown)
-	bool bIsDown;
+    // 기절 상태 복제 변수
+    UPROPERTY(ReplicatedUsing = OnRep_IsDown)
+    bool bIsDown;
 
-	UFUNCTION()
-	void OnRep_IsDown();
+    UFUNCTION()
+    void OnRep_IsDown();
 
-	void EnableMovementAfterRecovery();
-	void Turn(float Value);
-	void LookUp(float Value);
+    void EnableMovementAfterRecovery();
 
-	// --- [신규] 최적화된 카메라 이동 관련 ---
-	FTimerHandle CameraInterpTimerHandle;
-	float TargetCameraZ;
-	void UpdateCameraHeight(); // 타이머가 호출할 보간 함수
+    // 카메라 높이 조절 시스템 (최적화 타이머 기반)
+    FTimerHandle CameraInterpTimerHandle;
+    float TargetCameraZ;
+    void UpdateCameraHeight();
 
-	FTimerHandle RecoveryTimerHandle;
+    FTimerHandle RecoveryTimerHandle;
 
-	// 카메라 컴포넌트 참조 (FirstPersonCameraComponent가 있다고 가정)
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Camera")
-	class UCameraComponent* FirstPersonCameraComponent;
-
-	// [추가] 기절 시 재생할 사운드 에셋
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Audio")
-	USoundBase* KnockdownSound;
-
-	// [추가] 사운드 감쇄 설정 (거리별 볼륨 조절)
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Audio")
-	USoundAttenuation* KnockdownAttenuation;
-
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Camera")
+    class UCameraComponent* FirstPersonCameraComponent;
 };

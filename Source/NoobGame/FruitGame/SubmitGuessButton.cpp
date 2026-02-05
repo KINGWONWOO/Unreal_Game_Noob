@@ -1,5 +1,3 @@
-// SubmitGuessButton.cpp (½Å±Ô)
-
 #include "SubmitGuessButton.h"
 
 ASubmitGuessButton::ASubmitGuessButton()

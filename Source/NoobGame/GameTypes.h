@@ -1,45 +1,54 @@
-// FruitGameTypes.h
-
 #pragma once
 
 #include "CoreMinimal.h"
 #include "Engine/DataTable.h"
 #include "GameTypes.generated.h"
 
-// 0. 공용
+// =============================================================
+// 0. 공용 타입 (Common Types)
+// =============================================================
+
+// 프로젝트 전체에서 사용되는 캐릭터 종류
 UENUM(BlueprintType)
 enum class ECharacterType : uint8
 {
     ECT_None,
-    ECT_Cat		UMETA(DisplayName = "Cat"),
-    ECT_Dog		UMETA(DisplayName = "Dog")
+    ECT_Cat     UMETA(DisplayName = "Cat"),
+    ECT_Dog     UMETA(DisplayName = "Dog")
 };
 
-// 1. Fruit Game
+// =============================================================
+// 1. 과일 게임 타입 (Fruit Game Types)
+// =============================================================
+
+// 게임에 등장하는 과일의 종류
 UENUM(BlueprintType)
 enum class EFruitType : uint8
 {
-	FT_None		UMETA(DisplayName = "None"),
-	FT_Apple	UMETA(DisplayName = "Apple"),
-	FT_Banana	UMETA(DisplayName = "Banana"),
-	FT_Cherry	UMETA(DisplayName = "Cherry"),
-	FT_Orange	UMETA(DisplayName = "Orange")
+    FT_None     UMETA(DisplayName = "None"),
+    FT_Apple    UMETA(DisplayName = "Apple"),
+    FT_Banana   UMETA(DisplayName = "Banana"),
+    FT_Cherry   UMETA(DisplayName = "Cherry"),
+    FT_Orange   UMETA(DisplayName = "Orange")
 };
 
+// 과일 게임의 진행 단계
 UENUM(BlueprintType)
 enum class EFruitGamePhase : uint8
 {
-	GP_WaitingToStart	UMETA(DisplayName = "WaitingToStart"), // 2명 대기
-	GP_Instructions		UMETA(DisplayName = "Instructions"),  // 게임 설명
-	GP_Setup			UMETA(DisplayName = "Setup"), // 각자 과일 선택
-	GP_SpinnerTurn		UMETA(DisplayName = "SpinnerTurn"), // <-- 신규 단계 추가
-	GP_PlayerTurn		UMETA(DisplayName = "PlayerTurn"), // 턴 진행
-	GP_GameOver			UMETA(DisplayName = "GameOver") // 게임 종료
+    GP_WaitingToStart   UMETA(DisplayName = "WaitingToStart"), // 2명 대기 중
+    GP_Instructions     UMETA(DisplayName = "Instructions"),   // 게임 설명 단계
+    GP_Setup            UMETA(DisplayName = "Setup"),          // 각자 과일 설정 단계
+    GP_SpinnerTurn      UMETA(DisplayName = "SpinnerTurn"),    // 선공 결정을 위한 스피너
+    GP_PlayerTurn       UMETA(DisplayName = "PlayerTurn"),     // 메인 턴 진행
+    GP_GameOver         UMETA(DisplayName = "GameOver")        // 게임 종료
 };
 
+// =============================================================
+// 2. OX 퀴즈 게임 타입 (OX Quiz Game Types)
+// =============================================================
 
-// 2. OX Quiz Game
-
+// 퀴즈 난이도 설정
 UENUM(BlueprintType)
 enum class EQuizDifficulty : uint8
 {
@@ -48,21 +57,21 @@ enum class EQuizDifficulty : uint8
     Hard    UMETA(DisplayName = "Hard (상)")
 };
 
+// 퀴즈 게임의 진행 단계
 UENUM(BlueprintType)
 enum class EQuizGamePhase : uint8
 {
     GP_WaitingToStart   UMETA(DisplayName = "WaitingToStart"),
     GP_Instructions     UMETA(DisplayName = "Instructions"),
-    GP_Playing          UMETA(DisplayName = "Playing"),
-    GP_GameOver         UMETA(DisplayName = "GameOver")
+    GP_Playing           UMETA(DisplayName = "Playing"),
+    GP_GameOver          UMETA(DisplayName = "GameOver")
 };
 
+// 퀴즈 문제의 카테고리 정의 (데이터 테이블 및 JSON 매칭용)
 UENUM(BlueprintType)
 enum class EQuizCategory : uint8
 {
     None            UMETA(DisplayName = "없음"),
-
-    // JSON 데이터에 존재하는 카테고리들
     Science         UMETA(DisplayName = "과학"),
     History         UMETA(DisplayName = "역사"),
     IT              UMETA(DisplayName = "IT"),
@@ -80,48 +89,53 @@ enum class EQuizCategory : uint8
     Entertainment   UMETA(DisplayName = "엔터")
 };
 
-// 데이터 테이블 구조체
+// 퀴즈 데이터 테이블 구조체
 USTRUCT(BlueprintType)
 struct FQuizData : public FTableRowBase
 {
     GENERATED_BODY()
 
-    /** 퀴즈 문제 */
+    // 퀴즈 문제 텍스트
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Quiz")
     FText Question;
 
-    /** 선택지 배열 */
+    // 선택지 배열 (2개면 OX, 3개면 3지선다)
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Quiz")
     TArray<FText> Answers;
 
-    /** 정답 인덱스 */
+    // 정답 배열의 인덱스
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Quiz")
     int32 CorrectAnswerIndex;
 
-    /** 난이도 (JSON의 "Easy", "Hard" 등 영어 텍스트는 Enum과 자동 매칭됨) */
+    // 문제 난이도
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Quiz")
     EQuizDifficulty Difficulty;
 
-
+    // 카테고리 명칭
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Quiz")
     FString Category;
 
-    /** 문제 유형 (OX, 3Choice 등) */
+    // 문제 유형 구분 (OX, 3Choice 등)
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Quiz")
     FString Type;
 };
 
-//3. Maze Game
+// =============================================================
+// 3. 미로 게임 타입 (Maze Game Types)
+// =============================================================
+
+// 미로 게임의 진행 단계
 UENUM(BlueprintType)
 enum class EMazeGamePhase : uint8
 {
     GP_WaitingToStart   UMETA(DisplayName = "WaitingToStart"),
     GP_Instructions     UMETA(DisplayName = "Instructions"),
     GP_MapSelection     UMETA(DisplayName = "MapSelection"),
-    GP_Playing          UMETA(DisplayName = "Playing"),
-    GP_GameOver         UMETA(DisplayName = "GameOver")
+    GP_Playing           UMETA(DisplayName = "Playing"),
+    GP_GameOver          UMETA(DisplayName = "GameOver")
 };
 
+// 미로 내 동적 프롭(Prop) 동기화 데이터
 USTRUCT(BlueprintType)
 struct FMazePropData
 {
@@ -131,15 +145,17 @@ struct FMazePropData
     UPROPERTY() FRotator Rotation;
 };
 
+// 미로 내 동적 조명(Light) 동기화 데이터
 USTRUCT(BlueprintType)
 struct FMazeLightData
 {
     GENERATED_BODY()
-    UPROPERTY() int32 LightIndex;     // RandomLightClasses 배열의 인덱스
-    UPROPERTY() FVector RelativePos;  // 미로 기준 상대 위치
-    UPROPERTY() FRotator Rotation;    // 회전값
+    UPROPERTY() int32 LightIndex;    // 조명 액터 클래스 인덱스
+    UPROPERTY() FVector RelativePos; // 미로 기준 상대 위치
+    UPROPERTY() FRotator Rotation;   // 조명 회전값
 };
 
+// 미로 맵 크기 옵션
 UENUM(BlueprintType)
 enum class EMazeMapSize : uint8
 {

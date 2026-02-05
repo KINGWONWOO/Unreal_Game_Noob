@@ -101,7 +101,7 @@ void ANoobPlayerController::Server_RequestPunch_Implementation(ACharacter* HitCh
 		// 1. 서버 데미지 적용 (가장 핵심 로직!)
 		UGameplayStatics::ApplyDamage(
 			HitCharacter,
-			1.0f,               // 데미지 양 (0보다 커야 함)
+			1.0f,               // 데미지 양
 			this,               // 데미지 유발자 (Controller)
 			GetPawn(),          // 데미지 원인 액터 (Player Character)
 			UDamageType::StaticClass()
@@ -131,7 +131,6 @@ void ANoobPlayerController::Server_RequestPlayPunchMontage_Implementation()
 
 	if (MyChar && MyPS && GM)
 	{
-		// [추가 가이드] 캐릭터가 쓰러진 상태에서는 펀치 요청을 무시하도록 로직 추가 가능
 		// if (MyChar->GetIsDown()) return;
 
 		bool bIsLeft = MyPS->bIsNextPunchLeft;
@@ -143,7 +142,6 @@ void ANoobPlayerController::Server_RequestPlayPunchMontage_Implementation()
 
 void ANoobPlayerController::RequestActorPunch(AActor* TargetActor)
 {
-	// 클라이언트에서 즉시 로그 확인
 	UE_LOG(LogTemp, Display, TEXT("Lobby: RequestActorPunch to %s"), TargetActor ? *TargetActor->GetName() : TEXT("None"));
 
 	if (TargetActor)
@@ -161,7 +159,7 @@ void ANoobPlayerController::Server_RequestActorPunch_Implementation(AActor* Targ
 		// 1. 서버 데미지 적용 (가장 핵심 로직!)
 		UGameplayStatics::ApplyDamage(
 			TargetActor,
-			1.0f,               // 데미지 양 (0보다 커야 함)
+			1.0f,               // 데미지 양
 			this,               // 데미지 유발자 (Controller)
 			GetPawn(),          // 데미지 원인 액터 (Player Character)
 			UDamageType::StaticClass()

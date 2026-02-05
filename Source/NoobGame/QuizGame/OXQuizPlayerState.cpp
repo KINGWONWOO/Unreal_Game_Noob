@@ -1,21 +1,31 @@
-// OXQuizPlayerState.cpp
 #include "OXQuizPlayerState.h"
 #include "Kismet/GameplayStatics.h"
 #include "Net/UnrealNetwork.h"
 
+// =============================================================
+// 1. 초기화 (Constructor)
+// =============================================================
+
 AOXQuizPlayerState::AOXQuizPlayerState()
 {
+    // 게임 시작 시 초기 상태 설정
     bIsReady_Instructions = false;
     PunchHitCount = 0;
     bIsKnockedDown = false;
-    bIsNextPunchLeft = true; // 첫 펀치는 왼쪽
+    bIsNextPunchLeft = true; // 펀치 순서 초기화
     bIsRoomOwner = false;
 }
 
+// =============================================================
+// 2. 네트워크 복제 규칙 정의 (Replication Setup)
+// =============================================================
+
 void AOXQuizPlayerState::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
 {
+    // 부모 클래스(ANoobPlayerState)의 복제 설정 포함
     Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 
+    // OX 퀴즈 관련 모든 상태 변수를 복제 목록에 등록
     DOREPLIFETIME(AOXQuizPlayerState, bIsReady_Instructions);
     DOREPLIFETIME(AOXQuizPlayerState, PunchHitCount);
     DOREPLIFETIME(AOXQuizPlayerState, bIsKnockedDown);
@@ -23,26 +33,30 @@ void AOXQuizPlayerState::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& O
     DOREPLIFETIME(AOXQuizPlayerState, bIsRoomOwner);
 }
 
-// --- Ready ---
+// =============================================================
+// 3. 서버 측 상태 관리 (Server Logic)
+// =============================================================
+
 void AOXQuizPlayerState::SetInstructionReady_Server()
 {
+    // 서버 권한이 있을 때만 데이터를 수정하여 무결성 보장
     if (HasAuthority())
     {
         bIsReady_Instructions = true;
-        // OnRep은 클라이언트에서 자동 호출
     }
 }
 
+// =============================================================
+// 4. 블루프린트 편의 기능 (Static Helper)
+// =============================================================
+
 AOXQuizPlayerState* AOXQuizPlayerState::GetOXPlayerState(const UObject* WorldContextObject)
 {
-    // 1. 현재 월드의 로컬 플레이어 컨트롤러(인덱스 0)를 가져옵니다.
-    // (UI나 위젯은 항상 로컬 플레이어 소유이므로 Index 0이 나 자신입니다)
+    // 현재 월드의 로컬 플레이어 컨트롤러를 찾아 그 안의 PlayerState를 반환
     if (APlayerController* PC = UGameplayStatics::GetPlayerController(WorldContextObject, 0))
     {
-        // 2. 그 컨트롤러의 PlayerState를 내 타입으로 캐스팅해서 반환
         return Cast<AOXQuizPlayerState>(PC->PlayerState);
     }
 
-    // 컨트롤러를 못 찾았거나 PlayerState가 아직 없으면 nullptr 반환
     return nullptr;
 }

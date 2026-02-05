@@ -32,7 +32,6 @@ void ANoobPlayerState::SetInstructionReady_Server()
 
 void ANoobPlayerState::OnRep_IsRoomOwner()
 {
-	// 여기서 UI를 갱신하거나 로그를 찍어 확인합니다.
 	UE_LOG(LogTemp, Warning, TEXT("[%s] OnRep_IsRoomOwner Triggered! Am I Owner? %s"),
 		*GetName(), bIsRoomOwner ? TEXT("YES") : TEXT("NO"));
 }

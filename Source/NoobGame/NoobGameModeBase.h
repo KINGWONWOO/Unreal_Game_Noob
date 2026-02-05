@@ -13,71 +13,74 @@ class ANoobPlayerController;
 UCLASS()
 class NOOBGAME_API ANoobGameModeBase : public AGameModeBase
 {
-	GENERATED_BODY()
+    GENERATED_BODY()
 
 public:
-	ANoobGameModeBase();
+    ANoobGameModeBase();
 
-	// ──────────────────────────────────────────────────────────────────────────
-	// Public Shared API
-	// ──────────────────────────────────────────────────────────────────────────
-	virtual void StartWinnerAnnouncement(APlayerState* Winner);
+    // 1. 프레임워크 오버라이드
+    virtual void PostLogin(APlayerController* NewPlayer) override;
+    virtual void Logout(AController* Exiting) override;
 
-	UFUNCTION(BlueprintCallable, Category = "Game")
-	virtual void EndGame(APlayerState* Winner);
+    // 2. 게임 흐름 제어
+    // 승자 발표 단계 시작
+    virtual void StartWinnerAnnouncement(APlayerState* Winner);
 
-	UFUNCTION(BlueprintCallable, Category = "Game")
-	virtual void ProcessPunch(APlayerController* PuncherController, ACharacter* HitCharacter);
+    // 게임 종료 처리 및 엔딩 시퀀스 전환
+    UFUNCTION(BlueprintCallable, Category = "Game")
+    virtual void EndGame(APlayerState* Winner);
 
-	UFUNCTION(BlueprintCallable, Category = "Game")
-	void ProcessPunchAnimation(ACharacter* PunchingCharacter, UAnimMontage* MontageToPlay);
+    // 방장의 맵 전환 요청 처리
+    UFUNCTION(BlueprintCallable, Category = "Game Flow")
+    void Server_TransitionToSelectedMap(FString MapName);
 
-	// 방장이 호출할 맵 전환 함수
-	UFUNCTION(BlueprintCallable, Category = "Game Flow")
-	void Server_TransitionToSelectedMap(FString MapName);
+    // 3. 전투 및 충돌 로직
+    // 펀치 적중 처리 및 넉다운 판정
+    UFUNCTION(BlueprintCallable, Category = "Game")
+    virtual void ProcessPunch(APlayerController* PuncherController, ACharacter* HitCharacter);
+
+    // 모든 클라이언트에게 펀치 애니메이션 재생 요청
+    UFUNCTION(BlueprintCallable, Category = "Game")
+    void ProcessPunchAnimation(ACharacter* PunchingCharacter, UAnimMontage* MontageToPlay);
 
 protected:
-	virtual void PostLogin(APlayerController* NewPlayer) override;
-	virtual void Logout(AController* Exiting) override;
+    // 내부 헬퍼 로직
+    virtual bool IsGameInProgress() const { return true; }
+    virtual void AnnounceWinnerToClients(APlayerState* Winner) {}
+    virtual void CleanupLevelActors() {}
 
-	// 방장이 배정되었는지 확인하는 플래그
-	bool bHasAssignedRoomOwner = false;
+    // 플레이어 접속 끊김 시 패배 처리 로직
+    void HandlePlayerDisconnect(AController* ExitingPlayer);
 
-	// Helpers
-	virtual bool IsGameInProgress() const { return true; }
-	virtual void AnnounceWinnerToClients(APlayerState* Winner) {}
-	virtual void CleanupLevelActors() {}
+    // 넉다운 상태 복구 (타이머 호출용)
+    UFUNCTION()
+    void RecoverCharacter(ACharacter* CharacterToRecover);
 
-	void HandlePlayerDisconnect(AController* ExitingPlayer);
+    // 설정값
+    UPROPERTY(EditDefaultsOnly, Category = "Combat")
+    float PunchPushForce = 500.0f;
 
-	UFUNCTION()
-	void RecoverCharacter(ACharacter* CharacterToRecover);
+    UPROPERTY(EditDefaultsOnly, Category = "Combat")
+    float KnockdownDuration = 8.0f;
 
-	// ──────────────────────────────────────────────────────────────────────────
-	// Configuration
-	// ──────────────────────────────────────────────────────────────────────────
-	UPROPERTY(EditDefaultsOnly, Category = "Combat")
-	float PunchPushForce = 500.0f;
+    UPROPERTY(EditDefaultsOnly, Category = "Game Rules")
+    float WinnerAnnouncementDuration = 3.0f;
 
-	UPROPERTY(EditDefaultsOnly, Category = "Combat")
-	float KnockdownDuration = 8.0f;
+    // 엔딩 시퀀스 설정 (Tags)
+    UPROPERTY(EditDefaultsOnly, Category = "GameOver")
+    FName WinnerSpawnTag = TEXT("Result_Spawn_Winner");
 
-	UPROPERTY(EditDefaultsOnly, Category = "Game Rules")
-	float WinnerAnnouncementDuration = 3.0f;
+    UPROPERTY(EditDefaultsOnly, Category = "GameOver")
+    FName LoserSpawnTag = TEXT("Result_Spawn_Defeat");
 
-	// -- GameOver Settings --
-	UPROPERTY(EditDefaultsOnly, Category = "GameOver")
-	FName WinnerSpawnTag = TEXT("Result_Spawn_Winner");
+    UPROPERTY(EditDefaultsOnly, Category = "GameOver")
+    FName EndingCameraTag = TEXT("EndingCamera");
 
-	UPROPERTY(EditDefaultsOnly, Category = "GameOver")
-	FName LoserSpawnTag = TEXT("Result_Spawn_Defeat");
+    // 실행 변수 (Runtime)
+    bool bHasAssignedRoomOwner = false;
+    FTimerHandle EndGameDelayTimerHandle;
 
-	UPROPERTY(EditDefaultsOnly, Category = "GameOver")
-	FName EndingCameraTag = TEXT("EndingCamera");
-
-	// Runtime
-	FTimerHandle EndGameDelayTimerHandle;
-
-	UPROPERTY()
-	TMap<TWeakObjectPtr<ACharacter>, FTimerHandle> KnockdownTimers;
+    // 캐릭터별 넉다운 관리
+    UPROPERTY()
+    TMap<TWeakObjectPtr<ACharacter>, FTimerHandle> KnockdownTimers;
 };

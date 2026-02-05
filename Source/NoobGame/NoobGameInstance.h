@@ -1,100 +1,56 @@
 #pragma once
 
-
-
 #include "CoreMinimal.h"
 #include "Engine/GameInstance.h"
 #include "MenuSystem/MenuInterface.h"
 #include "NoobGameInstance.generated.h"
 
-
-
 UCLASS()
 class NOOBGAME_API UNoobGameInstance : public UGameInstance, public IMenuInterface
 {
-	GENERATED_BODY()
+    GENERATED_BODY()
 
 public:
-	UNoobGameInstance(const FObjectInitializer& ObjectInitializer);
+    // 초기화 및 생명주기
+    UNoobGameInstance(const FObjectInitializer& ObjectInitializer);
+    virtual void Init() override;
 
-	// GameInstance 초기화 시 호출됩니다.
+    // 네트워크 및 서버 이동 인터페이스 (IMenuInterface)
+    UFUNCTION(Exec)
+    void Host() override;
 
-	virtual void Init() override;
+    UFUNCTION(Exec)
+    void Join(const FString& Address) override;
 
+    virtual void LoadMainMenu() override;
 
+    // 메뉴 시스템 호출
+    UFUNCTION(BlueprintCallable)
+    void LoadMenu();
 
-	// 기존 함수들
+    UFUNCTION(BlueprintCallable)
+    void InGameLoadMenu();
 
-	UFUNCTION(BlueprintCallable)
-
-	void LoadMenu();
-
-
-
-	UFUNCTION(BlueprintCallable)
-
-	void InGameLoadMenu();
-
-
-
-	UFUNCTION(Exec)
-
-	void Host() override;
-
-
-
-	UFUNCTION(Exec)
-
-	void Join(const FString& Address) override;
-
-
-
-	virtual void LoadMainMenu() override;
-
-
-
-	UPROPERTY()
-
-	UUserWidget* LoadingWidget;
-
+    // 로딩 화면 참조
+    UPROPERTY()
+    UUserWidget* LoadingWidget;
 
 protected:
+    // 맵 전환 이벤트 델리게이트 응답 함수
+    UFUNCTION()
+    void OnPreLoadMap(const FString& MapName);
 
-	// 맵 로딩 시작 전 호출될 함수
-
-	UFUNCTION()
-
-	void OnPreLoadMap(const FString& MapName);
-
-
-
-	// 맵 로딩 완료 후 호출될 함수
-
-	UFUNCTION()
-
-	void OnPostLoadMap(UWorld* LoadedWorld);
-
-
+    UFUNCTION()
+    void OnPostLoadMap(UWorld* LoadedWorld);
 
 private:
+    // 위젯 클래스 에셋 참조
+    TSubclassOf<class UUserWidget> MenuClass;
+    TSubclassOf<class UUserWidget> InGameMenuClass;
 
-	// 메인 메뉴 위젯 클래스
+    // 비동기 및 메모리 최적화를 위한 로딩 화면 소프트 포인터
+    UPROPERTY()
+    TSoftClassPtr<UUserWidget> LoadingScreenClass;
 
-	TSubclassOf<class UUserWidget> MenuClass;
-
-
-
-	TSubclassOf<class UUserWidget> InGameMenuClass;
-
-
-
-	// 로딩 화면 위젯 클래스 (비동기 로드를 위해 TSoftClassPtr 사용)
-
-	UPROPERTY()
-	TSoftClassPtr<UUserWidget> LoadingScreenClass;
-
-
-
-	class UMainMenu* MMenu;
-
+    class UMainMenu* MMenu;
 };
