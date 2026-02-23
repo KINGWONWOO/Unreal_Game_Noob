@@ -25,8 +25,6 @@
 
 ## 📸 2. 플레이 사진 (Screenshots)
 
-## 📸 2. 플레이 사진 (Screenshots)
-
 | 메인 메뉴 (Main Menu) | 옵션 (Option) |
 | :---: | :---: |
 | <img src="Doc/Images/MainMenu.png" width="400" height="225" style="aspect-ratio: 16/9; object-fit: cover;"> | <img src="Doc/Images/Option.png" width="400" height="225" style="aspect-ratio: 16/9; object-fit: cover;"> |
@@ -45,7 +43,7 @@
 
 ---
 
-## 🎥 3. 플레이 영상 (Gameplay Video)
+## 🎥 2. 플레이 영상 (Gameplay Video)
 
 > *아래 이미지를 클릭하면 플레이 영상을 시청할 수 있습니다. (YouTube)*
 
@@ -53,7 +51,7 @@
 
 ---
 
-## 🛠️ 4. 사용 기술 (Tech Stack)
+## 🛠️ 3. 사용 기술 (Tech Stack)
 
 ### Engine & Language
 *   **Unreal Engine 5.6**: Core Engine (최신 기능 활용)
@@ -73,24 +71,78 @@
 *   **Git LFS**: 대용량 에셋(.blend, .uasset) 관리
 
 ---
+## 🎮 4. 레벨 구성도 및 구현
 
-## 📚 5. 기술 문서 (Technical Docs)
+### 4.1 메인메뉴
+<img src="Doc/Images/MainMenu.png" width="400" height="225" style="aspect-ratio: 16/9; object-fit: cover;">
+* **핵심 로직**: 사용자 경험(UX)을 고려한 직관적인 UI를 제공하며, Steam Online Subsystem을 통해 멀티플레이 세션을 생성하거나 초대 받아 게임에 진입하는 게이트웨이 역할을 합니다.
+* **구현**:
+   - **세션 관리**: Find Sessions와 Create Session 기능을 UI 버튼과 바인딩하여, 서버 브라우저를 통해 다른 플레이어의 방에 입장할 수 있도록 구현했습니다.
+   - **애니메이션 UI**: WBP_MainMenu 위젯에서 버튼 호버 이펙트 및 레벨 전환 시 페이드 인/아웃 처리를 통해 시각적 완성도를 높였습니다.
 
-### 5.1 네트워크 아키텍처 (Network Architecture)
-*   `ANoobGameStateBase`를 상속받은 각 게임 모드별 State(`MazeGameState`, `FruitGameState`)에서 게임의 진행 상태(남은 시간, 점수, 단계)를 관리하고 리플리케이션합니다.
-*   **Dedicated Server** 모델을 기반으로 설계되었으나, 테스트 환경(Listen Server)에서도 호환되도록 `HasAuthority()`와 `IsLocallyControlled()` 분기를 정교하게 처리했습니다.
+### 4.1 로비 및 NPC AI (Lobby & NPC AI)
+<img src="Doc/Images/Lobby.png" width="400" height="225" style="aspect-ratio: 16/9; object-fit: cover;">
+* **핵심 로직**: 플레이어가 게임 시작 전 대기하며, NPC와의 상호작용을 통해 미니게임 정보를 얻거나 연습할 수 있는 반응형 환경을 제공합니다.
+* **구현**: `Behavior Tree`와 `Blackboard`를 활용한 NPC AI를 구축하여, 로비 내 순찰(Patrol) 및 플레이어 감지 시 시선 추격 등 상태 기반 로직을 구현했습니다. 또한, 상호작용 시스템을 통해 상황별 대사를 출력함으로써 NPC의 입체감과 게임의 몰입도를 높였습니다.
 
-### 5.2 캐릭터 시스템
-*   `ANoobGameCharacter`를 베이스로 하여 다양한 파생 클래스(`CombatCharacter`, `PlatformingCharacter` 등)로 확장.
-*   다양한 동물 캐릭터(Cat, Dog, Raccoon)의 스켈레톤 구조 차이를 극복하기 위해 리타겟팅 및 본 매핑 최적화 진행.
+<details>
+<summary>💻 NPC AI 상호작용 로직 (LobbyNPCAIController.cpp) - 접기/펼치기</summary>
 
----
+```cpp
+void AMyNPC::Interact_Implementation(APlayerController* InteractedPlayerController)
+{
+    if (bIsOccupied) return;
+    if (HasAuthority()) bIsOccupied = true;
 
-## 🎮 6. 구현 기능 및 게임 모드 (Game Modes & Features)
+    // 상호작용 시작 시 AI의 자율 행동(비헤이비어 트리 등) 중지
+    if (AAIController* AICon = Cast<AAIController>(GetController()))
+    {
+        AICon->StopMovement();
+        if (AICon->GetBrainComponent()) AICon->GetBrainComponent()->StopLogic("Interaction Started");
+    }
 
-### 6.1 과일 게임 (Fruit Game)
-*   **핵심 로직**: 서버에서 각 플레이어의 정답 과일(`SecretAnswers`)을 설정하고, 턴마다 제출된 추측과 비교하여 결과를 판정합니다.
-*   **구현**: `AFruitGameMode::ProcessPlayerGuess`에서 정답 비교 로직을 수행합니다.
+    // 현재 재생 중인 애니메이션 중지
+    UAnimInstance* AnimInst = GetMesh()->GetAnimInstance();
+    if (AnimInst) AnimInst->Montage_Stop(0.2f);
+}
+
+void AMyNPC::StartDialogue(APlayerController* PC)
+{
+    if (!PC || !PC->IsLocalController()) return;
+    CurrentInteractingPC = PC;
+    bIsDialogueMode = true;
+
+    // 플레이어를 향한 타겟 회전값 계산
+    FVector Dir = CurrentInteractingPC->GetPawn()->GetActorLocation() - GetActorLocation();
+    Dir.Z = 0.0f;
+    TargetRotation = FRotationMatrix::MakeFromX(Dir).Rotator();
+
+    // 대화 위젯 생성 및 마우스 커서 활성화
+    if (NpcTalkWidgetClass)
+    {
+        CurrentTalkWidget = CreateWidget<UUserWidget>(CurrentInteractingPC, NpcTalkWidgetClass);
+        if (CurrentTalkWidget)
+        {
+            CurrentTalkWidget->AddToViewport();
+            FInputModeUIOnly InputMode;
+            InputMode.SetWidgetToFocus(CurrentTalkWidget->TakeWidget());
+            CurrentInteractingPC->SetInputMode(InputMode);
+            CurrentInteractingPC->bShowMouseCursor = true;
+        }
+    }
+}
+```
+</details>
+
+### 4.2 과일 게임 (Fruit Game)
+<img src="Doc/Images/FruitGame.png" width="400" height="225" style="aspect-ratio: 16/9; object-fit: cover;">
+
+* **진행 방식**: 1v1 턴제 기반 추리 게임입니다. 서버는 각 플레이어에게 고유한 과일 정답 조합(`SecretAnswers`)을 부여하며, 플레이어는 매 턴 상대의 조합을 추측합니다. 서버는 일치 개수를 계산해 양측 클라이언트에 동기화합니다.
+* **승리 방식**: 상대방의 과일 5개를 종류와 순서에 맞춰 **가장 먼저 모두 맞춘 플레이어**가 승리합니다.
+* **구현 내용**:
+    - **Server-Side Validation**: 모든 정답 판정 로직을 서버 권한(`Authority`)이 있는 `GameMode`에서 처리하여 클라이언트 측의 데이터 변조 및 부정행위를 원천 차단했습니다.
+    - **RPC 기반 실시간 피드백**: 플레이어의 추측값은 `Server RPC`로 수신하고, 판정 결과는 `Client RPC`를 통해 공격자와 방어자에게 각각 전송하여 UI 업데이트 및 게임 흐름을 제어합니다.
+    - **턴제 관리 시스템**: 플레이어의 입력 상태를 서버에서 관리하고, 추측 완료 후 유효성 검사를 거쳐 자동으로 턴을 교체하는 로직을 구현했습니다.
 
 <details>
 <summary>💻 정답 비교 및 결과 처리 코드 (FruitGameMode.cpp) - 접기/펼치기</summary>
@@ -127,7 +179,7 @@ void AFruitGameMode::ProcessPlayerGuess(AController* PlayerController, const TAr
 ```
 </details>
 
-### 6.2 미로 게임 (Maze Game)
+### 4.3 미로 게임 (Maze Game)
 *   **핵심 로직**: 시드(Seed) 기반 절차적 미로 생성 및 네트워크 동기화.
 *   **구현**: `AMazeGenerate` 액터가 시드값을 받아 미로 구조를 생성하고, 필요한 소품(Prop)과 조명 데이터를 생성하여 `GameState`에 저장, 클라이언트와 동기화합니다.
 
@@ -168,7 +220,7 @@ void AMazeGenerate::UpdateMazeWithSeed(int32 NewSeed)
 ```
 </details>
 
-### 6.3 퀴즈 게임 (Quiz Game)
+### 4.4 퀴즈 게임 (Quiz Game)
 *   **핵심 로직**: 데이터 테이블(`QuizDataTable`) 기반 문제 출제 및 동적 장애물 스폰.
 *   **구현**: 난이도에 따라 문제 리스트를 로드하고, 일정 주기마다 장애물(`QuizObstacleBase`)을 스폰하며 속도를 점진적으로 증가시킵니다.
 
@@ -216,7 +268,24 @@ void AOXQuizGameMode::SpawnNextQuizObstacle()
 
 ---
 
-## 📂 7. 프로젝트 구조 (Project Structure)
+## 📚 5. 기술 문서 (Technical Docs)
+
+### 5.1 네트워크 아키텍처 (Network Architecture)
+* **Steam Online Subsystem 통합**: Steam SDK를 기반으로 세션 생성(CreateSession), 검색(FindSessions), 참여(JoinSession) 로직을 구현하여 별도의 IP 입력 없이도 매칭이 가능하도록 설계했습니다.
+* **State Management**: `ANoobGameStateBase`를 상속받은 각 게임 모드별 State(`MazeGameState`, `FruitGameState`)에서 게임 진행 상태(남은 시간, 점수, 단계)를 관리하며, `OnRep_` 함수를 통해 클라이언트 UI에 실시간으로 동기화합니다.
+* **Authority Logic**: Steam P2P 환경에서 발생할 수 있는 데이터 위변조를 방지하기 위해 모든 주요 판정(점수 획득, 승리 조건)은 서버(`HasAuthority`)에서 처리하도록 엄격히 분리했습니다.
+
+### 5.2 캐릭터 시스템 및 애니메이션
+* **Modular Character Design**: `ANoobGameCharacter`를 베이스로 확장성을 고려해 각 미니게임에 맞는 캐릭터를 파생 설계했습니다.
+* **Retargeting Optimization**: 서로 다른 스켈레톤 구조를 가진 에셋 간의 애니메이션 호환성을 위해 IK Rig 및 IK Retargeter를 활용하여 본 매핑을 최적화했습니다.
+
+### 5.3 데이터 관리 및 안정성
+* **Data-Driven Design**: 미니게임의 설정값(제한 시간, 목표 점수, 퀴즈 문항)을 `UDataTable`로 관리하여 코드 수정 없이 밸런싱이 가능한 구조를 구축했습니다.
+* **Version Control (Git LFS)**: Steam SDK 바이너리와 언리얼 엔진의 대용량 에셋(.uasset, .umap) 충돌 및 용량 관리를 위해 Git LFS를 운용하여 안정적인 협업 환경을 유지했습니다.
+
+---
+
+## 📂 6. 프로젝트 구조 (Project Structure)
 
 ```
 C:/Users/qudtn/UnrealEngine/NoobGame
@@ -240,7 +309,7 @@ C:/Users/qudtn/UnrealEngine/NoobGame
 
 ---
 
-## 🐛 8. 트러블 슈팅 (Troubleshooting)
+## 🐛 7. 트러블 슈팅 (Troubleshooting)
 
 ### 이슈 1: 애니메이션 리타겟팅 시 메쉬 뭉개짐
 *   **문제**: 서로 다른 체형(고양이, 강아지, 라쿤)의 캐릭터에 동일한 애니메이션을 적용할 때, 뼈대 구조 차이로 인해 메쉬가 비정상적으로 늘어나거나 뭉개지는 현상 발생.
