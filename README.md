@@ -1,6 +1,6 @@
 # 🎮 NoobGame (Multiplayer Party Game Project)
 
-![Project Banner](https://via.placeholder.com/1200x400?text=NoobGame+Project+Banner)
+![Project Logo](Doc/Images/Logo.png)
 
 > **"다양한 미니게임을 친구들과 함께 즐기는 멀티플레이어 파티 게임"**
 >
@@ -27,13 +27,15 @@
 
 | 메인 메뉴 (Main Menu) | 옵션 (Option) |
 | :---: | :---: |
-| ![MainMenu](https://via.placeholder.com/400x225?text=Main+Menu+Screenshot) | ![Option](https://via.placeholder.com/400x225?text=Option+Screenshot) |
-| **로비 (Lobby)** | **게임 선택 (Game Select)** |
-| ![Lobby](https://via.placeholder.com/400x225?text=Lobby+Screenshot) | ![GameSelect](https://via.placeholder.com/400x225?text=Game+Select+Screenshot) |
+| ![MainMenu](Doc/Images/MainMenu.png) | ![Option](Doc/Images/Option.png) |
 
-| 과일 게임 (Fruit Game) | 미로 게임 (Maze Game) | 퀴즈 게임 (Quiz Game) |
-| :---: | :---: | :---: |
-| ![FruitGame](https://via.placeholder.com/260x150?text=Fruit+Game) | ![MazeGame](https://via.placeholder.com/260x150?text=Maze+Game) | ![QuizGame](https://via.placeholder.com/260x150?text=Quiz+Game) |
+| 로비 (Lobby) | 과일 게임 (Fruit Game) |
+| :---: | :---: |
+| ![Lobby](Doc/Images/Lobby.png) | ![FruitGame](Doc/Images/FruitGame.png) |
+
+| 미로 게임 (Maze Game) | 퀴즈 게임 (Quiz Game) |
+| :---: | :---: |
+| ![MazeGame](Doc/Images/MazeGame.png) | ![QuizGame](Doc/Images/QuizGame.png) |
 
 ---
 
