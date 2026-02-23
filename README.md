@@ -29,9 +29,13 @@
 | :---: | :---: |
 | ![MainMenu](Doc/Images/MainMenu.png) | ![Option](Doc/Images/Option.png) |
 
+<br>
+
 | 로비 (Lobby) | 과일 게임 (Fruit Game) |
 | :---: | :---: |
 | ![Lobby](Doc/Images/Lobby.png) | ![FruitGame](Doc/Images/FruitGame.png) |
+
+<br>
 
 | 미로 게임 (Maze Game) | 퀴즈 게임 (Quiz Game) |
 | :---: | :---: |
