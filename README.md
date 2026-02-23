@@ -175,16 +175,19 @@ void AFruitGameMode::ProcessPlayerGuess(AController* PlayerController, const TAr
 
 <details>
 <summary>📖 알고리즘 관련 공부 내용 - 접기/펼치기</summary>
-# 1. Recursive Backtracking (재귀 백트래킹)
 
-## 핵심 개념
+---
+   
+## 1. Recursive Backtracking (재귀 백트래킹)
+
+### 핵심 개념
 **DFS(깊이 우선 탐색)**와 **스택(Stack)**을 이용한 방식입니다.
 
-## 특징
+### 특징
 - 한 방향으로 끝까지 파고드는 성질 때문에 길고 구불구불한 경로가 생성됩니다.
 - 막다른 길이 상대적으로 적고 전체적인 흐름이 뚜렷하여, 플레이어가 긴 호흡으로 길을 찾게 만드는 몰입감을 줍니다.
 
-## 동작 원리
+### 동작 원리
 1. 현재 셀에서 방문하지 않은 무작위 인접 셀을 선택합니다.
 2. 선택한 셀 사이의 벽을 허물고 이동하며, 해당 셀을 스택에 넣고 방문 표시를 합니다.
 3. 더 이상 방문할 인접 셀이 없으면, 방문 가능한 셀이 나올 때까지 스택에서 Pop하여 이전 단계로 되돌아갑니다 (Backtrack).
@@ -192,21 +195,23 @@ void AFruitGameMode::ProcessPlayerGuess(AController* PlayerController, const TAr
 
 ---
 
-# 2. Prim's Algorithm (프림 알고리즘)
+## 2. Prim's Algorithm (프림 알고리즘)
 
-## 핵심 개념
+### 핵심 개념
 MST(최소 신장 트리) 개념을 미로 생성에 응용한 방식입니다.
 
-## 특징
+### 특징
 - 특정 지점에서 사방으로 뻗어 나가는 형태를 띠며, 복잡한 갈림길과 짧은 막다른 길이 다수 생성됩니다.
 - 선택지가 많아 플레이어에게 잦은 판단을 요구하므로 체감 난이도가 높게 형성됩니다.
 
-## 동작 원리
+### 동작 원리
 1. 무작위 셀을 하나 선택해 '미로 집합'에 포함시키고, 그 셀에 인접한 모든 **벽(Wall)**을 리스트에 추가합니다.
 2. 리스트에서 무작위로 벽 하나를 선택합니다.
 3. 만약 선택한 벽이 미로에 포함되지 않은 새로운 셀과 연결된다면, 그 벽을 허물고 해당 셀을 미로 집합에 포함시킵니다.
 4. 새로 추가된 셀의 인접 벽들을 다시 리스트에 넣고, 리스트가 빌 때까지 반복합니다.
 </details>
+
+---
 
 <details>
 <summary>💻 미로 생성 및 동기화 코드 (MazeGenerate.cpp) - 접기/펼치기</summary>
@@ -246,9 +251,14 @@ void AMazeGenerate::UpdateMazeWithSeed(int32 NewSeed)
 </details>
 
 ### 4.4 퀴즈 게임 (Quiz Game)
-*   **핵심 로직**: 데이터 테이블(`QuizDataTable`) 기반 문제 출제 및 동적 장애물 스폰.
-*   **구현**: 난이도에 따라 문제 리스트를 로드하고, 일정 주기마다 장애물(`QuizObstacleBase`)을 스폰하며 속도를 점진적으로 증가시킵니다.
+<img src="Doc/Images/QuizGame.png" width="400" height="225" style="aspect-ratio: 16/9; object-fit: cover;">
 
+* **진행 방식**: 플레이어는 전방에서 다가오는 퀴즈 장애물(QuizObstacle)을 마주하게 됩니다. 장애물에는 문제와 선택지(O/X 또는 다지선다)가 표시되며, 플레이어는 제한 시간 내에 정답 구역으로 이동해야 합니다. 게임이 진행될수록 장애물의 이동 속도가 단계적으로 상승합니다.
+* **승리 방식**: 장애물 충돌 없이 끝까지 생존하거나, 준비된 모든 퀴즈 리스트를 소진했을 때 최종 점수가 더 높은 플레이어가 승리합니다. 오답 구역에 머물러 장애물에 충돌할 경우 즉시 탈락 처리됩니다.
+* **구현 내용**:
+   - Data-Driven Quiz System: UDataTable을 활용하여 문제 내용, 선택지 개수, 정답 데이터를 구조화했습니다. 이를 통해 코드 수정 없이도 퀴즈 콘텐츠를 손쉽게 확장하거나 편집할 수 있도록 설계했습니다.
+   - Dynamic Obstacle Spawning: 퀴즈 데이터의 선택지 개수에 따라 2지선다 또는 3지선다용 장애물 클래스를 동적으로 선택하여 스폰하는 로직을 구현했습니다.
+   - Adaptive Difficulty Curve: SpawnedQuizCount를 추적하여 일정 주기마다 CurrentMoveSpeed를 점진적으로 증가시키는 레벨링 시스템을 적용하여 게임의 긴장감을 유지했습니다.
 <details>
 <summary>💻 퀴즈 스폰 및 속도 증가 로직 (OXQuizGameMode.cpp) - 접기/펼치기</summary>
 
