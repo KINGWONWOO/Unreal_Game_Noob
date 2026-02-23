@@ -60,6 +60,9 @@
 *   **C++ & Blueprints**: 하이브리드 구조 (C++로 핵심 시스템 구현, BP로 로직/UI 연결)
 *   **Visual Studio 2022**: IDE
 
+### Modeling
+*   **Blender**: 기초적인 Mesh 생성 및 Rigging, AI로 생성된 Mesh 수정
+
 ### Generative AI Tools
 *   **Tripo 3D**: 3D 에셋 생성 및 프로토타이핑
 *   **Nano Banana**: 텍스처 및 이미지 리소스 생성
