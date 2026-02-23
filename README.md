@@ -23,26 +23,6 @@
 
 ---
 
-## 📸 2. 플레이 사진 (Screenshots)
-
-| 메인 메뉴 (Main Menu) | 옵션 (Option) |
-| :---: | :---: |
-| <img src="Doc/Images/MainMenu.png" width="400" height="225" style="aspect-ratio: 16/9; object-fit: cover;"> | <img src="Doc/Images/Option.png" width="400" height="225" style="aspect-ratio: 16/9; object-fit: cover;"> |
-
-<br>
-
-| 로비 (Lobby) | 과일 게임 (Fruit Game) |
-| :---: | :---: |
-| <img src="Doc/Images/Lobby.png" width="400" height="225" style="aspect-ratio: 16/9; object-fit: cover;"> | <img src="Doc/Images/FruitGame.png" width="400" height="225" style="aspect-ratio: 16/9; object-fit: cover;"> |
-
-<br>
-
-| 미로 게임 (Maze Game) | 퀴즈 게임 (Quiz Game) |
-| :---: | :---: |
-| <img src="Doc/Images/MazeGame.png" width="400" height="225" style="aspect-ratio: 16/9; object-fit: cover;"> | <img src="Doc/Images/QuizGame.png" width="400" height="225" style="aspect-ratio: 16/9; object-fit: cover;"> |
-
----
-
 ## 🎥 2. 플레이 영상 (Gameplay Video)
 
 > *아래 이미지를 클릭하면 플레이 영상을 시청할 수 있습니다. (YouTube)*
@@ -75,15 +55,19 @@
 
 ### 4.1 메인메뉴
 <img src="Doc/Images/MainMenu.png" width="400" height="225" style="aspect-ratio: 16/9; object-fit: cover;">
-* **핵심 로직**: 사용자 경험(UX)을 고려한 직관적인 UI를 제공하며, Steam Online Subsystem을 통해 멀티플레이 세션을 생성하거나 초대 받아 게임에 진입하는 게이트웨이 역할을 합니다.
-* **구현**:
-   - **세션 관리**: Find Sessions와 Create Session 기능을 UI 버튼과 바인딩하여, 서버 브라우저를 통해 다른 플레이어의 방에 입장할 수 있도록 구현했습니다.
-   - **애니메이션 UI**: WBP_MainMenu 위젯에서 버튼 호버 이펙트 및 레벨 전환 시 페이드 인/아웃 처리를 통해 시각적 완성도를 높였습니다.
 
-### 4.1 로비 및 NPC AI (Lobby & NPC AI)
+* **역할**: 사용자 경험(UX)을 고려한 직관적인 UI를 제공하며, Steam Online Subsystem을 통해 멀티플레이 세션을 생성하거나 초대 받아 게임에 진입하는 게이트웨이 역할을 합니다.
+* **구현**:
+   - 세션 관리: Find Sessions와 Create Session 기능을 UI 버튼과 바인딩하여, 서버 브라우저를 통해 다른 플레이어의 방에 입장할 수 있도록 구현했습니다.
+   - 애니메이션 UI: WBP_MainMenu 위젯에서 버튼 호버 이펙트 및 레벨 전환 시 페이드 인/아웃 처리를 통해 시각적 완성도를 높였습니다.
+
+### 4.2 로비 및 NPC AI (Lobby & NPC AI)
 <img src="Doc/Images/Lobby.png" width="400" height="225" style="aspect-ratio: 16/9; object-fit: cover;">
-* **핵심 로직**: 플레이어가 게임 시작 전 대기하며, NPC와의 상호작용을 통해 미니게임 정보를 얻거나 연습할 수 있는 반응형 환경을 제공합니다.
-* **구현**: `Behavior Tree`와 `Blackboard`를 활용한 NPC AI를 구축하여, 로비 내 순찰(Patrol) 및 플레이어 감지 시 시선 추격 등 상태 기반 로직을 구현했습니다. 또한, 상호작용 시스템을 통해 상황별 대사를 출력함으로써 NPC의 입체감과 게임의 몰입도를 높였습니다.
+
+* **역할**: 플레이어가 게임 진입 전 대기하는 허브 공간입니다. 단순 UI 방식에서 벗어나 맵 내 배치된 상호작용 Actor를 통해 Steam 친구 초대, 미니게임 선택, NPC 대화 등 인게임 월드와 유기적으로 연결된 활동이 가능하도록 설계했습니다.
+* **구현**:
+   - World-Space Interaction: Steam SDK와 연동된 특정 오브젝트(예: 게시판, 단말기 등)에 접근 시 세션 초대 및 게임 모드 선택 인터페이스가 활성화되도록 구현했습니다.
+   - State-Based AI: Behavior Tree와 Blackboard를 기반으로 NPC AI를 구축하여 자율 순찰(Patrol) 및 플레이어 인식 시 시선 추격(Head Tracking) 등의 상태 기반 로직을 구현했습니다.
 
 <details>
 <summary>💻 NPC AI 상호작용 로직 (LobbyNPCAIController.cpp) - 접기/펼치기</summary>
@@ -134,7 +118,7 @@ void AMyNPC::StartDialogue(APlayerController* PC)
 ```
 </details>
 
-### 4.2 과일 게임 (Fruit Game)
+### 4.3 과일 게임 (Fruit Game)
 <img src="Doc/Images/FruitGame.png" width="400" height="225" style="aspect-ratio: 16/9; object-fit: cover;">
 
 * **진행 방식**: 1v1 턴제 기반 추리 게임입니다. 서버는 각 플레이어에게 고유한 과일 정답 조합(`SecretAnswers`)을 부여하며, 플레이어는 매 턴 상대의 조합을 추측합니다. 서버는 일치 개수를 계산해 양측 클라이언트에 동기화합니다.
@@ -180,8 +164,49 @@ void AFruitGameMode::ProcessPlayerGuess(AController* PlayerController, const TAr
 </details>
 
 ### 4.3 미로 게임 (Maze Game)
-*   **핵심 로직**: 시드(Seed) 기반 절차적 미로 생성 및 네트워크 동기화.
-*   **구현**: `AMazeGenerate` 액터가 시드값을 받아 미로 구조를 생성하고, 필요한 소품(Prop)과 조명 데이터를 생성하여 `GameState`에 저장, 클라이언트와 동기화합니다.
+<img src="Doc/Images/MazeGame.png" width="400" height="225" style="aspect-ratio: 16/9; object-fit: cover;">
+
+* **진행 방식**: 서버에서 생성된 시드(Seed)값을 기반으로 모든 플레이어에게 동일한 구조의 미로를 절차적으로 생성합니다. 플레이어들은 미로 속에서 먼저 탈출하기 위해 경쟁합니다.
+* **승리 방식**: 미로의 종착지에 위치한 고기 오브젝트(GoalTrigger)에 가장 먼저 도달하는 플레이어가 승리합니다. 도달 즉시 서버 판정을 통해 게임이 종료됩니다.
+* **구현 내용**:
+   - Procedural Algorithms: 미로의 형태적 다양성을 위해 Recursive Backtracking(길고 구불구불한 경로)과 Prim's Algorithm(복잡한 갈림길)을 선택적으로 사용할 수 있도록 설계했습니다.
+   - Random Seed-Based Sync: 입장 시 서버가 랜덤하게 단일 시드값을 생성하여 모든 클라이언트에게 공유합니다. 이 시드값을 통해 모든 플레어에게 동일한 미로가 생성됩니다.
+   - Data Replication: 미로 내 프롭(Prop) 위치와 조명 데이터를 GameState의 리플리케이션 변수로 관리하여, 서버와 클라이언트 간의 시각적 불일치를 방지했습니다.
+
+<details>
+<summary>📖 알고리즘 관련 공부 내용 - 접기/펼치기</summary>
+# 1. Recursive Backtracking (재귀 백트래킹)
+
+## 핵심 개념
+**DFS(깊이 우선 탐색)**와 **스택(Stack)**을 이용한 방식입니다.
+
+## 특징
+- 한 방향으로 끝까지 파고드는 성질 때문에 길고 구불구불한 경로가 생성됩니다.
+- 막다른 길이 상대적으로 적고 전체적인 흐름이 뚜렷하여, 플레이어가 긴 호흡으로 길을 찾게 만드는 몰입감을 줍니다.
+
+## 동작 원리
+1. 현재 셀에서 방문하지 않은 무작위 인접 셀을 선택합니다.
+2. 선택한 셀 사이의 벽을 허물고 이동하며, 해당 셀을 스택에 넣고 방문 표시를 합니다.
+3. 더 이상 방문할 인접 셀이 없으면, 방문 가능한 셀이 나올 때까지 스택에서 Pop하여 이전 단계로 되돌아갑니다 (Backtrack).
+4. 스택이 완전히 빌 때까지 이 과정을 반복합니다.
+
+---
+
+# 2. Prim's Algorithm (프림 알고리즘)
+
+## 핵심 개념
+MST(최소 신장 트리) 개념을 미로 생성에 응용한 방식입니다.
+
+## 특징
+- 특정 지점에서 사방으로 뻗어 나가는 형태를 띠며, 복잡한 갈림길과 짧은 막다른 길이 다수 생성됩니다.
+- 선택지가 많아 플레이어에게 잦은 판단을 요구하므로 체감 난이도가 높게 형성됩니다.
+
+## 동작 원리
+1. 무작위 셀을 하나 선택해 '미로 집합'에 포함시키고, 그 셀에 인접한 모든 **벽(Wall)**을 리스트에 추가합니다.
+2. 리스트에서 무작위로 벽 하나를 선택합니다.
+3. 만약 선택한 벽이 미로에 포함되지 않은 새로운 셀과 연결된다면, 그 벽을 허물고 해당 셀을 미로 집합에 포함시킵니다.
+4. 새로 추가된 셀의 인접 벽들을 다시 리스트에 넣고, 리스트가 빌 때까지 반복합니다.
+</details>
 
 <details>
 <summary>💻 미로 생성 및 동기화 코드 (MazeGenerate.cpp) - 접기/펼치기</summary>
