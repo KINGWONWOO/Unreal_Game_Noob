@@ -211,7 +211,6 @@ MST(최소 신장 트리) 개념을 미로 생성에 응용한 방식입니다.
 4. 새로 추가된 셀의 인접 벽들을 다시 리스트에 넣고, 리스트가 빌 때까지 반복합니다.
 </details>
 
----
 
 <details>
 <summary>💻 미로 생성 및 동기화 코드 (MazeGenerate.cpp) - 접기/펼치기</summary>
@@ -330,6 +329,7 @@ C:/Users/qudtn/UnrealEngine/NoobGame
 │   ├── Characters/       # 캐릭터 모델링 및 애니메이션
 │   ├── Levels/           # Game, Lobby 맵 파일
 │   └── UI/               # 위젯 및 이미지 리소스
+│   └── Mesh/             # 게임 Static Mesh 및 Material, Texture              
 ├── Source/               # C++ 소스 코드
 │   └── NoobGame/
 │       ├── FruitGame/    # 과일 게임 로직 (GameMode, GameState, Controller)
@@ -337,7 +337,7 @@ C:/Users/qudtn/UnrealEngine/NoobGame
 │       ├── QuizGame/     # 퀴즈 게임 로직 (Obstacle Spawning)
 │       ├── MenuSystem/   # 메뉴 및 UI 시스템
 │       ├── NPC/          # NPC AI
-│       └── Variant_*/    # 다양한 프로토타입 (Combat, Platforming)
+│       └── # 다양한 베이스 코드
 ├── 기획/                 # 기획 문서
 └── 모델링/               # Blender 원본 파일 (Cat, Dog, Raccoon 등)
 ```
@@ -347,26 +347,22 @@ C:/Users/qudtn/UnrealEngine/NoobGame
 ## 🐛 7. 트러블 슈팅 (Troubleshooting)
 
 ### 이슈 1: 애니메이션 리타겟팅 시 메쉬 뭉개짐
-*   **문제**: 서로 다른 체형(고양이, 강아지, 라쿤)의 캐릭터에 동일한 애니메이션을 적용할 때, 뼈대 구조 차이로 인해 메쉬가 비정상적으로 늘어나거나 뭉개지는 현상 발생.
-*   **해결**: `IK Rig`와 `IK Retargeter`를 정밀하게 설정하고, 특히 척추(Spine)와 다리(Leg) 본의 체인 매핑(Chain Mapping)을 각 캐릭터 비율에 맞춰 수동으로 보정하여 해결.
+*   **문제**: 서로 다른 체형)의 캐릭터에 동일한 애니메이션을 적용할 때, 뼈대 구조 차이로 인해 메쉬가 비정상적으로 늘어나거나 뭉개지는 현상 발생.
+*   **해결**: `IK Rig`와 `IK Retargeter`를 정밀하게 설정하고, 특히 척추(Spine)와 다리(Leg) 본의 체인 매핑(Chain Mapping)을 각 캐릭터 비율에 맞춰 수동으로 보정. Blender를 통해 각 Bone의 Weight를 수정해서 정밀하게 추가 보정하여 해결.
 
-### 이슈 2: Dedicated vs Listen Server 설정 혼동
-*   **문제**: Dedicated Server를 상정하고 구현한 로직(`SwitchHasAuthority`만 사용)이 Listen Server(Host가 플레이어도 겸함) 환경에서 Host에게만 중복 실행되거나, Client 로직이 무시되는 문제 발생.
-*   **해결**: `HasAuthority()` 체크뿐만 아니라 `IsLocallyControlled()`를 조합하여, 서버 로직과 로컬 클라이언트(Host 포함)의 UI/입력 처리 로직을 명확히 분리.
-
-### 이슈 3: 특정 행동(RPC)이 Host에게만 작동
+### 이슈 2: 특정 행동(RPC)이 Host에게만 작동
 *   **문제**: 클라이언트가 상호작용 키를 눌렀을 때, `Server RPC`가 호출되지 않거나 반응이 없는 현상.
 *   **해결**: 해당 액터의 `Owner`가 플레이어 컨트롤러로 설정되지 않아 RPC 호출 권한이 없음을 확인. `SetOwner`를 통해 소유권을 명확히 하거나, 인터페이스를 통해 컨트롤러를 경유하여 RPC를 호출하는 방식으로 구조 개선.
 
-### 이슈 4: 과일 게임 Niagara/Animation 동기화 실패
+### 이슈 3: 과일 게임 Niagara/Animation 동기화 실패
 *   **문제**: 과일 획득 시 재생되는 파티클(Niagara)과 애니메이션이 Host 화면에서만 보이고 Client에서는 보이지 않음.
 *   **해결**: 이펙트 재생은 게임플레이에 영향을 주지 않는 시각적 요소이므로, 서버에서 `NetMulticast` 함수를 호출하여 연결된 모든 클라이언트에서 각각 이펙트를 재생하도록 변경.
 
-### 이슈 5: 퀴즈 게임 캐릭터 위치 끊김 (Jittering)
+### 이슈 4: 퀴즈 게임 캐릭터 위치 끊김 (Jittering)
 *   **문제**: 움직이는 벽(Wall)에 캐릭터가 밀릴 때, 위치 동기화 보정(Correction)으로 인해 캐릭터가 심하게 떨리는 현상.
 *   **해결**: `CharacterMovementComponent`의 네트워크 보정 임계값을 조정하고, 벽의 이동 방식을 `SetActorLocation` 대신 물리 기반 이동이나 `InterpTo` 로직을 개선하여 서버/클라이언트 간 위치 오차를 최소화.
 
-### 이슈 6: 미로 게임 Goal Trigger 생성 오류
+### 이슈 5: 미로 게임 Goal Trigger 생성 오류
 *   **문제**: 절차적으로 생성된 미로에서 도착 지점(Goal Trigger)이 맵 밖이나 벽 속에 생성되어 게임 클리어가 불가능한 버그.
 *   **해결**: 미로 생성 알고리즘(`MazeGenerate.cpp`)에서 `PathEnd` 좌표 계산 로직을 디버깅하여, 그리드 인덱스와 월드 좌표 변환 과정의 오차를 수정하고 생성 후 `Overlapping` 체크를 추가하여 유효한 위치인지 검증하는 로직 추가.
 
