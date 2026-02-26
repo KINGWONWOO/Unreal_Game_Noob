@@ -163,7 +163,7 @@ void AFruitGameMode::ProcessPlayerGuess(AController* PlayerController, const TAr
 ```
 </details>
 
-### 4.3 미로 게임 (Maze Game)
+### 4.4 미로 게임 (Maze Game)
 <img src="Doc/Images/MazeGame.png" width="400" height="225" style="aspect-ratio: 16/9; object-fit: cover;">
 
 * **진행 방식**: 서버에서 생성된 시드(Seed)값을 기반으로 모든 플레이어에게 동일한 구조의 미로를 절차적으로 생성합니다. 플레이어들은 미로 속에서 먼저 탈출하기 위해 경쟁합니다.
@@ -249,7 +249,7 @@ void AMazeGenerate::UpdateMazeWithSeed(int32 NewSeed)
 ```
 </details>
 
-### 4.4 퀴즈 게임 (Quiz Game)
+### 4.5 퀴즈 게임 (Quiz Game)
 <img src="Doc/Images/QuizGame.png" width="400" height="225" style="aspect-ratio: 16/9; object-fit: cover;">
 
 * **진행 방식**: 플레이어는 전방에서 다가오는 퀴즈 장애물(QuizObstacle)을 마주하게 됩니다. 장애물에는 문제와 선택지(O/X 또는 다지선다)가 표시되며, 플레이어는 제한 시간 내에 정답 구역으로 이동해야 합니다. 게임이 진행될수록 장애물의 이동 속도가 단계적으로 상승합니다.
