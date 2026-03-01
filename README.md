@@ -262,6 +262,33 @@ void AMazeGenerate::UpdateMazeWithSeed(int32 NewSeed)
     // 4. 탈출구(Goal) 스폰
     SpawnGoalTrigger(GetActorLocation(), GetActorScale3D());
 }
+
+void AMazeGenerate::GenerateRandomPropData(TArray<FMazePropData>& OutData)
+{
+    if (RandomPropMeshes.Num() == 0 || SpawnProbability <= 0.0f) return;
+
+    for (int32 y = 0; y < MazeSize.Y; y++) {
+        for (int32 x = 0; x < MazeSize.X; x++) {
+            // 길(Path, 1)이면서 시작점이나 끝점이 아닌 곳에 확률적으로 스폰
+            if (MazeGrid.IsValidIndex(y) && MazeGrid[y].IsValidIndex(x) && MazeGrid[y][x] == 1) {
+                if ((x == 0 && y == 0) || (x == PathEnd.X && y == PathEnd.Y)) continue;
+
+                if (FMath::FRand() < SpawnProbability) {
+                    FMazePropData D;
+                    D.MeshIndex = FMath::RandRange(0, RandomPropMeshes.Num() - 1);
+                    float OffX = MazeCellSize.X * 0.3f;
+                    float OffY = MazeCellSize.Y * 0.3f;
+
+                    D.RelativePos = FVector(x * MazeCellSize.X + FMath::RandRange(-OffX, OffX),
+                        y * MazeCellSize.Y + FMath::RandRange(-OffY, OffY), 50.0f);
+                    D.Rotation = FRotator(0.f, FMath::FRandRange(0.f, 360.f), 0.f);
+                    OutData.Add(D);
+                }
+            }
+        }
+    }
+}
+
 ```
 </details>
 
