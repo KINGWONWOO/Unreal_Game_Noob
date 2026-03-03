@@ -138,6 +138,16 @@ void ANoobPlayerController::Server_RequestPlayPunchMontage_Implementation()
 		UAnimMontage* Montage = bIsLeft ? MyChar->LeftPunchMontage : MyChar->RightPunchMontage;
 		GM->ProcessPunchAnimation(MyChar, Montage);
 	}
+
+	// 애니메이션이 비정상적으로 종료되어 Notify가 안 와도, 1초 뒤엔 무조건 공격 가능 상태로 복구
+        float SafeExitTime = 1.0f; 
+        GetWorldTimerManager().SetTimer(
+            MyChar->AttackSafeTimerHandle, 
+            MyChar, 
+            &ANoobGameCharacter::ResetAttackState, // 캐릭터에 구현된 상태 초기화 함수
+            SafeExitTime, 
+            false
+        );
 }
 
 void ANoobPlayerController::RequestActorPunch(AActor* TargetActor)
@@ -148,15 +158,6 @@ void ANoobPlayerController::RequestActorPunch(AActor* TargetActor)
 	{
 		Server_RequestActorPunch(TargetActor);
 	}
-	// 애니메이션이 비정상적으로 종료되어 Notify가 안 와도, 1초 뒤엔 무조건 공격 가능 상태로 복구
-        float SafeExitTime = 1.0f; 
-        GetWorldTimerManager().SetTimer(
-            MyChar->AttackSafeTimerHandle, 
-            MyChar, 
-            &ANoobGameCharacter::ResetAttackState, // 캐릭터에 구현된 상태 초기화 함수
-            SafeExitTime, 
-            false
-        );
 }
 
 bool ANoobPlayerController::Server_RequestActorPunch_Validate(AActor* TargetActor) { return true; }
@@ -177,6 +178,7 @@ void ANoobPlayerController::Server_RequestActorPunch_Implementation(AActor* Targ
 		// 2. 서버 로그 출력
 		UE_LOG(LogTemp, Warning, TEXT("Server: Successfully Damaged %s"), *TargetActor->GetName());
 	}
+	
 }
 
 void ANoobPlayerController::Multicast_PlayHitReaction_Implementation(ACharacter* TargetCharacter, UAnimMontage* MontageToPlay)
