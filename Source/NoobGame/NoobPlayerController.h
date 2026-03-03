@@ -118,6 +118,9 @@ protected:
 	UPROPERTY(EditAnywhere, Category = "Input|Touch Controls")
 	TSubclassOf<UUserWidget> MobileControlsWidgetClass;
 
+	// 서버 전용 Fail-Safe 타이머 핸들
+    FTimerHandle AttackSafeTimerHandle;
+
 	TObjectPtr<UUserWidget> MobileControlsWidget;
 
 	UFUNCTION()
